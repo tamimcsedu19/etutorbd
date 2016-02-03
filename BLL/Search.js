@@ -5,6 +5,16 @@
 
 function search(key)
 {
+    /**
+     * returns an array of object of Tutor type
+     *
+     * key is an object type
+     * key.subject is the subject student is interested in
+     *
+     * returns an array each element of which is a Tutor object
+     * matching the students search skills
+     *
+     */
 
 }
 
