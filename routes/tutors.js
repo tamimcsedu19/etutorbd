@@ -2,13 +2,14 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/signup', function (req, res, next) {
     console.log(__dirname);
-    res.sendFile('index.html', {root: __dirname});
+    res.sendFile('index.html', {root: __dirname + '/../public'});
 });
 
 router.post('/', function (req, res, next) {
-    console.log(req.body);
+    console.log(req.body.title);
+    console.log(req.body.description);
     res.send('Post page');
 });
 

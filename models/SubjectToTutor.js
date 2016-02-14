@@ -14,5 +14,4 @@ var subjectToTutorSchema = new Schema({
 
 });
 
-var SubjectToTutor = mongoose.model('SubjectToTutor', subjectToTutorSchema);
-module.exports = new SubjectToTutor();
+module.exports = mongoose.model('SubjectToTutor', subjectToTutorSchema);
