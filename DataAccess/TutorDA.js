@@ -13,14 +13,13 @@ module.exports = {
         var tutor = new Tutor(tutorGiven);
         tutor.save(function (err) {
             if (err) {
-                return callback(err, null);
+                return callback(err);
             }
-            return callback(null, null);
+            return callback(null);
         });
     },
 
     getTutor: function (email, callback) {
-
         Tutor.findOne({email: email}, function (err, foundTutor) {
             if (err)
                 return callback(err, null);
@@ -28,6 +27,12 @@ module.exports = {
             return callback(null, foundTutor);
 
         });
+
+
+    },
+    getTutorByResetLink: function (resetLink, callback) {
+        Tutor.findOne({resetPasswordToken: resetLink, resetPasswordExpires: {$gt: Date.now()}}, callback);
+
 
     }
 }

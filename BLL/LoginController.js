@@ -7,40 +7,60 @@ var TutorDA = require('./../DataAccess/TutorDA');
 var LocalStrategy = require('passport-local').Strategy;
 
 passport.serializeUser(function (user, done) {
+
+    console.log('Serializing user' + user);
     done(null, {email: user.email, type: user.userType});
 });
 
 passport.deserializeUser(function (savedUser, done) {
 
     if (savedUser.type == "tutor") {
-        var tutor = TutorDA.getTutor(savedUser.email);
-        if (tutor)
-            done(null, tutor);
-        else
-            done("Error", null);
+
+        TutorDA.getTutor(savedUser.email, done);
+
     }
 
 });
 
 
-passport.use(new LocalStrategy(function (username, password, done) {
+passport.use(new LocalStrategy(
+    {
+        usernameField: 'email',
+        passwordField: 'password'
 
-    var tutor = TutorDA.getTutor(email);
-    if (tutor) {
-        tutor.comparePassword(password, function (err, isMatch) {
-            if (isMatch) {
-                return done(null, tutor);
+
+    },
+
+    function (email, password, done) {
+
+
+        var tutor = TutorDA.getTutor(email, function (err, tutor) {
+
+            if (tutor) {
+
+
+                tutor.comparePassword(password, function (err, isMatch) {
+                    if (isMatch) {
+                        console.log('Successfully logged in');
+                        return done(null, tutor);
+                    } else {
+                        console.log("Incorrect password");
+                        return done(null, false, {message: 'Incorrect password.'});
+                    }
+                });
+
+
             } else {
-                return done(null, false, {message: 'Incorrect password.'});
+                console.log("Incorrect email");
+
+                return done(null, false, {message: 'Incorrect email'});
             }
+
 
         });
 
 
-    } else {
 
-        return done(null, false, {message: 'Incorrect username.'});
-    }
 
 }));
 module.exports = passport;

@@ -9,6 +9,7 @@ var passport = require('./BLL/LoginController');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var tutor = require('./routes/tutors');
+var flash = require('express-flash');
 var app = express();
 
 // view engine setup
@@ -23,13 +24,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({secret: 'addariTamim', resave: true, saveUninitialized: true}));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
 
-
-
+console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use('/', routes);
 app.use('/users', users);
