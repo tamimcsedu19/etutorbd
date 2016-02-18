@@ -10,6 +10,7 @@ var nodemailer = require('nodemailer');
 module.exports =
 {
     sendForgot: function (req, res, next) {
+
         async.waterfall([
             function (done) {
                 crypto.randomBytes(20, function (err, buf) {

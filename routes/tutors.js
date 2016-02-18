@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var tutorSignUp = require('../BLL/TutorSignUp.js');
-var passport = require('../BLL/LoginController');
+var passport = require('../BLL/PassportConfig');
 var async = require('async');
 var forgotreset = require('../BLL/PassReset');
 
