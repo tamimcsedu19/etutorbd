@@ -9,7 +9,7 @@
 'use strict';
 
 var subjectToTutorDA = require('./../DataAccess/SubjectToTutorDA');
-var TutorDA = require('./../DataAccess/TutorDA');
+var TutorDA = require('./../DataAccess/UserDAs/TutorDA');
 module.exports = {
 
 

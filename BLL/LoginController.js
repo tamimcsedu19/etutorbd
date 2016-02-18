@@ -3,7 +3,7 @@
  */
 'use strict';
 var passport = require('passport');
-var TutorDA = require('./../DataAccess/TutorDA');
+var TutorDA = require('./../DataAccess/UserDAs/TutorDA');
 var LocalStrategy = require('passport-local').Strategy;
 
 passport.serializeUser(function (user, done) {

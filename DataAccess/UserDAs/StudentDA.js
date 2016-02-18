@@ -2,9 +2,7 @@
  * Created by tamim on 2/9/16.
  */
 "use strict";
-var mongoose = require('mongoose');
-var connection = require('./DbConnection');
-var Tutor = require('./../models/Tutor');
+var Tutor = require('./../../models/Tutor');
 
 module.exports = {
 
