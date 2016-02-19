@@ -4,25 +4,51 @@
 'use strict';
 var async = require('async');
 var crypto = require('crypto');
-var TutorDA = require('../DataAccess/UserDAs/TutorDA');
+var EmailToTypeDA = require('./../DataAccess/UserDAs/EmailToTypeDA');
+var UserDA;
 var nodemailer = require('nodemailer');
 
 module.exports =
 {
     sendForgot: function (req, res, next) {
+        // Set the appropriate UserDA
 
         async.waterfall([
-            function (done) {
+
+            function findUserType(done) {
+
+                EmailToTypeDA.getUserType(req.body.email, function (err, emailToType) {
+                    if (!err && emailToType)
+                        UserDA = require('./../DataAccess/UserDAs/UserDA')(emailToType.userType);
+                    else {
+                        req.flash('error', 'No account with that email address exists.');
+                        return res.redirect('forgot');
+
+                    }
+                    done();
+
+                });
+
+            },
+
+            function generateResetToken(done) {
+
+
+
                 crypto.randomBytes(20, function (err, buf) {
                     var token = buf.toString('hex');
                     done(err, token);
                 });
             },
+
+
             function (token, done) {
-                TutorDA.getTutor(req.body.email, function (err, tutor) {
-                    if (!tutor) {
-                        req.flash('error', 'No account with that email address exists.');
-                        return res.redirect('/tutors/forgot');
+
+                UserDA.getUserByEmail(req.body.email, function (err, tutor) {
+
+                    if (err) {
+                        console.log(err);
+                        return done(err);
                     }
 
                     tutor.resetPasswordToken = token;
@@ -33,6 +59,7 @@ module.exports =
                     });
                 });
             },
+
             function (token, tutor, done) {
                 var transporter = nodemailer.createTransport('smtps://wikimailer90%40gmail.com:wikimailer@smtp.gmail.com');
 
@@ -52,14 +79,14 @@ module.exports =
             }
         ], function (err) {
             if (err) return next(err);
-            res.redirect('/tutors/forgot');
+            res.redirect('forgot');
         });
     },
     resetClicked: function (req, res) {
-        TutorDA.getTutorByResetLink(req.params.token, function (err, tutor) {
+        UserDA.getUserByResetLink(req.params.token, function (err, tutor) {
             if (!tutor) {
                 req.flash('error', 'Password reset token is invalid or has expired.');
-                return res.redirect('/tutors/forgot');
+                return res.redirect('forgot');
             }
             res.render('reset', {
                 user: req.user
@@ -71,11 +98,11 @@ module.exports =
     passwordUpdate: function (req, res) {
         async.waterfall([
             function (done) {
-                TutorDA.getTutorByResetLink(req.params.token, function (err, tutor) {
+                UserDA.getUserByResetLink(req.params.token, function (err, tutor) {
                     if (!tutor) {
-                        console.log("Whattt");
+                        console.log("Updating  the password failed");
                         req.flash('error', 'Password reset token is invalid or has expired.');
-                        return res.redirect('/tutors/forget');
+                        return res.redirect('forgot');
                     }
 
                     tutor.password = req.body.password;
@@ -104,7 +131,7 @@ module.exports =
                     if (err)
                         done(err);
                     else
-                        res.redirect('/tutors');
+                        res.redirect('home');
                 });
 
             }

@@ -5,7 +5,7 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var EmailToTypeDA = require('../DataAccess/UserDAs/EmailToTypeDA');
-var User;
+var UserDA;
 var async = require('async');
 
 
@@ -17,7 +17,7 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (savedUser, done) {
 
-    var UserDA = require('./../UserDAs/UserDA')(savedUser.type);
+    var UserDA = require('../DataAccess/UserDAs/UserDA')(savedUser.type);
     UserDA.getUserByEmail(savedUser.email, function (err, user) {
         if (err)
             return done(err);
@@ -44,20 +44,25 @@ passport.use(new LocalStrategy(
                     function getUserType(wdone) {
                     EmailToTypeDA.getUserType(email, function (err, emailToType) {
                         /** IF it finds a email to type matching call the next function with the type argument **/
-                        if (err) {
-                            err.customData = "NOUSER";
+                        if (!emailToType) {
+                            if (!err)
+                                err = {};
+                            err.customData = "NO USER WITH THIS EMAIL";
+                            return wdone(err);
                         }
-                        return wdone(err, emailToType.userType);
+                        else {
+                            return wdone(err, emailToType.userType);
+                        }
 
                     });
 
                 },
                 /** This function acceses the approprate DA and retrives the password **/
                     function getUser(userType, wdone) {
-                    User = require('../DataAccess/UserDAs/UserDA')(userType); // Access the appropriate schema
+                    UserDA = require('../DataAccess/UserDAs/UserDA')(userType); // Access the appropriate schema
                     UserDA.getUserByEmail(email, function (err, user) {
-                        if (err)
-                            err.customData = "INCOSISTENTDATA";
+                        //if (err)
+                        // err.customData = "INCOSISTENTDATA";
                         wdone(err, user);
 
                     });
@@ -67,20 +72,28 @@ passport.use(new LocalStrategy(
                     function matchPassword(user, wdone) {
                     user.comparePassword(password, function (err, isMatch) {
                         if (err) {
-                            err.customData = "WRONGPASSWORD";
+                            console.log(err);
                             return wdone(err, wdone);
-                    }
-                        else {
+                        }
+                        else if (isMatch) {
                             /** We have successfully matched our So authentication was successfull **/
+                            console.log("Successfull Authentication");
                             done(null, user);
                             wdone(null, 'done');
                         }
-                });
+                        else {
+                            err = {};
+                            err.customData = "WRONG PASSWORD";
+                            wdone(err, 'done');
+                        }
+                    });
+
                 }]
             ,
             function (err) {
                 /** We got an error we call the unsuccessfull callback **/
-                return done(null, false, {customData: "INCORRECT INFO"});
+                if (err)
+                    return done(null, false, {error: err.customData});
             }
         );
 

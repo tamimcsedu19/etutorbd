@@ -14,19 +14,19 @@ html
                         span.icon-bar
                         span.icon-bar
                         span.icon-bar
-                    a.navbar-brand(href='/tutors') Project name
+                    a.navbar-brand(href='/') WebEngineering
                 .collapse.navbar-collapse
                     ul.nav.navbar-nav
                         li.active
-                            a(href='/tutors') Home
+                            a(href='/') Home
                         if user
                             li
-                                a(href='/tutors/logout') Logout
+                                a(href='logout') Logout
                         else
                             li
-                                a(href='/tutors/login') Login
+                                a(href='login') Login
                             li
-                                a(href='/tutors/signup') Signup
+                                a(href='signup') Signup
 
         .container
             if messages.error

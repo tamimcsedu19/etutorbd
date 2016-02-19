@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var tutorSignUp = require('../BLL/TutorSignUp.js');
+var tutorSignUp = require('../BLL/TutorApplication.js');
 var passport = require('../BLL/PassportConfig');
 var async = require('async');
 var forgotreset = require('../BLL/PassReset');
@@ -20,7 +20,7 @@ router.post('/login', function (req, res, next) {
                 console.log(err);
                 return next(err)
             }
-            ;
+
             console.log('Redirecting user ' + user + 'to /');
             return res.redirect('home');
         });

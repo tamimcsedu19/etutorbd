@@ -3,7 +3,7 @@
  */
 /** This file contains the logic of Tutor Search after a Student has entered the search key **/
 
-function search(key)
+exports.search = function (key)
 {
     /**
      * returns an array of object of Tutor type
@@ -15,6 +15,7 @@ function search(key)
      * matching the students search skills
      *
      */
+
 
 }
 

@@ -8,6 +8,7 @@ var EmailToType = require('../../models/EmailToType');
 
 exports.getUserType = function (email, callback) {
 
+    // emailToUser is a document like {email:foo@gmail.com , userType:"student"}
     EmailToType.findOne({email: email}, function (err, emailToUser) {
         if (err)
             return callback(err);
