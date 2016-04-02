@@ -44,7 +44,7 @@ module.exports =
 
             function (token, done) {
 
-                UserDA.getUserByEmail(req.body.email, function (err, tutor) {
+                UserDA.getUserByEmail(req.body.email, function (err, user) {
 
                     if (err) {
                         console.log(err);

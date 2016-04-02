@@ -28,13 +28,32 @@ module.exports = function (userType) {
     module.getUserByEmail = function (email, callback) {
 
         module.User.findOne({email: email}, function (err, foundUser) {
-            if (err)
+            console.log(foundUser);
+            if (err || !foundUser)
                 return callback(err, null); //If some kind of error happens
 
             return callback(null, foundUser); // Else call the callback with the found user
 
         });
     };
+
+    /** Can we use popoulate of mongoose here ? **/
+
+
+    module.getUsersByEmails = function (emails, callback) {
+
+
+        module.User.find({email: {$in: emails}}, function (err, users) {
+
+            /** UserDA returning array of users matching any if the emails**/
+            if (err)
+                return callback(err, null);
+            else
+                return callback(null, users.toArray());
+        });
+
+
+    }
 
 
     // Other stuff...

@@ -19,7 +19,7 @@ router.post('/login', function (req, res, next) {
                 console.log(err);
                 return next(err)
             }
-            ;
+
             console.log('Redirecting user ' + user + 'to /');
             return res.redirect('home');
         });
@@ -39,6 +39,9 @@ router.get('/home', function (req, res) {
 });
 
 router.get('/', function (req, res, next) {
+
+
+    res.send('index.html');
     if (req.user)
         res.redirect('home');
     else
@@ -107,5 +110,16 @@ router.post('/reset/:token', function (req, res) {
 
     forgotReset.passwordUpdate(req, res);
 });
+
+
+router.get('/search', function (req, res) {
+
+    var subject = req.param('subject');
+
+});
+
+
+
+
 
 module.exports = router;

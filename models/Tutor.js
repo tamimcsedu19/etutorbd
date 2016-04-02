@@ -12,18 +12,17 @@ var tutorSchema = new Schema({
     password: {type: String, required: true},
     resetPasswordToken: String,
     resetPasswordExpires: Date,
-    userType: {type: String, required: true, maxlength: 10}
-    /**
-     bankName: {type: String, default: "" , maxlength: 50},
-     bankSwift: {type: String, default: "" , maxlength: 50},
-     bankAccountNo: {type: String, default: "" , maxlength: 50},
-     birthDay: {type: Date, required: true },
-     university: {type: String, required: true, maxlength: 30},
-     currentDegree: {type: String, required: true , maxlength: 30},
-     majorSubject: {type: String, required: true , maxlength: 40},
+    userType: {type: String, required: true, maxlength: 10},
+    bankName: {type: String, default: "", maxlength: 50},
+    bankSwift: {type: String, default: "", maxlength: 50},
+    bankAccountNo: {type: String, default: "", maxlength: 50},
+    birthDay: {type: Date, required: true},
+    university: {type: String, required: true, maxlength: 30},
+    //Todo: insert enum of values
+    currentDegree: {type: String, required: true, maxlength: 30},
+    majorSubject: {type: String, required: true, maxlength: 40},
+    expectedGraduation: {type: Number, required: true}
 
-     expectedGraduation: {type: Number , required:true }
-     **/
 });
 
 tutorSchema.pre('save', SchemaFunctions.hashPassword);

@@ -9,7 +9,7 @@ var SubjectToTutor = require('./../models/SubjectToTutor');
 
 module.exports = {
 
-    save: function (SubjectToTutorData, callback) {
+    saveSubjectTutor: function (SubjectToTutorData, callback) {
 
         var subjectToTutor = new SubjectToTutor(SubjectToTutorData);
         subjectToTutor.save(function (err) {
@@ -22,6 +22,21 @@ module.exports = {
 
 
     }
+    ,
+    getSubjectTutors: function (subject, callback) {
+
+        var tutors = SubjectToTutor.find({subject: subject}, function (err, tutorCursors) {
+            if (err)
+                callback(err, null);
+            else
+                callback(null, tutorCursors.toArray());
+
+
+        });
+
+
+    }
+    
 
 
 }

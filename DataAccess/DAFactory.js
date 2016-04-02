@@ -1,6 +1,7 @@
 /**
  * Created by tamim on 2/18/16.
- */ Student = require('./../models/Student');
+ */
+var Student = require('./../models/Student');
 
 module.exports = function (userType) {
 

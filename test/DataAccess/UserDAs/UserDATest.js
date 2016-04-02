@@ -68,6 +68,7 @@ describe('User Database Actions', function () {
             };
             TutorDA.save(tutor, function (err) {
 
+
                 try {
                     assert(!err);
 
@@ -76,6 +77,7 @@ describe('User Database Actions', function () {
                     return done(err);
 
                 }
+                console.log("Saved " + tutor);
 
                 TutorDA.getUserByEmail("tamim.tamim1382@gmail.com", function (err, tutor) {
                     assert(!err);

@@ -8,7 +8,7 @@ var assert = require('assert');
 var should = require('should');
 var SignUpBL = require('../../BLL/StudentSignUp');
 var expect = require('chai').expect;
-var cleaner = require('../DBCleanUp');
+var cleaner = require('../utility');
 describe('Signs up a student', function () {
 
 
