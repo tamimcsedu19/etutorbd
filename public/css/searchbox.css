@@ -1,0 +1,15 @@
+ .typeahead-demo {
+    position:relative;
+	width:300px;
+	height:150px;
+	top:100px;
+	margin-top:-75px;
+	left:700px;
+	margin-left:-150px;
+	z-index:1;
+  }
+
+  .heading {
+	position:relative;
+    left:100px;
+  }
