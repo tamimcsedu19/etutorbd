@@ -25,12 +25,14 @@ module.exports = {
     ,
     getSubjectTutors: function (subject, callback) {
 
-        var tutors = SubjectToTutor.find({subject: subject}, function (err, tutorCursors) {
+        var tutors = SubjectToTutor.find({subject: subject}, function (err, tutors) {
             if (err)
                 callback(err, null);
-            else
-                callback(null, tutorCursors.toArray());
+            else {
 
+                console.log(tutors);
+                callback(null, tutors);
+            }
 
         });
 

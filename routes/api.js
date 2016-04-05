@@ -7,7 +7,7 @@ var router = express.Router();
 
 
 subjects = {
-    availablesubjects: ['C++', 'Java', 'Algebra']
+    availablesubjects: ['C++', 'Java', 'Algebra','Geometry']
 
 }
 router.get('/getavailablesubjects', function (req, res) {
