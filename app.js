@@ -46,6 +46,7 @@ app.use(function (req, res, next) {
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(cookieParser());
 app.use(session({
     store: sessionStore,
@@ -54,11 +55,11 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
-app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+app.use(flash());
 console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'public')));
 

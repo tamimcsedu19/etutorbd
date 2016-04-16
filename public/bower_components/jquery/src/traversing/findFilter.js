@@ -33,7 +33,7 @@ function winnow( elements, qualifier, not ) {
 	}
 
 	return jQuery.grep( elements, function( elem ) {
-		return ( indexOf.call( qualifier, elem ) >= 0 ) !== not;
+		return ( indexOf.call(qualifier, elem) > -1 ) !== not;
 	});
 }
 
@@ -51,7 +51,7 @@ jQuery.filter = function( expr, elems, not ) {
 		}));
 };
 
-jQuery.fn.extend({
+	jQuery.fn.extend({
 	find: function( selector ) {
 		var i,
 			len = this.length,
@@ -59,13 +59,13 @@ jQuery.fn.extend({
 			self = this;
 
 		if ( typeof selector !== "string" ) {
-			return this.pushStack( jQuery( selector ).filter(function() {
+			return this.pushStack(jQuery(selector).filter(function () {
 				for ( i = 0; i < len; i++ ) {
 					if ( jQuery.contains( self[ i ], this ) ) {
 						return true;
 					}
 				}
-			}) );
+			}));
 		}
 
 		for ( i = 0; i < len; i++ ) {
@@ -78,10 +78,10 @@ jQuery.fn.extend({
 		return ret;
 	},
 	filter: function( selector ) {
-		return this.pushStack( winnow(this, selector || [], false) );
+		return this.pushStack(winnow(this, selector || [], false));
 	},
 	not: function( selector ) {
-		return this.pushStack( winnow(this, selector || [], true) );
+		return this.pushStack(winnow(this, selector || [], true));
 	},
 	is: function( selector ) {
 		return !!winnow(
@@ -95,6 +95,6 @@ jQuery.fn.extend({
 			false
 		).length;
 	}
-});
+	});
 
 });
