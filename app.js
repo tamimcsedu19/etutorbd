@@ -22,6 +22,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var tutor = require('./routes/tutors');
 var api = require('./routes/api');
+var searchRoutes = require('./SearchService/SearchRoutes');
 
 
 var flash = require('express-flash');
@@ -68,7 +69,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/tutors', tutor);
 app.use('/api', api);
-
+app.use('/',searchRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -96,10 +97,7 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+  res.send(err.message);
 });
 
 

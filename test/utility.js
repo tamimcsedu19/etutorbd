@@ -4,7 +4,7 @@
 'use-strict';
 __base = __dirname + '/../'
 var TutorDA = require(__base + 'DataAccess/UserDAs/UserDA')('tutor');
-var subjectToTutor = require(__base + 'DataAccess/SubjectToTutorDA');
+var subjectToTutor = require('../SearchService/SubjectToTutorDA');
 var Student = require(__base + 'models/Student');
 var Tutor = require(__base + 'models/Tutor');
 var EmailToType = require(__base + 'models/EmailToType');

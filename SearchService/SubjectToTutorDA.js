@@ -2,9 +2,9 @@
  * Created by tamim on 2/9/16.
  */
 var mongoose = require('mongoose');
-var connection = require('./DbConnection');
+var connection = require('./../DataAccess/DbConnection');
 
-var SubjectToTutor = require('./../models/SubjectToTutor');
+var SubjectToTutor = require('./SubjectToTutor');
 
 
 module.exports = {

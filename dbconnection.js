@@ -1,8 +1,11 @@
 /**
- * Created by tamim on 1/27/16.
+ * Created by tamim on 2/12/16.
  */
-/** A singleton containing the database connection **/
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test');
 
+if (mongoose.connection.readyState == 0) {
+    mongoose.connect('mongodb://localhost/test');
+
+}
+module.exports = mongoose;

@@ -4,7 +4,7 @@
 /** This is a model of the mapping with tutors email and Subject Expertise **/
 
 "use strict";
-var mongoose = require('mongoose');
+var mongoose = require('../dbconnection');
 var Schema = mongoose.Schema;
 
 var subjectToTutorSchema = new Schema({

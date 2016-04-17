@@ -114,21 +114,4 @@ router.post('/reset/:token', function (req, res) {
 
 
 
-var SubjectToTutorDA = require('../DataAccess/SubjectToTutorDA');
-
-
-router.get('/search', function (req, res) {
-
-    var subject = req.param('subject');
-    SubjectToTutorDA.getSubjectTutors(subject,function (err,tutors) {
-        res.send(tutors);
-
-    })
-
-});
-
-
-
-
-
 module.exports = router;
