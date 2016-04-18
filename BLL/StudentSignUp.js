@@ -8,7 +8,7 @@
 
 'use strict';
 
-var StudentDA = require('./../DataAccess/UserDAs/UserDA')('student');
+var StudentDA = require('./../UserService/UserDA')('student');
 var EmailToTypeDA = require('./../DataAccess/UserDAs/EmailToTypeDA');
 
 module.exports = {

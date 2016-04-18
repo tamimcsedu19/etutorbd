@@ -9,11 +9,11 @@
 process.env.NODE_ENV = 'test';
 var assert = require('assert');
 var should = require('should');
-var TutorDA = require('../../../DataAccess/UserDAs/UserDA')('tutor');
-var StudentDA = require('../../../DataAccess/UserDAs/UserDA')('student');
+var TutorDA = require('./UserDA')('tutor');
+var StudentDA = require('./UserDA')('student');
 
-var Tutor = require('../../../models/Tutor');
-var Student = require('../../../models/Student');
+var Tutor = require('./TutorModel');
+var Student = require('./StudentModel');
 var expect = require('chai').expect;
 
 

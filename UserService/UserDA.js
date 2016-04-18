@@ -8,7 +8,7 @@
 module.exports = function (userType) {
     var module = {};
 
-    module.User = require('../DAFactory')(userType);
+    module.User = require('./DAFactory')(userType);
 
 
     module.save = function (userGiven, callback) {

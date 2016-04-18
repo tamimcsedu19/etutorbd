@@ -21,7 +21,6 @@ global.__base = __dirname + '/'
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var tutor = require('./routes/tutors');
-var api = require('./routes/api');
 var searchRoutes = require('./SearchService/SearchRoutes');
 
 
@@ -68,7 +67,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/tutors', tutor);
-app.use('/api', api);
 app.use('/',searchRoutes);
 
 // catch 404 and forward to error handler

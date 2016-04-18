@@ -4,7 +4,7 @@
 
 /** This DataAccess file is used to get the type of the user given email **/
 /** As a bonus we can also check if a user is in database **/
-var EmailToType = require('../../models/EmailToType');
+var EmailToType = require('../../UserService/EmailToTypeModel');
 
 exports.getUserType = function (email, callback) {
 
@@ -24,7 +24,7 @@ exports.setUserType = function (email, type, callback) {
     emailToType.save(function (err) {
 
         if (err) {
-            console.log("Failed to save email to type of the user " + email + "May be the email already exists");
+            console.log("Failed to save email to type of the user " + email + " May be the email already exists");
             callback(err);
         }
         else

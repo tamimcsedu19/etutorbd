@@ -16,7 +16,13 @@ router.get('/search', function (req, res) {
 
 });
 
+subjects = {
+    availablesubjects: ['C++', 'Java', 'Algebra','Geometry']
 
+}
+router.get('/api/getavailablesubjects', function (req, res) {
+    res.send(subjects);
+});
 
 
 

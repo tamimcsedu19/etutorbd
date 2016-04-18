@@ -19,7 +19,7 @@ module.exports =
 
                 EmailToTypeDA.getUserType(req.body.email, function (err, emailToType) {
                     if (!err && emailToType)
-                        UserDA = require('./../DataAccess/UserDAs/UserDA')(emailToType.userType);
+                        UserDA = require('./../UserService/UserDA')(emailToType.userType);
                     else {
                         req.flash('error', 'No account with that email address exists.');
                         return res.redirect('forgot');

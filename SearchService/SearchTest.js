@@ -11,7 +11,7 @@ var assert = require('assert');
 var should = require('should');
 var expect = require('chai').expect;
 var utility = require('../test/utility');
-var TutorDA = require('../DataAccess/UserDAs/UserDA')('tutor');
+var TutorDA = require('../UserService/UserDA')('tutor');
 var subjectToTutor = require('./SubjectToTutorDA');
 var async = require('async');
 

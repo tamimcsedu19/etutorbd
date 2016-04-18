@@ -1,14 +1,14 @@
 /**
  * Created by tamim on 2/18/16.
  */
-var Student = require('./../models/Student');
+var Student = require('./StudentModel');
 
 module.exports = function (userType) {
 
     if (userType == "tutor")
-        return require('./../models/Tutor');
+        return require('./TutorModel');
     else if (userType == "student")
-        return require('./../models/Student');
+        return require('./StudentModel');
     ;
 
 }

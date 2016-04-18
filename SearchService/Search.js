@@ -4,7 +4,7 @@
 /** This file contains the logic of Tutor Search after a Student has entered the search key **/
 'use strict';
 var SubjectToTutorDA = require('./SubjectToTutorDA');
-var UserDA = require('../DataAccess/UserDAs/UserDA')('tutor');
+var UserDA = require('../UserService/UserDA')('tutor');
 
 exports.searchBySubject = function (subject, callback)
 {

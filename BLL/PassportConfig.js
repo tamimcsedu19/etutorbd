@@ -17,7 +17,7 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (savedUser, done) {
 
-    var UserDA = require('../DataAccess/UserDAs/UserDA')(savedUser.type);
+    var UserDA = require('../UserService/UserDA')(savedUser.type);
     UserDA.getUserByEmail(savedUser.email, function (err, user) {
         if (err)
             return done(err);
@@ -59,7 +59,7 @@ passport.use(new LocalStrategy(
                 },
                 /** This function acceses the approprate DA and retrives the password **/
                     function getUser(userType, wdone) {
-                    UserDA = require('../DataAccess/UserDAs/UserDA')(userType); // Access the appropriate schema
+                    UserDA = require('../UserService/UserDA')(userType); // Access the appropriate schema
                     UserDA.getUserByEmail(email, function (err, user) {
                         //if (err)
                         // err.customData = "INCOSISTENTDATA";
