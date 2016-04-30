@@ -7,24 +7,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var EmailToTypeDA = require('../DataAccess/UserDAs/EmailToTypeDA');
 var UserDA;
 var async = require('async');
-
-
-passport.serializeUser(function (user, done) {
-
-    console.log('Serializing user' + user);
-    done(null, {email: user.email, type: user.userType});
-});
-
-passport.deserializeUser(function (savedUser, done) {
-
-    var UserDA = require('../UserService/UserDA')(savedUser.type);
-    UserDA.getUserByEmail(savedUser.email, function (err, user) {
-        if (err)
-            return done(err);
-        else
-            return done(null, user);
-    });
-});
+var crypto = require('crypto');
 
 /** An authentication strategy for passport **/
 
@@ -47,10 +30,11 @@ passport.use(new LocalStrategy(
                         /** IF it finds a email to type matching call the next function with the type argument **/
                         if (!emailToType) {
                             if (!err)
-                                err = {};
-                            err.customData = "NO USER WITH THIS EMAIL";
+                                var err = {};
+                            err.message = "NO USER WITH THIS EMAIL";
                             return wdone(err);
                         }
+
                         else {
                             return wdone(err, emailToType.userType);
                         }
@@ -60,10 +44,10 @@ passport.use(new LocalStrategy(
                 },
                 /** This function acceses the approprate DA and retrives the password **/
                     function getUser(userType, wdone) {
-                    UserDA = require('../UserService/UserDA')(userType); // Access the appropriate schema
-                    UserDA.getUserByEmail(email, function (err, user) {
-                        //if (err)
-                        // err.customData = "INCOSISTENTDATA";
+                        UserDA = require('../UserService/UserDA')(userType); // Access the appropriate schema
+                        UserDA.getUserByEmail(email, function (err, user) {
+                        if (err)
+                             err.message = "INCOSISTENTDATA";
                         wdone(err, user);
 
                     });
@@ -71,30 +55,36 @@ passport.use(new LocalStrategy(
                 },
                 /** This function matches the password with Users comparePassword , see models/SchemaFunctions */
                     function matchPassword(user, wdone) {
-                    user.comparePassword(password, function (err, isMatch) {
-                        if (err) {
-                            console.log(err);
-                            return wdone(err, wdone);
-                        }
-                        else if (isMatch) {
-                            /** We have successfully matched our So authentication was successfull **/
+
+                        var hash = crypto.pbkdf2Sync(password,user.salt, 1000, 64).toString('hex');
+
+                        if (hash == user.hash){
                             console.log("Successfull Authentication");
+
+
+                            /** TODO:: Return a user with only the property that is required i.e delete user.hash,user.salt etc**/
+
+                            console.log('successfull login');
                             done(null, user);
-                            wdone(null, 'done');
+                            wdone(null, 'done')
+
                         }
                         else {
-                            err = {};
-                            err.customData = "WRONG PASSWORD";
+
+                            var err = {};
+                            err.message = "WRONG PASSWORD";
                             wdone(err, 'done');
                         }
-                    });
+
 
                 }]
             ,
             function (err) {
                 /** We got an error we call the unsuccessfull callback **/
-                if (err)
-                    return done(null, false, {error: err.customData});
+                if (err) {
+                    console.log(err.message);
+                    return done(null, false, {message: err.message});
+                }
             }
         );
 

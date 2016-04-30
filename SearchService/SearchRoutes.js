@@ -8,11 +8,11 @@ var router = express.Router();
 
 router.get('/search', function (req, res) {
 
-    var subject = req.param('subject');
+    var subject = req.query.subject;
     SubjectToTutorDA.getSubjectTutors(subject,function (err,tutors) {
         res.send(tutors);
 
-    })
+    });
 
 });
 
@@ -20,7 +20,8 @@ subjects = {
     availablesubjects: ['C++', 'Java', 'Algebra','Geometry']
 
 }
-router.get('/api/getavailablesubjects', function (req, res) {
+
+router.get('/getavailablesubjects', function (req, res) {
     res.send(subjects);
 });
 

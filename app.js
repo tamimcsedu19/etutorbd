@@ -5,32 +5,24 @@ var session = require('express-session');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var passport = require('./BLL/PassportConfig');
+var passport = require('./AuthenticationService/PassportConfig');
 
 /** redis **/
 var redis = require('redis');
 var RedisStore = require('connect-redis')(session);
 var rClient = redis.createClient();
-var sessionStore = new RedisStore({client: rClient});
+var redisSessionStore = new RedisStore({client: rClient});
 
 /** Global variables **/
 global.__base = __dirname + '/'
 
 
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var tutor = require('./routes/tutors');
-var searchRoutes = require('./SearchService/SearchRoutes');
-
-
 var flash = require('express-flash');
 var app = express();
 
-// view engine setup
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -49,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser());
 app.use(session({
-    store: sessionStore,
+    store: redisSessionStore,
     key: 'jsessionid',
     secret: 'addariTamim',
     resave: true,
@@ -59,15 +51,21 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(flash());
-console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/tutors', tutor);
-app.use('/',searchRoutes);
+require('./routes/RouteManager').addRoutes(app);
+
+
+
+
+
+
+
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

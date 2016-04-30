@@ -8,10 +8,11 @@ var SchemaFunctions = require('./SchemaFunctions');
 var studentSchema = new Schema({
 
 
-    firstName: {type: String, required: true, maxlength: 20},
-    lastName: {type: String, required: true, maxlength: 20},
+    firstName: {type: String , maxlength: 20},
+    lastName: {type: String  , maxlength: 20},
+    fullName: {type: String  , maxlength: 40},
     email: {type: String, required: true, maxlength: 40, unique: true},
-    password: {type: String, required: true},
+    hash: {type: String, required: true},
     resetPasswordToken: String,
     resetPasswordExpires: Date,
     ActivationToken: String,
@@ -23,9 +24,6 @@ var studentSchema = new Schema({
 });
 
 
-studentSchema.pre('save', SchemaFunctions.hashPassword);
-
-studentSchema.methods.comparePassword = SchemaFunctions.comparePassword;
 
 var Student = mongoose.model('Student', studentSchema);
 module.exports = Student;

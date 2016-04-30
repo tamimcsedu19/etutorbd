@@ -6,9 +6,9 @@
 process.env.NODE_ENV = 'test';
 var assert = require('assert');
 var should = require('should');
-var SignUpBL = require('../../BLL/StudentSignUp');
+var SignUpBL = require('./StudentSignUp');
 var expect = require('chai').expect;
-var cleaner = require('../utility');
+var cleaner = require('../test/utility');
 describe('Signs up a student', function () {
 
 

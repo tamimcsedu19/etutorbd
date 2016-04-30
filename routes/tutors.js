@@ -1,10 +1,10 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var tutorSignUp = require('../BLL/TutorApplication.js');
-var passport = require('../BLL/PassportConfig');
+var tutorSignUp = require('./TutorApplication.js');
+var passport = require('./PassportConfig');
 var async = require('async');
-var forgotreset = require('../BLL/PassReset');
+var forgotreset = require('./PassReset');
 
 /* GET signup page. */
 

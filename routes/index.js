@@ -1,10 +1,10 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var studentSignUp = require('../BLL/StudentSignUp.js');
-var passport = require('../BLL/PassportConfig');
+var studentSignUp = require('./StudentSignUp.js');
+var passport = require('./PassportConfig');
 var async = require('async');
-var forgotReset = require('../BLL/PassReset');
+var forgotReset = require('./PassReset');
 
 router.post('/login', function (req, res, next) {
 
