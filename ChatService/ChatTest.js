@@ -29,6 +29,7 @@ describe('Tests chatting functionality', function () {
         before(function () {
             client1 = io.connect(socketURL, options);
             client2 = io.connect(socketURL, options);
+
             client1.on('connect', function () {
                 client1.emit('create', {user_id: 'tamim.tamim1382@gmail.com'});
             });

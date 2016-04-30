@@ -20,7 +20,7 @@ module.exports = {
         EmailToTypeDA.setUserType(studentGiven.email, 'student', function (err) {
 
             if (err) {
-                err.customData = "EMAIL ALREADY EXISTS";
+                err.customData = "USER ALREADY EXISTS";
                 return callback(err);
             }
 
@@ -34,7 +34,9 @@ module.exports = {
             });
 
 
-            /** Code for sending the Activation email **/
+            /**
+             * TODO
+             * Code for sending the Activation email **/
 
 
         });

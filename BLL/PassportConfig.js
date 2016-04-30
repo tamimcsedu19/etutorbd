@@ -41,6 +41,7 @@ passport.use(new LocalStrategy(
         // wdone stands for waterfall done
         async.waterfall([
                 /** This function finds the user type and in process checks if the user already exists in the system **/
+
                     function getUserType(wdone) {
                     EmailToTypeDA.getUserType(email, function (err, emailToType) {
                         /** IF it finds a email to type matching call the next function with the type argument **/
