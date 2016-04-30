@@ -17,7 +17,7 @@ exports.login = function(req, res) {
             return;
         }
 
-        // If a user is found
+        // If a user is found then
         if(user){
             var expiry = new Date();
             expiry.setDate(expiry.getDate() + 7);
