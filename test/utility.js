@@ -8,6 +8,7 @@ var subjectToTutor = require('../SearchService/SubjectToTutorDA');
 var Student = require('../UserService/StudentModel');
 var Tutor = require('../UserService/TutorModel');
 var EmailToType = require('../UserService/EmailToTypeModel');
+var SubjectToTutor = require('../SearchService/SubjectToTutor');
 var async = require('async');
 
 exports.cleanup = function () {
@@ -35,6 +36,16 @@ exports.cleanup = function () {
     EmailToType.remove({}, function (err) {
         if (!err) {
             console.log("Successfully EmailToType students Collection\n");
+        }
+        else {
+
+            console.log("error clearing EmailToType during test");
+        }
+    });
+
+    SubjectToTutor.remove({}, function (err) {
+        if (!err) {
+            console.log("Successfully SubjectToTutor students Collection\n");
         }
         else {
 
@@ -124,7 +135,7 @@ exports.insertTutors = function (alldone) {
         /** Lets give em some subjects **/
             function (done) {
             subjectToTutor.saveSubjectTutor({
-                'email': "mahfujhowlader@gmail.com",
+                'tutorEmail': "mahfujhowlader@gmail.com",
                 'subject': 'C++'
             }, function () {
                 done();
@@ -133,7 +144,7 @@ exports.insertTutors = function (alldone) {
         },
         function (done) {
             subjectToTutor.saveSubjectTutor({
-                'email': "mahfujhowlader@gmail.com",
+                'tutorEmail': "mahfujhowlader@gmail.com",
                 'subject': 'Algebra'
             }, function () {
                 done();
@@ -142,7 +153,7 @@ exports.insertTutors = function (alldone) {
         },
         function (done) {
             subjectToTutor.saveSubjectTutor({
-                'email': "tamim.tamim1382@gmail.com",
+                'tutorEmail': "tamim.tamim1382@gmail.com",
                 'subject': 'Geometry'
             }, function () {
                 done();

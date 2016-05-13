@@ -34,8 +34,14 @@ module.exports = {
                 callback(err, null);
             else {
 
-                console.log(tutors);
-                callback(null, tutors);
+
+                tutorEmails = [];
+
+                for(var i=0;i<tutors.length;++i){
+                    tutorEmails.push(tutors[i].tutorEmail);
+                }
+
+                callback(null, tutorEmails);
             }
 
         });

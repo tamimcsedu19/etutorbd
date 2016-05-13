@@ -14,6 +14,7 @@ var utility = require('../test/utility');
 var TutorDA = require('../UserService/UserDA')('tutor');
 var subjectToTutor = require('./SubjectToTutorDA');
 var async = require('async');
+var search = require('./Search');
 
 
 describe('Searches for tutors', function () {
@@ -30,9 +31,19 @@ describe('Searches for tutors', function () {
                     assert(!err);
                     assert(tutor.firstName == "Tamim");
                     assert(tutor.email == "tamim.tamim1382@gmail.com");
+
+
+
+
+                });
+
+                search.searchBySubject('C++',function(err,tutors){
+                    assert(tutors[0].email == "mahfujhowlader@gmail.com");
+
                     alldone();
 
                 });
+
 
             });
 

@@ -2,14 +2,14 @@
  * Created by tamim on 4/17/16.
  */
 
-var SubjectToTutorDA = require('../SearchService/SubjectToTutorDA');
+var search = require('./Search');
 var express = require('express');
 var router = express.Router();
 
 router.get('/search', function (req, res) {
 
     var subject = req.query.subject;
-    SubjectToTutorDA.getSubjectTutors(subject,function (err,tutors) {
+    search.searchBySubject(subject,function (err,tutors) {
         res.send(tutors);
 
     });

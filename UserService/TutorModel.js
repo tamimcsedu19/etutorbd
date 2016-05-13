@@ -25,9 +25,8 @@ var tutorSchema = new Schema({
 
 });
 
-tutorSchema.pre('save', SchemaFunctions.hashPassword);
 
-tutorSchema.methods.comparePassword = SchemaFunctions.comparePassword;
+
 
 
 var Tutor = mongoose.model('Tutor', tutorSchema);
