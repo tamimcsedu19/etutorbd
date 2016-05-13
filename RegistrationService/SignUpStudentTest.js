@@ -38,25 +38,22 @@ describe('Signs up a student', function () {
                     console.log(err);
                     done(err);
                 }
+            });
 
                 /** This one should be error
                  * cause the student is already saved
                  */
+
+
                 SignUpBL.signUpStudent(student, function (err) {
-
-                    try {
-                        assert(err);
-                        done(err);
-
-                    } catch (e) {
+                    assert(err);
+                    if(err) {
                         console.log("Signing up multiple students with same email");
-                        done(err);
                     }
-
-
                 });
 
-            });
+
+
 
 
         });

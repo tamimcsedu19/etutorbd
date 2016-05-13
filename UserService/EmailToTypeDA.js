@@ -4,7 +4,7 @@
 
 /** This DataAccess file is used to get the type of the user given email **/
 /** As a bonus we can also check if a user is in database **/
-var EmailToType = require('../../UserService/EmailToTypeModel');
+var EmailToType = require('./EmailToTypeModel');
 
 exports.getUserType = function (email, callback) {
 

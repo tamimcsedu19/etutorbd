@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/DataAccess/UserDAs/EmailToTypeDA.js" afterPath="$PROJECT_DIR$/UserService/EmailToTypeDA.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SearchService/SearchRoutes.js" afterPath="$PROJECT_DIR$/SearchService/SearchRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SearchService/SearchTest.js" afterPath="$PROJECT_DIR$/SearchService/SearchTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SearchService/SubjectToTutorDA.js" afterPath="$PROJECT_DIR$/SearchService/SubjectToTutorDA.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserService/TutorModel.js" afterPath="$PROJECT_DIR$/UserService/TutorModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserService/UserDA.js" afterPath="$PROJECT_DIR$/UserService/UserDA.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthenticationService/AuthController.js" afterPath="$PROJECT_DIR$/AuthenticationService/AuthController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthenticationService/PassReset.js" afterPath="$PROJECT_DIR$/AuthenticationService/PassReset.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthenticationService/PassportConfig.js" afterPath="$PROJECT_DIR$/AuthenticationService/PassportConfig.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js" afterPath="$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RegistrationService/StudentSignUp.js" afterPath="$PROJECT_DIR$/RegistrationService/StudentSignUp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/utility.js" afterPath="$PROJECT_DIR$/test/utility.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.txt" afterPath="$PROJECT_DIR$/todo.txt" />
     </list>
     <ignored path="etutorbd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +31,83 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserDA.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AuthenticationService/AuthController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="70" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="70" />
+              <folding>
+                <element signature="e#0#39#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignUpStudentTest.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="29" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDATest.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/UserService/UserDATest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.03640777">
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDA.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UserService/UserDA.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2378641">
+            <state vertical-scroll-proportion="0.0">
               <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EmailToTypeModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UserService/EmailToTypeModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TutorModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UserService/TutorModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SchemaFunctions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UserService/SchemaFunctions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentSignUp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RegistrationService/StudentSignUp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -43,67 +117,17 @@
         <entry file="file://$PROJECT_DIR$/test/utility.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="52" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatTestUtility.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatService/ChatTestUtility.js">
+      <file leaf-file-name="EmailToTypeDA.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UserService/EmailToTypeDA.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChatDA.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatService/ChatDA.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Search.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SearchService/Search.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubjectToTutorDA.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SearchService/SubjectToTutorDA.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchRoutes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SearchService/SearchRoutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchTest.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SearchService/SearchTest.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="73" selection-start-line="40" selection-start-column="73" selection-end-line="40" selection-end-column="73" />
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -132,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/js/controllers.js" />
         <option value="$PROJECT_DIR$/DataAccess/SubjectToTutorDA.js" />
         <option value="$PROJECT_DIR$/routes/api.js" />
         <option value="$PROJECT_DIR$/chatService/route.js" />
@@ -158,8 +181,6 @@
         <option value="$PROJECT_DIR$/test/BLL/SignUpStudentTest.js" />
         <option value="$PROJECT_DIR$/UserService/SchemaFunctions.js" />
         <option value="$PROJECT_DIR$/UserService/StudentModel.js" />
-        <option value="$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js" />
-        <option value="$PROJECT_DIR$/RegistrationService/StudentSignUp.js" />
         <option value="$PROJECT_DIR$/RegistrationService/RegistrationRoutes.js" />
         <option value="$PROJECT_DIR$/AuthenticationService/LoginRoute.js" />
         <option value="$PROJECT_DIR$/AuthenticationService/LoginController.js" />
@@ -174,15 +195,18 @@
         <option value="$PROJECT_DIR$/socketio.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
         <option value="$PROJECT_DIR$/ChatService/ChatController.js" />
-        <option value="$PROJECT_DIR$/AuthenticationService/AuthController.js" />
-        <option value="$PROJECT_DIR$/todo.txt" />
         <option value="$PROJECT_DIR$/SearchService/InsertSubjectTutorData.js" />
         <option value="$PROJECT_DIR$/UserService/TutorModel.js" />
-        <option value="$PROJECT_DIR$/test/utility.js" />
         <option value="$PROJECT_DIR$/SearchService/SearchTest.js" />
         <option value="$PROJECT_DIR$/UserService/UserDA.js" />
         <option value="$PROJECT_DIR$/SearchService/SubjectToTutorDA.js" />
         <option value="$PROJECT_DIR$/SearchService/SearchRoutes.js" />
+        <option value="$PROJECT_DIR$/todo.txt" />
+        <option value="$PROJECT_DIR$/UserService/EmailToTypeDA.js" />
+        <option value="$PROJECT_DIR$/AuthenticationService/AuthController.js" />
+        <option value="$PROJECT_DIR$/RegistrationService/StudentSignUp.js" />
+        <option value="$PROJECT_DIR$/test/utility.js" />
+        <option value="$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js" />
       </list>
     </option>
   </component>
@@ -283,7 +307,49 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SearchService" />
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RegistrationService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataAccess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AuthenticationService" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,14 +390,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/UserService" />
       <recent name="$PROJECT_DIR$/AuthenticationService" />
       <recent name="$PROJECT_DIR$/RegistrationService" />
-      <recent name="$PROJECT_DIR$/UserService" />
       <recent name="$PROJECT_DIR$/SearchService" />
       <recent name="$PROJECT_DIR$/SessionService" />
     </key>
   </component>
-  <component name="RunManager" selected="Mocha.SearchTest">
+  <component name="RunManager" selected="Mocha.SignUpStudentTest">
     <configuration default="false" name="ChatController.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="ChatController.js" working-dir="$PROJECT_DIR$/ChatService">
       <method />
     </configuration>
@@ -618,39 +684,45 @@
       <option name="project" value="LOCAL" />
       <updated>1463152765635</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Working Search functionality , run SearchTest before running.">
+      <created>1463155335557</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1463155335557</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchTest - 2016.05.13 at 21h 53m 16s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 16m 48s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 21h 54m 19s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 24m 48s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 21h 54m 49s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 25m 39s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 21h 55m 29s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 26m 14s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 21h 55m 44s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 27m 18s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 21h 57m 58s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 27m 44s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 21h 59m 25s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 28m 03s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 21h 59m 33s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 28m 10s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 21h 59m 58s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 28m 26s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="SearchTest - 2016.05.13 at 22h 00m 20s.xml">
-      <configuration name="SearchTest" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="SignUpStudentTest - 2016.05.13 at 22h 29m 03s.xml">
+      <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -716,7 +788,8 @@
     <MESSAGE value="Live session controller demo added" />
     <MESSAGE value="Added subject tutor data script" />
     <MESSAGE value="Add usertype in JWT" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add usertype in JWT" />
+    <MESSAGE value="Working Search functionality , run SearchTest before running." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Search functionality , run SearchTest before running." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -757,13 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataAccess/UserDAs/EmailToTypeDA.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="80" selection-start-line="26" selection-start-column="80" selection-end-line="26" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -830,21 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserService/SchemaFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/tutors.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -883,14 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25485438">
           <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RegistrationService/StudentSignUp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="39" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -965,32 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AuthenticationService/AuthController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AuthenticationService/PassportConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SearchService/InsertSubjectTutorData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1005,22 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService/EmailToTypeModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService/UserDATest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1053,22 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService/TutorModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6723301">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/utility.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="52" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -1121,10 +1106,100 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/todo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AuthenticationService/PassportConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UserService/UserDA.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2378641">
+        <state vertical-scroll-proportion="0.0">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService/SchemaFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService/EmailToTypeDA.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService/EmailToTypeModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService/TutorModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AuthenticationService/AuthController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="70" selection-start-line="56" selection-start-column="70" selection-end-line="56" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RegistrationService/StudentSignUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/utility.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService/UserDATest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03640777">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding />
         </state>
       </provider>

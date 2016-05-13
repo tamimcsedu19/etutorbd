@@ -35,7 +35,7 @@ exports.cleanup = function () {
 
     EmailToType.remove({}, function (err) {
         if (!err) {
-            console.log("Successfully EmailToType students Collection\n");
+            console.log("Successfully cleared EmailToType students Collection\n");
         }
         else {
 
@@ -45,7 +45,7 @@ exports.cleanup = function () {
 
     SubjectToTutor.remove({}, function (err) {
         if (!err) {
-            console.log("Successfully SubjectToTutor students Collection\n");
+            console.log("Successfully cleared SubjectToTutor students Collection\n");
         }
         else {
 
@@ -112,6 +112,7 @@ exports.insertTutors = function (alldone) {
 
     async.waterfall([
         function (done) {
+            EmailToType.
             TutorDA.save(tutor1, function (err) {
                 done();
 

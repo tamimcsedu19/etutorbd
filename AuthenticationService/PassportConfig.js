@@ -4,7 +4,7 @@
 'use strict';
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var EmailToTypeDA = require('../DataAccess/UserDAs/EmailToTypeDA');
+var EmailToTypeDA = require('../UserService/EmailToTypeDA');
 var UserDA;
 var async = require('async');
 var crypto = require('crypto');

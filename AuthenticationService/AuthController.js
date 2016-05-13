@@ -55,7 +55,6 @@ module.exports.profileRead = function(req, res) {
     } else {
         // Otherwise continue
         StudentDA.getUserByEmail(req.payload.email,function(err,user){
-
                 res.status(200).json(user);
             });
     }

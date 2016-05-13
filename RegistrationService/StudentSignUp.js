@@ -9,7 +9,7 @@
 'use strict';
 
 var StudentDA = require('./../UserService/UserDA')('student');
-var EmailToTypeDA = require('./../DataAccess/UserDAs/EmailToTypeDA');
+var EmailToTypeDA = require('./../UserService/EmailToTypeDA');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
@@ -49,6 +49,7 @@ module.exports = {
                     var token = jwt.sign({
                         email: student.email,
                         fullName: student.fullName,
+                        userType: student.userType,
                         exp: parseInt(expiry.getTime() / 1000),
                     }, "MY_SECRET");
 

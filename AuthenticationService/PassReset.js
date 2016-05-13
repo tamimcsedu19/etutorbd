@@ -4,7 +4,7 @@
 'use strict';
 var async = require('async');
 var crypto = require('crypto');
-var EmailToTypeDA = require('./../DataAccess/UserDAs/EmailToTypeDA');
+var EmailToTypeDA = require('./../UserService/EmailToTypeDA');
 var UserDA;
 var nodemailer = require('nodemailer');
 
