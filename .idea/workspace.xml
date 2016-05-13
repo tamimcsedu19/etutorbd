@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SearchService/InsertSubjectTutorData.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatController.js" afterPath="$PROJECT_DIR$/ChatService/ChatController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
     </list>
     <ignored path="etutorbd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,22 +36,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
+      <file leaf-file-name="UserDATest.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UserService/UserDATest.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="31" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="31" />
+              <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatDA.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatService/ChatDA.js">
+      <file leaf-file-name="SubjectToTutor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SearchService/SubjectToTutor.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="11" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubjectToTutorDA.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SearchService/SubjectToTutorDA.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InsertSubjectTutorData.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SearchService/InsertSubjectTutorData.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.29126215">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#39#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,33 +88,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="socketio.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/socketio.js">
+      <file leaf-file-name="Search.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SearchService/Search.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#39#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4368932">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.js">
+      <file leaf-file-name="UserDA.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UserService/UserDA.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="22" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchRoutes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SearchService/SearchRoutes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -122,7 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataAccess/UserDAs/UserDA.js" />
         <option value="$PROJECT_DIR$/socketIO/LiveLessonHandler.js" />
         <option value="$PROJECT_DIR$/public/js/search.js" />
         <option value="$PROJECT_DIR$/public/js/controllers.js" />
@@ -173,6 +201,7 @@
         <option value="$PROJECT_DIR$/socketio.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
         <option value="$PROJECT_DIR$/ChatService/ChatController.js" />
+        <option value="$PROJECT_DIR$/SearchService/InsertSubjectTutorData.js" />
       </list>
     </option>
   </component>
@@ -259,7 +288,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LiveLessonService" />
+              <option name="myItemId" value="UserService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchService" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,20 +364,20 @@
       <recent name="$PROJECT_DIR$/SessionService" />
     </key>
   </component>
-  <component name="RunManager" selected="Mocha.Tests Chatting functionality">
+  <component name="RunManager" selected="Node.js.InsertSubjectTutorData.js">
     <configuration default="false" name="ChatController.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="ChatController.js" working-dir="$PROJECT_DIR$/ChatService">
       <method />
     </configuration>
     <configuration default="false" name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
-    <configuration default="false" name="StudentSignUp.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="$PROJECT_DIR$/RegistrationService/StudentSignUp.js" working-dir="$PROJECT_DIR$/RegistrationService">
-      <method />
-    </configuration>
     <configuration default="false" name="LiveLessonController.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="LiveLessonController.js" working-dir="$PROJECT_DIR$/LiveLessonService">
       <method />
     </configuration>
     <configuration default="false" name="LiveLessonModel.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="LiveLessonModel.js" working-dir="$PROJECT_DIR$/LiveLessonService">
+      <method />
+    </configuration>
+    <configuration default="false" name="InsertSubjectTutorData.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="InsertSubjectTutorData.js" working-dir="$PROJECT_DIR$/SearchService">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -449,17 +492,17 @@
       <item index="5" class="java.lang.String" itemvalue="Mocha.SignUpStudentTest" />
       <item index="6" class="java.lang.String" itemvalue="Node.js.ChatController.js" />
       <item index="7" class="java.lang.String" itemvalue="Node.js.app.js" />
-      <item index="8" class="java.lang.String" itemvalue="Node.js.StudentSignUp.js" />
-      <item index="9" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
-      <item index="10" class="java.lang.String" itemvalue="Node.js.LiveLessonModel.js" />
+      <item index="8" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
+      <item index="9" class="java.lang.String" itemvalue="Node.js.LiveLessonModel.js" />
+      <item index="10" class="java.lang.String" itemvalue="Node.js.InsertSubjectTutorData.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.app.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.ChatController.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.LiveLessonModel.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.StudentSignUp.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.InsertSubjectTutorData.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.app.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.ChatController.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.LiveLessonModel.js" />
       </list>
     </recent_temporary>
   </component>
@@ -590,7 +633,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463141768949</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Live session controller demo added">
+      <created>1463150070899</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1463150070899</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -685,7 +734,8 @@
     <MESSAGE value="Updated the routes for serving index.html on certain pages." />
     <MESSAGE value="Added function for offer and response" />
     <MESSAGE value="Re Arrange code to handle connection on socketio file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Re Arrange code to handle connection on socketio file." />
+    <MESSAGE value="Live session controller demo added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Live session controller demo added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -694,13 +744,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23255815">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/passport/lib/middleware/authenticate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5450122">
@@ -792,13 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UserService/UserDATest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -817,27 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SearchService/Search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SearchService/SubjectToTutor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SearchService/SubjectToTutorDA.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -890,13 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SearchService/SearchRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UserService/SchemaFunctions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -908,13 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService/UserDA.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -984,16 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/GenericRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChatService/MessageModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1044,14 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/socketio.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1072,9 +1055,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4368932">
+        <state vertical-scroll-proportion="0.0">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="36" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SearchService/SearchRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService/UserDA.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/GenericRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserService/UserDATest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SearchService/SubjectToTutorDA.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SearchService/Search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SearchService/SubjectToTutor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SearchService/InsertSubjectTutorData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29126215">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
