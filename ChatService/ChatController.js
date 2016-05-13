@@ -1,6 +1,13 @@
 /**
  * Created by tamim on 4/16/16.
+ *
  */
+
+
+
+
+
+
 'use strict';
 var sio = require("socket.io");
 var io = sio.listen(3001);
@@ -62,6 +69,18 @@ io.on('connection', function (socket) {
 
     });
 
+    socket.on('liveSessionOffer', function (data) {
+
+        io.to(data.to).emit('liveSessionOffer', data);
+
+
+    });
+    socket.on('liveSessionReply',function(data){
+
+        io.to(data.to).emit('liveSessionReply')
+
+    });
+
 
     socket.on('disconnect', function (data) {
 
@@ -72,3 +91,4 @@ io.on('connection', function (socket) {
 });
 
 
+modules.exports = sio;
