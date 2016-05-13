@@ -4,8 +4,4 @@
 var subjectToTutorDA = require('./SubjectToTutorDA');
 subjectToTutorDA.saveSubjectTutor({
     subject:'C++',
-
-    tutorEmail: 'tamim.tamim1382@gmail.com'}
-, function (err) {
-        
-    });
+    tutorEmail: 'tamim.tamim1382@gmail.com'});
