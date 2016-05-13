@@ -8,14 +8,12 @@
 
 
 
-'use strict';
-var sio = require("socket.io");
-var io = sio.listen(3001);
+'use-strict';
 
 var ChatDA = require('./ChatDA');
 
 
-io.on('connection', function (socket) {
+exports.handleClient =  function (io,socket) {
 
     console.log('A user has connected to the socket');
 
@@ -46,10 +44,6 @@ io.on('connection', function (socket) {
 
     socket.on('create', function (data) {
 
-        /** TODO :: Implement token authorization with redis
-         *  data.token
-         *  data.from
-         * **/
         console.log('Room creating with user_id: ' + data.user_id);
         socket.join(data.user_id); // Id of the user  possibly email
 
@@ -77,7 +71,8 @@ io.on('connection', function (socket) {
     });
     socket.on('liveSessionReply',function(data){
 
-        io.to(data.to).emit('liveSessionReply')
+
+        io.to(data.to).emit('liveSessionReply');
 
     });
 
@@ -88,7 +83,6 @@ io.on('connection', function (socket) {
     });
 
 
-});
+}
 
 
-modules.exports = sio;
