@@ -5,7 +5,12 @@
 'use strict';
 exports.handleClient = function(io,socket){
 
+   socket.on('init',function(data){
 
+      data.tutor;
+      data.student;
+
+   });
 
 
 

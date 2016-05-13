@@ -71,8 +71,7 @@ exports.handleClient =  function (io,socket) {
     });
     socket.on('liveSessionReply',function(data){
 
-
-        io.to(data.to).emit('liveSessionReply');
+        io.to(data.to).emit('liveSessionReply',data);
 
     });
 
@@ -81,6 +80,8 @@ exports.handleClient =  function (io,socket) {
 
 
     });
+
+
 
 
 }
