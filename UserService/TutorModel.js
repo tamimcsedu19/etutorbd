@@ -9,7 +9,7 @@ var tutorSchema = new Schema({
     firstName: {type: String, required: true, maxlength: 20},
     lastName: {type: String, required: true, maxlength: 20},
     email: {type: String, required: true, maxlength: 40, unique: true},
-    password: {type: String, required: true},
+    hash: {type: String, required: true},
     resetPasswordToken: String,
     resetPasswordExpires: Date,
     userType: {type: String, required: true, maxlength: 10},

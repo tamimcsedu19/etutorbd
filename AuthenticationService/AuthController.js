@@ -25,7 +25,7 @@ exports.login = function(req, res) {
             token = jwt.sign({
                 _id: user._id,
                 email: user.email,
-                fullName: user.fullName,
+                fullName: user.firstName+" "+user.lastName,
                 userType: user.userType,
                 exp: parseInt(expiry.getTime() / 1000),
             }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!

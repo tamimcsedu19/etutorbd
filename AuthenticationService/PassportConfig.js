@@ -55,9 +55,15 @@ passport.use(new LocalStrategy(
                 },
                 /** This function matches the password with Users comparePassword , see models/SchemaFunctions */
                     function matchPassword(user, wdone) {
+                    /** TODO :: Implement hashing for tutors **/
+                        var hash = "";
 
-                        var hash = crypto.pbkdf2Sync(password,user.salt, 1000, 64).toString('hex');
+                        if(user.userType == "tutor")
+                            hash = password;
+                         else
+                            hash = crypto.pbkdf2Sync(password,user.salt, 1000, 64).toString('hex');
 
+                        console.log(hash);
                         if (hash == user.hash){
                             console.log("Successfull Authentication");
 

@@ -58,11 +58,14 @@ exports.cleanup = function () {
 
 
 exports.insertTutors = function (alldone) {
+
+
+
     var tutor1 = {
         firstName: "Tamim",
         lastName: "Addari",
         email: "tamim.tamim1382@gmail.com",
-        password: "tamimaddari",
+        hash: "tamimaddari",
         birthDay: Date('1994-09-13'),
         university: "University of Dhaka",
         currentDegree: "Undergraduate",
@@ -75,7 +78,7 @@ exports.insertTutors = function (alldone) {
         firstName: "Mahfuj",
         lastName: "Howlader",
         email: "mahfujhowlader@gmail.com",
-        password: "mahfuj1234",
+        hash: "mahfuj1234",
         birthDay: Date('1994-02-07'),
         university: "University of Dhaka",
         currentDegree: "Undergraduate",
@@ -88,7 +91,7 @@ exports.insertTutors = function (alldone) {
         firstName: "Rakib",
         lastName: "Ahsan",
         email: "rakib.13th@gmail.com",
-        password: "rak13123",
+        hash: "rak13123",
         birthDay: Date('1992-06-07'),
         university: "University of Dhaka",
         currentDegree: "Undergraduate",
@@ -101,7 +104,7 @@ exports.insertTutors = function (alldone) {
         firstName: "Tamim",
         lastName: "Addari",
         email: "tamim.tamim1382@gmail.com",
-        password: "tamimaddari",
+        hash: "tamimaddari",
         birthDay: Date('1994-09-13'),
         university: "University of Dhaka",
         currentDegree: "Honors",
