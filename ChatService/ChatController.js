@@ -73,7 +73,7 @@ exports.handleClient =  function (io,socket) {
 
 
     socket.on('disconnect', function (data) {
-        //console.log(io.rooms);
+        console.log(io.rooms);
         socket.leave(socket.user_id);
 
     });

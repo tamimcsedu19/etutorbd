@@ -30,6 +30,7 @@ describe('Searches for tutors', function () {
                 TutorDA.getUserByEmail("mahfujhowlader@gmail.com", function (err, tutor) {
                     assert(!err);
                     assert(tutor.firstName == "Mahfuj");
+                    assert(tutor.fullName=="Mahfuj Howlader")
                     assert(tutor.email == "mahfujhowlader@gmail.com");
 
                 });

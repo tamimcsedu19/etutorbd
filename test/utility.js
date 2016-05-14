@@ -61,22 +61,12 @@ exports.insertTutors = function (alldone) {
 
 
 
-    var tutor1 = {
-        firstName: "Tamim",
-        lastName: "Addari",
-        email: "tamim.tamim1382@gmail.com",
-        hash: "tamimaddari",
-        birthDay: Date('1994-09-13'),
-        university: "University of Dhaka",
-        currentDegree: "Undergraduate",
-        majorSubject: "Computer Science",
-        expectedGraduation: 2017,
-        userType: "tutor"
-    };
+
 
     var tutor2 = {
         firstName: "Mahfuj",
         lastName: "Howlader",
+        fullName: "Mahfuj Howlader",
         email: "mahfujhowlader@gmail.com",
         hash: "mahfuj1234",
         birthDay: Date('1994-02-07'),
@@ -90,6 +80,7 @@ exports.insertTutors = function (alldone) {
     var tutor3 = {
         firstName: "Rakib",
         lastName: "Ahsan",
+        fullName: "Rakib Ahsan",
         email: "rakib.13th@gmail.com",
         hash: "rak13123",
         birthDay: Date('1992-06-07'),
@@ -98,20 +89,6 @@ exports.insertTutors = function (alldone) {
         majorSubject: "Computer Science and Engineering",
         expectedGraduation: 2017,
         userType: "tutor"
-    };
-    var tutor = {
-
-        firstName: "Tamim",
-        lastName: "Addari",
-        email: "tamim.tamim1382@gmail.com",
-        hash: "tamimaddari",
-        birthDay: Date('1994-09-13'),
-        university: "University of Dhaka",
-        currentDegree: "Honors",
-        majorSubject: "Computer Science",
-        expectedGraduation: 2017
-
-
     };
 
     async.waterfall([

@@ -6,8 +6,9 @@ var SchemaFunctions = require('./SchemaFunctions');
 
 var tutorSchema = new Schema({
 
-    firstName: {type: String, required: true, maxlength: 20},
-    lastName: {type: String, required: true, maxlength: 20},
+    firstName: {type: String, maxlength: 20},
+    lastName: {type: String, maxlength: 20},
+    fullName: {type: String,maxlength:40},
     email: {type: String, required: true, maxlength: 40, unique: true},
     hash: {type: String, required: true},
     resetPasswordToken: String,

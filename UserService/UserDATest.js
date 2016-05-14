@@ -56,6 +56,7 @@ describe('User Database Actions', function () {
 
                 firstName: "Tamim",
                 lastName: "Addari",
+                fullName: "Tamim Addari",
                 email: "tamim.tamim1382@gmail.com",
                 password: "tamimaddari",
                 birthDay: Date('1994-09-13'),
@@ -99,6 +100,7 @@ describe('User Database Actions', function () {
 
                 firstName: "Tamim",
                 lastName: "Addari",
+                fullName: "Tamim Addari",
                 email: "tamim.tamim1382@gmail.com",
                 password: "tamimaddari",
                 birthDay: Date('1994-09-13'),
