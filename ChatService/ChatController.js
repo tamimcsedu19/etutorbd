@@ -3,11 +3,6 @@
  *
  */
 
-
-
-
-
-
 'use-strict';
 
 var ChatDA = require('./ChatDA');
@@ -45,6 +40,7 @@ exports.handleClient =  function (io,socket) {
     socket.on('create', function (data) {
 
         console.log('Room creating with user_id: ' + data.user_id);
+        socket.user_id = data.user_id;
         socket.join(data.user_id); // Id of the user  possibly email
 
 
@@ -77,7 +73,8 @@ exports.handleClient =  function (io,socket) {
 
 
     socket.on('disconnect', function (data) {
-
+        //console.log(io.rooms);
+        socket.leave(socket.user_id);
 
     });
 

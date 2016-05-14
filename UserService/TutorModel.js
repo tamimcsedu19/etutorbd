@@ -21,7 +21,8 @@ var tutorSchema = new Schema({
     //Todo: insert enum of values
     currentDegree: {type: String, required: true, maxlength: 30},
     majorSubject: {type: String, required: true, maxlength: 40},
-    expectedGraduation: {type: Number, required: true}
+    expectedGraduation: {type: Number, required: true},
+    isOnline: {type: Boolean,default:false}
 
 });
 
