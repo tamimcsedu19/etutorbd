@@ -4,6 +4,13 @@
   
   <h1>Welcome to EtutorBD</h1>
 
-  <p>Won't you please <a href="login">sign in</a> or <a href="register">register</a>?</p>
+  <div class='typeahead-demo' ng-controller="TypeaheadCtrl">
+    <div class="heading">
+      <h4>Find A Tutor</h4>
+    </div>
+    <input type="text" ng-model="selected" uib-typeahead="subject for subject in subjects | filter:$viewValue | limitTo:8" class="form-control">
+    <button ng-click="check()">Search</button>
+
+  </div>
 
 </div>

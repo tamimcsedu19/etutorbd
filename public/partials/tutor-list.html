@@ -6,7 +6,7 @@
 	<div class="heading">
     <h4>Find A Tutor</h4>
 	</div>
-    <input type="text" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+    <input type="text" ng-model="selected" uib-typeahead="subject for subject in subjects | filter:$viewValue | limitTo:8" class="form-control">
 
     
 </div>
@@ -36,23 +36,69 @@
       </select>
 
     </div>
-    <div class="col-md-9">
+    <div class="col-md-6">
       <!--Body content-->
 
       <ul class="phones">
         <li dir-paginate="phone in phones | filter:query | orderBy:orderProp | itemsPerPage: 10"  class="thumbnail">
-          <a href="/tutors/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}"></a>
-          <a href="/tutors/{{phone.id}}">{{phone.name}}</a>
+          <a href="/tutor/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}"></a>
+          <a href="/tutor/{{phone.id}}">{{phone.name}}</a>
           <p>{{phone.snippet}}</p>
         </li>
       </ul>
 
     </div>
-	
-	<div class="text-center">
-          <dir-pagination-controls template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
+
+
+    <div class="col-md-3">
+        <div id ="outer" ng-controller="chatCtrl">
+            <div class="chat-sidebar">
+                <div class="sidebar-name">
+                    <!-- Pass username and display name to register popup -->
+                    <a href="javascript:register_popup('narayan-prusty', 'Narayan Prusty');">
+                        <img width="30" height="30" />
+                        <span>Narayan Prusty</span>
+                    </a>
+                </div>
+                <div class="sidebar-name">
+                    <a href="javascript:register_popup('qnimate', 'QNimate');">
+                        <img width="30" height="30" />
+                        <span>QNimate</span>
+                    </a>
+                </div>
+                <div class="sidebar-name">
+                    <a href="javascript:register_popup('qscutter', 'QScutter');">
+                        <img width="30" height="30"  />
+                        <span>QScutter</span>
+                    </a>
+                </div>
+                <div class="sidebar-name">
+                    <a href="javascript:register_popup('qidea', 'QIdea');">
+                        <img width="30" height="30"  />
+                        <span>QIdea</span>
+                    </a>
+                </div>
+                <div class="sidebar-name">
+                    <a href="javascript:register_popup('rakib13th@yahoo.com', 'Rakib');">
+                        <img width="30" height="30"  />
+                        <span>Rakib</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
     </div>
+	
+
 
 
 </div>
+<div class="row">
+
+    <div class="text-center">
+        <dir-pagination-controls template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
+    </div>
+
+</div>
+
 </div>

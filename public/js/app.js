@@ -26,14 +26,17 @@ tutorApp.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'partials/login.html',
                 controller: 'loginCtrl',
                 controllerAs: 'vm'
+            }).when('/tutor-home', {
+                templateUrl: 'partials/tutorHome.html',
+                controller: 'tutorChatCtrl'
             }).when('/profile', {
                 templateUrl: 'partials/profile.html',
                 controller: 'profileCtrl',
                 controllerAs: 'vm'
-            }).when('/tutors', {
+            }).when('/tutors/:subject', {
                 templateUrl: 'partials/tutor-list.html',
                 controller: 'TutorListCtrl'
-            }).when('/tutors/:tutorId', {
+            }).when('/tutor/:tutorId', {
                 templateUrl: 'partials/tutor-detail.html',
                 controller: 'TutorDetailCtrl'
             }).when('/chat', {
@@ -44,5 +47,15 @@ tutorApp.config(['$routeProvider', '$locationProvider',
             });
             $locationProvider.html5Mode(true);
         }
+]);
+
+tutorApp.run(['$rootScope', '$location', 'authentication',
+    function ($rootScope, $location, authentication) {
+        $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
+            if ($location.path() === '/tutors' && !authentication.isLoggedIn()) {
+                $location.path('/');
+            }
+        });
+    }
 ]);
 
