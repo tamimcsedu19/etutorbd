@@ -30,7 +30,7 @@ exports.handleClient =  function (io,socket) {
             from: data.from,
             message: data.message,
             timeStamp: data.timeStamp,
-            sampleName: data.sampleName
+            senderName: data.senderName
 
         };
 
