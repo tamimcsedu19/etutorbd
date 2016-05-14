@@ -50,8 +50,6 @@ module.exports = {
                         _id: student._id,
                         email: student.email,
                         fullName: student.fullName,
-                        firstName: student.firstName,
-                        lastName: student.lastName,
                         userType: student.userType,
                         exp: parseInt(expiry.getTime() / 1000),
                     }, "MY_SECRET");

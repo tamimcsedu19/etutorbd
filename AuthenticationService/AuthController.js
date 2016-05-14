@@ -26,8 +26,6 @@ exports.login = function(req, res) {
                 _id: user._id,
                 email: user.email,
                 fullName: user.fullName,
-                firstName: user.firstName,
-                lastName: user.lastName,
                 userType: user.userType,
                 exp: parseInt(expiry.getTime() / 1000),
             }, "MY_SECRET"); // DO NOT KEEP YOUR SECRET IN THE CODE!
