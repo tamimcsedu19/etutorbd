@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthenticationService/AuthController.js" afterPath="$PROJECT_DIR$/AuthenticationService/AuthController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RegistrationService/StudentSignUp.js" afterPath="$PROJECT_DIR$/RegistrationService/StudentSignUp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatController.js" afterPath="$PROJECT_DIR$/ChatService/ChatController.js" />
     </list>
     <ignored path="etutorbd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,16 +46,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchRoutes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SearchService/SearchRoutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SignUpStudentTest.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -67,31 +56,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TutorModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService/TutorModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentSignUp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StudentSignUp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RegistrationService/StudentSignUp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4915254">
+            <state vertical-scroll-proportion="0.0">
               <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
+      <file leaf-file-name="ChatTest.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatService/ChatTest.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatService/MessageModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.4697337">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatTestUtility.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatService/ChatTestUtility.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -102,16 +111,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RouteManager.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/RouteManager.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -195,13 +194,13 @@
         <option value="$PROJECT_DIR$/UserService/StudentModel.js" />
         <option value="$PROJECT_DIR$/UserService/UserDA.js" />
         <option value="$PROJECT_DIR$/SearchService/Search.js" />
-        <option value="$PROJECT_DIR$/ChatService/ChatController.js" />
         <option value="$PROJECT_DIR$/UserService/TutorModel.js" />
         <option value="$PROJECT_DIR$/UserService/UserDATest.js" />
         <option value="$PROJECT_DIR$/test/utility.js" />
         <option value="$PROJECT_DIR$/SearchService/SearchTest.js" />
         <option value="$PROJECT_DIR$/AuthenticationService/AuthController.js" />
         <option value="$PROJECT_DIR$/RegistrationService/StudentSignUp.js" />
+        <option value="$PROJECT_DIR$/ChatService/ChatController.js" />
       </list>
     </option>
   </component>
@@ -517,7 +516,7 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-  <component name="RunManager" selected="Mocha.SearchTest">
+  <component name="RunManager" selected="Mocha.Tests Chatting functionality">
     <configuration default="false" name="ChatController.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="ChatController.js" working-dir="$PROJECT_DIR$/ChatService">
       <method />
     </configuration>
@@ -841,7 +840,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463221425366</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="JWT updated">
+      <created>1463221528979</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1463221528979</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -857,9 +862,6 @@
     <history-entry file="SignUpStudentTest - 2016.05.14 at 16h 22m 52s.xml">
       <configuration name="SignUpStudentTest" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.14 at 16h 03m 24s.xml">
-      <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Tests_Chatting_functionality - 2016.05.14 at 16h 05m 29s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -870,6 +872,9 @@
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
     <history-entry file="Tests_Chatting_functionality - 2016.05.14 at 16h 22m 12s.xml">
+      <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Tests_Chatting_functionality - 2016.05.14 at 16h 30m 28s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
     <history-entry file="UserDataAccessTest - 2016.05.14 at 16h 22m 24s.xml">
@@ -918,7 +923,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added tutor Search etc" />
     <MESSAGE value="A more complete skeleton." />
     <MESSAGE value="Added signup page , No session management yet" />
     <MESSAGE value="Tutor signup complete" />
@@ -943,7 +947,8 @@
     <MESSAGE value="test up to date&#10;" />
     <MESSAGE value="Full name works" />
     <MESSAGE value="Full Name Works Again" />
-    <option name="LAST_COMMIT_MESSAGE" value="Full Name Works Again" />
+    <MESSAGE value="JWT updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="JWT updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1092,13 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatTestUtility.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SearchService/SubjectToTutor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1158,14 +1156,6 @@
             <marker date="1463202179039" expanded="true" signature="10032:10043" placeholder="..." />
             <marker date="1463202179039" expanded="true" signature="14679:14690" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/MessageModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,14 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="14" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1253,14 +1235,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1333,8 +1307,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RegistrationService/StudentSignUp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4915254">
+        <state vertical-scroll-proportion="0.0">
           <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatTestUtility.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/MessageModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4697337">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
           <folding />
         </state>
       </provider>

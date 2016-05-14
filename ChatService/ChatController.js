@@ -24,6 +24,7 @@ exports.handleClient =  function (io,socket) {
             to: data.to,
             from: data.from,
             message: data.message,
+            senderName: data.senderName,
             timeStamp: data.timeStamp,
             senderName: data.senderName
 
@@ -73,8 +74,9 @@ exports.handleClient =  function (io,socket) {
 
 
     socket.on('disconnect', function (data) {
-        console.log(io.rooms);
+        console.log(io.sockets.adapter.rooms);
         socket.leave(socket.user_id);
+        console.log(io.sockets.adapter.rooms);
 
     });
 
