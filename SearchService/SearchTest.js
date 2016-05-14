@@ -27,15 +27,13 @@ describe('Searches for tutors', function () {
         it('should save 3 tutors and then test search', function (alldone) {
             utility.insertTutors(function () {
 
-                TutorDA.getUserByEmail("tamim.tamim1382@gmail.com", function (err, tutor) {
+                TutorDA.getUserByEmail("mahfujhowlader@gmail.com", function (err, tutor) {
                     assert(!err);
-                    assert(tutor.firstName == "Tamim");
-                    assert(tutor.email == "tamim.tamim1382@gmail.com");
-
-
-
+                    assert(tutor.firstName == "Mahfuj");
+                    assert(tutor.email == "mahfujhowlader@gmail.com");
 
                 });
+
 
                 search.searchBySubject('C++',function(err,tutors){
                     assert(tutors[0].email == "mahfujhowlader@gmail.com");

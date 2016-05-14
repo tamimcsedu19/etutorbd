@@ -9,6 +9,7 @@ var Student = require('../UserService/StudentModel');
 var Tutor = require('../UserService/TutorModel');
 var EmailToType = require('../UserService/EmailToTypeModel');
 var SubjectToTutor = require('../SearchService/SubjectToTutor');
+var EmailToTypeDA = require('../UserService/EmailToTypeDA');
 var async = require('async');
 
 exports.cleanup = function () {
@@ -112,25 +113,22 @@ exports.insertTutors = function (alldone) {
 
     async.waterfall([
         function (done) {
-            EmailToType.
-            TutorDA.save(tutor1, function (err) {
-                done();
-
+            EmailToTypeDA.setUserType(tutor2.email,'tutor',function(err) {
+                TutorDA.save(tutor2, function (err) {
+                    done();
+                });
             });
+
 
         },
         function (done) {
-            TutorDA.save(tutor2, function (err) {
-                done();
-
+            EmailToTypeDA.setUserType(tutor3.email,'tutor',function(err) {
+                TutorDA.save(tutor3, function (err) {
+                    done();
+                });
             });
 
-        },
-        function (done) {
-            TutorDA.save(tutor3, function (err) {
-                done();
 
-            });
         },
 
         /** Lets give em some subjects **/
@@ -147,15 +145,6 @@ exports.insertTutors = function (alldone) {
             subjectToTutor.saveSubjectTutor({
                 'tutorEmail': "mahfujhowlader@gmail.com",
                 'subject': 'Algebra'
-            }, function () {
-                done();
-            });
-
-        },
-        function (done) {
-            subjectToTutor.saveSubjectTutor({
-                'tutorEmail': "tamim.tamim1382@gmail.com",
-                'subject': 'Geometry'
             }, function () {
                 done();
             });
