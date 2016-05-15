@@ -4,7 +4,7 @@
 
 
 var passport = require('./PassportConfig');
-var StudentDA = require('../UserService/UserDA')('student');
+var TutorDA;
 var jwt = require('jsonwebtoken');
 exports.login = function(req, res) {
 
@@ -53,8 +53,9 @@ module.exports.profileRead = function(req, res) {
             "message" : "UnauthorizedError: private profile"
         });
     } else {
+        UserDA = require('../UserService/UserDA')(req.payload.userType);
         // Otherwise continue
-        StudentDA.getUserByEmail(req.payload.email,function(err,user){
+        UserDA.getUserByEmail(req.payload.email,function(err,user){
                 res.status(200).json(user);
             });
     }

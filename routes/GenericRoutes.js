@@ -17,5 +17,11 @@ router.get('/register',function(req,res){
     });
 });
 
+router.get('/tutor-home',function(req,res){
+
+    res.sendFile(global.__base+'/public/index.html', function (err) {
+        console.log(err);
+    });
+});
 
 module.exports = router;

@@ -1,5 +1,5 @@
 (function () {
-
+  var serverAddress = 'localhost';
   angular
     .module('Etutor')
     .service('authentication', authentication);
@@ -45,13 +45,13 @@
     };
 
     register = function(user) {
-      return $http.post('http://localhost:3000/api/register', user).success(function(data){
+      return $http.post('http://'+serverAddress+':3000/api/register', user).success(function(data){
         saveToken(data.token);
       });
     };
 
     login = function(user) {
-      return $http.post('http://localhost:3000/api/login', user).success(function(data) {
+      return $http.post('http://'+serverAddress+':3000/api/login', user).success(function(data) {
         saveToken(data.token);
       });
     };

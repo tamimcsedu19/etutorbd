@@ -6,6 +6,8 @@
 'use-strict';
 
 var ChatDA = require('./ChatDA');
+var redis = require("redis"),
+    redisClient = redis.createClient();
 
 
 exports.handleClient =  function (io,socket) {
@@ -65,10 +67,13 @@ exports.handleClient =  function (io,socket) {
         io.to(data.to).emit('liveSessionOffer', data);
 
 
+
     });
     socket.on('liveSessionReply',function(data){
 
         io.to(data.to).emit('liveSessionReply',data);
+
+
 
     });
 
