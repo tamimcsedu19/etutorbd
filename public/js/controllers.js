@@ -33,34 +33,6 @@ tutorControllers.controller('TutorDetailCtrl', ['$scope', '$routeParams', '$http
     }]);
 
 
-// JavaScript Document
-
-// tutorControllers.controller('TypeaheadCtrl', function ($scope, $http ,$window,$location,authentication) {
-//
-//     $scope.selected = undefined;
-//     $scope.$watch('$viewContentLoaded', function () {
-//         $http.get("http://localhost:3000/api/getavailablesubjects").success(
-//             function (data) {
-//                 $scope.subjects = data.availablesubjects;
-//             });
-//     });
-//
-//     $scope.check = function(){
-//
-//         var isLoggedIn;
-//
-//         isLoggedIn = authentication.isLoggedIn();
-//         if(isLoggedIn) {
-//             $location.url('/tutors');
-//         }
-//         else {
-//             $window.alert("Please Login!");
-//         }
-//
-//     };
-//
-//     // $scope.check =
-// });
 
 
 
@@ -204,6 +176,8 @@ tutorControllers.controller('navigationCtrl', [ '$location', '$route','authentic
         vm.isLoggedIn = authentication.isLoggedIn();
 
         vm.currentUser = authentication.currentUser();
+        
+        vm.userType = vm.currentUser.userType;
 
         vm.logOut = function () {
             authentication
@@ -220,46 +194,6 @@ tutorControllers.controller('navigationCtrl', [ '$location', '$route','authentic
 
 
 
-// tutorControllers.controller('chatCtrl', function ($scope, $log, $compile,socket) {
-//   $scope.all_messages = new Array();
-//
-//   $scope.chatSend = function(id, name) {
-//     var chattext = document.getElementById("chatin"+id).value;
-//     document.getElementById("chatin"+id).value='';
-//     console.log(" id = " + id + ", with name: " + name + " sent : \n "+chattext);
-//     $scope.all_messages[id].push({name: name, msg: chattext});
-//   };
-//
-//   $scope.chatReceive = function () {
-//     var username = "";
-//     //var myEl = angular.element( document.querySelector( '#divID' ) );
-//   };
-//
-//   $scope.addChatBox = function(id, name){
-//     //console.log("addcaht called...." + id);
-//     if(!$scope.all_messages[id]){
-//       $scope.all_messages[id] = new Array();
-//       //console.log("New array created");
-//     }
-//     var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\''+id+'\', \''+ name+'\')">SEND</button></span>';
-//     //'onclick=chatSend(\''+id+'\')';
-//     var tmpinput = '<input type="text" class="form-control" placeholder="Enter your text..." id= "chatin'+ id+ '">';
-//
-//     var tmpfullin = '<div class="well well-sm"><div class="input-group"">'+tmpinput+ tempclick +'</div></div>';
-//
-//     var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in all_messages[\''+id+'\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
-//
-//     var element = '<div class="popup-box chat-popup" id="'+ id +'">';
-//     element = element + '<div class="popup-head">';
-//     element = element + '<div class="popup-head-left">'+ name +'</div>';
-//     element = element + '<div class="popup-head-right"><a href="javascript:close_popup(\''+ id +'\');">&#10005;</a></div>';
-//     element = element + '<div style="clear: both"></div></div><div class="popup-messages">'+repeatel+'</div>'+ tmpfullin +'</div>';
-//
-//     var divElement = angular.element(document.querySelector('#outer'));
-//     var appendHtml = $compile(element)($scope);
-//     divElement.append(appendHtml);
-//   }
-// });
 
 tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compile','authentication',
     function ($rootScope,$scope, $log, $compile,authentication) {
@@ -268,22 +202,15 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
         console.log('chat control student');
         var vm = this;
         vm.currentUser = authentication.currentUser();
-        // var socketURL = "http://localhost:3001";
-        // var options = {
-        //     transports: ['websocket'],
-        //     'force new connection': true
-        // };
-
-        // var c1 = io.connect(socketURL, options);
-        // var c2 = io.connect(socketURL, options);
-        $rootScope.all_student_messages = new Array();
+        
+        $scope.messages = new Array();
 
         $scope.chatSend = function (id, name) {
             var chattext = document.getElementById("chatin" + id).value;
             document.getElementById("chatin" + id).value = '';
             console.log(" id = " + id + ", with name: " + name + " sent : \n " + chattext);
             $scope.chatInit(id);
-            $rootScope.all_student_messages[id].push({name: name, msg: chattext});
+            $scope.messages[id].push({name: name, msg: chattext});
 
             $rootScope.mySocket.emit('message', {
                 from: vm.currentUser.email,
@@ -301,14 +228,14 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
 
             $scope.chatInit(id);
             // $rootScope.all_student_messages[id].push({name:data.messages[i].from, msg:data.messages[i].message});
-            $rootScope.all_student_messages[id].push({name: name, msg: msg_text});
+            $scope.messages[id].push({name: name, msg: msg_text});
             $scope.$apply();
         };
 
         $scope.chatInit = function(id){
-            console.log('first '+(typeof $rootScope.all_student_messages[id] === 'undefined'));
-            if ( !$rootScope.all_student_messages[id]) {
-                $rootScope.all_student_messages[id] = new Array();
+            console.log('first '+(typeof $scope.messages[id] === 'undefined'));
+            if ( !$scope.messages[id]) {
+                $scope.messages[id] = new Array();
                 console.log("New array created");
 
                 var offset = 'ffffffffffffffffffffffff';
@@ -320,7 +247,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
 
                 });
             }
-            console.log('second '+(typeof $rootScope.all_student_messages[id] === 'undefined'));
+            console.log('second '+(typeof $scope.messages[id] === 'undefined'));
         };
 
         $scope.addChatBox = function (id, name) {
@@ -335,7 +262,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
 
             var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + tempclick + '</div></div>';
 
-            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in all_student_messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
+            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
             var element = '<div class="popup-box chat-popup" id="' + id + '">';
             element = element + '<div class="popup-head">';
@@ -353,49 +280,22 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
 
 
         };
-
-        // ================
-        // var offset = 'ffffffffffffffffffffffff';
-        //
-        // socket.on('connect', function () {
-        //   socket.emit('create', {user_id: 'tamim.tamim1382@gmail.com'});
-        // });
-        //
+        
         $rootScope.mySocket.on('message', function (data) {
             console.log(data);
             $scope.chatReceive(data.from,data.senderName,data.message);
 
         });
-
-
-        // $scope.send = function (data) {
-        //   socket.emit('message', {
-        //     from: 'rakib13th@yahoo.com',
-        //     to: 'tamim.tamim1382@gmail.com',
-        //     message: "How are you",
-        //     timeStamp: 5
-        //
-        //   });
-        //
-        //
-        // };
-
-        // socket.emit('retrieveMessages', {
-        //   toUserId: 'rakib13th@yahoo.com',
-        //   fromUserId: 'tamim.tamim1382@gmail.com',
-        //   pageSize: 1,
-        //   offset: offset
-        //
-        // });
+        
 
         $rootScope.mySocket.on('historyMessages', function (data) {
             console.log(data);
             for(var i=0; i < data.messages.length;i++)
             {
-                $rootScope.all_student_messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
+                $scope.messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
                 // $rootScope.all_student_messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
             }
-            console.log($rootScope.all_student_messages);
+            console.log($scope.messages);
             $scope.$apply();
         });
     }]);
@@ -404,25 +304,19 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
 tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$compile','authentication',
     function ($rootScope,$scope, $log, $compile,authentication) {
 
-        console.log('chat control tutor');
+
+        console.log('chat control student');
         var vm = this;
         vm.currentUser = authentication.currentUser();
-        // var socketURL = "http://localhost:3001";
-        // var options = {
-        //     transports: ['websocket'],
-        //     'force new connection': true
-        // };
 
-        // var c1 = io.connect(socketURL, options);
-        // var c2 = io.connect(socketURL, options);
-        $rootScope.all_tutor_messages = new Array();
+        $scope.messages = new Array();
 
         $scope.chatSend = function (id, name) {
             var chattext = document.getElementById("chatin" + id).value;
             document.getElementById("chatin" + id).value = '';
             console.log(" id = " + id + ", with name: " + name + " sent : \n " + chattext);
             $scope.chatInit(id);
-            $rootScope.all_tutor_messages[id].push({name: name, msg: chattext});
+            $scope.messages[id].push({name: name, msg: chattext});
 
             $rootScope.mySocket.emit('message', {
                 from: vm.currentUser.email,
@@ -440,14 +334,14 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
 
             $scope.chatInit(id);
             // $rootScope.all_student_messages[id].push({name:data.messages[i].from, msg:data.messages[i].message});
-            $rootScope.all_tutor_messages[id].push({name: id, msg: msg_text});
+            $scope.messages[id].push({name: name, msg: msg_text});
             $scope.$apply();
         };
 
         $scope.chatInit = function(id){
-            console.log('first '+(typeof $rootScope.all_tutor_messages[id] === 'undefined'));
-            if ( !$rootScope.all_tutor_messages[id]) {
-                $rootScope.all_tutor_messages[id] = new Array();
+            console.log('first '+(typeof $scope.messages[id] === 'undefined'));
+            if ( !$scope.messages[id]) {
+                $scope.messages[id] = new Array();
                 console.log("New array created");
 
                 var offset = 'ffffffffffffffffffffffff';
@@ -459,7 +353,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
 
                 });
             }
-            console.log('second '+(typeof $rootScope.all_tutor_messages[id] === 'undefined'));
+            console.log('second '+(typeof $scope.messages[id] === 'undefined'));
         };
 
         $scope.addChatBox = function (id, name) {
@@ -474,7 +368,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
 
             var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + tempclick + '</div></div>';
 
-            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in all_tutor_messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
+            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
             var element = '<div class="popup-box chat-popup" id="' + id + '">';
             element = element + '<div class="popup-head">';
@@ -493,13 +387,6 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
 
         };
 
-        // ================
-        // var offset = 'ffffffffffffffffffffffff';
-        //
-        // socket.on('connect', function () {
-        //   socket.emit('create', {user_id: 'tamim.tamim1382@gmail.com'});
-        // });
-        //
         $rootScope.mySocket.on('message', function (data) {
             console.log(data);
             $scope.chatReceive(data.from,data.senderName,data.message);
@@ -507,34 +394,14 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
         });
 
 
-        // $scope.send = function (data) {
-        //   socket.emit('message', {
-        //     from: 'rakib13th@yahoo.com',
-        //     to: 'tamim.tamim1382@gmail.com',
-        //     message: "How are you",
-        //     timeStamp: 5
-        //
-        //   });
-        //
-        //
-        // };
-
-        // socket.emit('retrieveMessages', {
-        //   toUserId: 'rakib13th@yahoo.com',
-        //   fromUserId: 'tamim.tamim1382@gmail.com',
-        //   pageSize: 1,
-        //   offset: offset
-        //
-        // });
-
         $rootScope.mySocket.on('historyMessages', function (data) {
-            console.log(data.messages.length+"\n");
+            console.log(data);
             for(var i=0; i < data.messages.length;i++)
             {
-                $rootScope.all_tutor_messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
+                $scope.messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
                 // $rootScope.all_student_messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
             }
-            console.log($rootScope.all_tutor_messages);
+            console.log($scope.messages);
             $scope.$apply();
         });
     }]);

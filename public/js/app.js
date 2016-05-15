@@ -28,7 +28,7 @@ tutorApp.config(['$routeProvider', '$locationProvider',
                 controllerAs: 'vm'
             }).when('/tutor-home', {
                 templateUrl: 'partials/tutorHome.html',
-                controller: 'tutorChatCtrl'
+                controller: 'profileCtrl'
             }).when('/profile', {
                 templateUrl: 'partials/profile.html',
                 controller: 'profileCtrl',

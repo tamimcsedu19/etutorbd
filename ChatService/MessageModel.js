@@ -14,7 +14,7 @@ var messageSchema = new Schema({
     from: {type: String, required: true, maxlength: 40},
     message: {type: String, required: true, maxlength: 1024},
     timeStamp: {type: Number},
-    senderName: {type: String, maxlength: 10}
+    senderName: {type: String, maxlength: 40}
 
 });
 

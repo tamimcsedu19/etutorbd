@@ -6,7 +6,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="navvm.isLoggedIn"><a href="login">Sign in</a></li>
-        <li ng-show="navvm.isLoggedIn"><a href="profile">{{ navvm.currentUser.name }}</a></li>
+        <li ng-show="navvm.isLoggedIn && (navvm.userType === 'student')"><a href="profile">{{ navvm.currentUser.name }}</a></li>
+        <li ng-show="navvm.isLoggedIn && (navvm.userType === 'tutor')"><a href="tutor-home">{{ navvm.currentUser.name }}</a></li>
         <li ng-show="navvm.isLoggedIn"><button ng-click="navvm.logOut()">Log Out</button></li>
       </ul>
     </div>

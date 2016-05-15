@@ -6,7 +6,14 @@ var Message = require('./MessageModel');
 exports.saveMessage = function (n_message) {
 
     var message = new Message(n_message);
-    message.save();
+
+    message.save(function (err) {
+        if(err)
+            console.log(err);
+        else
+            console.log(message+" \n"+"saved successfully");
+
+    });
 
 
 }
