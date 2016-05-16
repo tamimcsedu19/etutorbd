@@ -111,8 +111,7 @@ exports.handleClient =  function (io,socket) {
                     io.to(data.to).emit('initLiveLesson',liveLessonData);
                     io.to(data.from).emit('initLiveLesson',liveLessonData);
                 }
-
-                redisClient.
+                /** TODO:: Delete key from redis **/
 
 
 
