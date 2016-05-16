@@ -8,11 +8,12 @@ var bodyParser = require('body-parser');
 var passport = require('./AuthenticationService/PassportConfig');
 
 /** redis **/
+/*
 var redis = require('redis');
 var RedisStore = require('connect-redis')(session);
 var rClient = redis.createClient();
 var redisSessionStore = new RedisStore({client: rClient});
-
+*/
 /** Global variables **/
 global.__base = __dirname + '/'
 
@@ -40,6 +41,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(cookieParser());
+/*
 app.use(session({
     store: redisSessionStore,
     key: 'jsessionid',
@@ -47,7 +49,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
-
+*/
 app.use(passport.initialize());
 app.use(passport.session());
 
