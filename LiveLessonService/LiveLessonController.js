@@ -14,3 +14,11 @@ exports.handleClient = function(io,socket){
 
 
 }
+
+
+exports.initLesson = function (liveLessonData) {
+
+
+
+
+}

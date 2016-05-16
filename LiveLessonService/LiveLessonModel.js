@@ -13,14 +13,17 @@ var Schema = mongoose.Schema;
 
 var liveLessonSchema = new Schema({
 
-    tutor: {type: String, required: true, maxlength: 40},
-    student: {type: String, required: true, maxlength: 40},
-    chats : {type: Array},
-    timeStamp: {type: Number},
-    sampleName: {type: String, maxlength: 10}
+
+    liveLessionId:  {type: String, required: true, maxlength: 15},
+    user1:      {type: String, required: true, maxlength: 40},
+    user2:      {type: String, required: true, maxlength: 40},
+    chats :     {type: Array},
+    startTimeStamp: {type: Number}, //In milliseconds
+    liveLessonLength: {type: Number}
+
 
 });
 
 
-var Message = mongoose.model('Message', messageSchema);
-module.exports = Message;
+var LiveLesson = mongoose.model('liveLesson', liveLessonSchema);
+module.exports = LiveLesson;

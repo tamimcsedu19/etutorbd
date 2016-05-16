@@ -23,7 +23,8 @@ var tutorSchema = new Schema({
     currentDegree: {type: String, required: true, maxlength: 30},
     majorSubject: {type: String, required: true, maxlength: 40},
     expectedGraduation: {type: Number, required: true},
-    isOnline: {type: Boolean,default:false}
+    isOnline: {type: Boolean,default:false},
+    liveLessonId: String
 
 });
 

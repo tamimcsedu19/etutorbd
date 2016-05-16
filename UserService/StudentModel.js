@@ -20,7 +20,8 @@ var studentSchema = new Schema({
     userType: {type: String, required: true, maxlength: 10},
     AccountBalance: {type: Number, default: 0},
     salt : String,
-    isOnline: {type: Boolean,default:false}
+    isOnline: {type: Boolean,default:false},
+    liveLessonId: String
 
 });
 
