@@ -262,7 +262,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
                 $rootScope.mySocket.emit('retrieveMessages', {
                     toUserId: id,
                     fromUserId: vm.currentUser.email,
-                    pageSize: 30,
+                    pageSize: 50,
                     offset: offset
 
                 });
@@ -368,7 +368,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
                 $rootScope.mySocket.emit('retrieveMessages', {
                     toUserId: id,
                     fromUserId: vm.currentUser.email,
-                    pageSize: 30,
+                    pageSize: 50,
                     offset: offset
 
                 });
