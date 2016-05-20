@@ -94,6 +94,7 @@ exports.handleClient =  function (io,socket) {
 
         var key1 = data.to+appendSessionAttrib,key2 = data.from+appendSessionAttrib;
 
+        
         redisClient.get(key1, function(err, liveLessonId1) {
             redisClient.get(key2,function (err,liveLessonId2) {
                 if(data.reply == 1 && liveLessonId1 == liveLessonId2)

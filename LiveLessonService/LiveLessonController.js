@@ -29,7 +29,7 @@ exports.handleClient = function(io,socket){
 
     socket.on('getById',function (data) {
 
-        liveLessonDA.getById(data.liveLessonID,function (err,data) {
+        liveLessonDA.getById(data.liveLessonId,function (err,data) {
             socket.emit('liveLessonData',data);
 
         });
