@@ -215,8 +215,8 @@ tutorControllers.controller('navigationCtrl', [ '$rootScope','$location', '$rout
 
 
 
-tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compile','authentication',
-    function ($rootScope,$scope, $log, $compile,authentication) {
+tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compile','authentication','$mdDialog',
+    function ($rootScope,$scope, $log, $compile,authentication,$mdDialog) {
 
 
         console.log('chat control student');
@@ -224,6 +224,25 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
         vm.currentUser = authentication.currentUser();
         
         $scope.messages = new Array();
+
+
+        $scope.showAlert = function() {
+            $mdDialog.show(
+                $mdDialog.alert()
+                    //.parent(angular.element(document.querySelector('#popupContainer')))
+                    .clickOutsideToClose(true)
+                    .title('Live Session')
+                    .textContent('Your request has been sent!')
+                    .ariaLabel('Alert Dialog Demo')
+                    .ok('Got it!')
+                    .openFrom('#left')
+                    // or an element
+                    .closeTo(angular.element(document.querySelector('#right')))
+                    // .targetEvent(ev)
+            );
+        };
+
+
 
         $scope.chatSend = function (id, name) {
             var chattext = document.getElementById("chatin" + id).value;
@@ -275,7 +294,8 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             console.log("addcaht called...." + id);
 
 
-            //var livesession = ' <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button>';
+            var livesession = ' <button type="button" class="btn btn-primary btn-xs" style="margin-right: 5px" ng-click="showAlert()"><span class="glyphicon glyphicon-blackboard"></span> </button>';
+            var closeChat = '<button type="button" class="btn btn-primary btn-xs" onclick="close_popup(\'' + id + '\')"><span class="glyphicon glyphicon-remove"></span> </button>';
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
@@ -288,7 +308,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             var element = '<div class="popup-box chat-popup" id="' + id + '">';
             element = element + '<div class="popup-head">';
             element = element + '<div class="popup-head-left">' + name + '</div>';
-            element = element + '<div class="popup-head-right"><a href="javascript:close_popup(\'' + id + '\');">&#10005;</a></div>';
+            element = element + '<div class="popup-head-right">'+livesession+closeChat+'</div>';
             element = element + '<div style="clear: both"></div></div><div class="popup-messages">' + repeatel + '</div>' + tmpfullin + '</div>';
 
 
@@ -327,8 +347,8 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
     }]);
 
 
-tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$compile','authentication',
-    function ($rootScope,$scope, $log, $compile,authentication) {
+tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$compile','authentication', '$mdDialog',
+    function ($rootScope,$scope, $log, $compile,authentication,$mdDialog) {
 
 
         console.log('chat control student');
@@ -336,6 +356,22 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
         vm.currentUser = authentication.currentUser();
 
         $scope.messages = new Array();
+
+        $scope.showAlert = function() {
+            $mdDialog.show(
+                $mdDialog.alert()
+                //.parent(angular.element(document.querySelector('#popupContainer')))
+                    .clickOutsideToClose(true)
+                    .title('Live Session')
+                    .textContent('Your request has been sent!')
+                    .ariaLabel('Alert Dialog Demo')
+                    .ok('Got it!')
+                    .openFrom('#left')
+                    // or an element
+                    .closeTo(angular.element(document.querySelector('#right')))
+                // .targetEvent(ev)
+            );
+        };
 
         $scope.chatSend = function (id, name) {
             var chattext = document.getElementById("chatin" + id).value;
@@ -388,6 +424,8 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
 
 
 
+            var livesession = ' <button type="button" class="btn btn-primary btn-xs" style="margin-right: 5px" ng-click="showAlert()"><span class="glyphicon glyphicon-blackboard"></span> </button>';
+            var closeChat = '<button type="button" class="btn btn-primary btn-xs" onclick="close_popup(\'' + id + '\')"><span class="glyphicon glyphicon-remove"></span> </button>';
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
@@ -400,8 +438,10 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
             var element = '<div class="popup-box chat-popup" id="' + id + '">';
             element = element + '<div class="popup-head">';
             element = element + '<div class="popup-head-left">' + name + '</div>';
-            element = element + '<div class="popup-head-right"><a href="javascript:close_popup(\'' + id + '\');">&#10005;</a></div>';
+            element = element + '<div class="popup-head-right">'+livesession+closeChat+'</div>';
             element = element + '<div style="clear: both"></div></div><div class="popup-messages">' + repeatel + '</div>' + tmpfullin + '</div>';
+
+
 
             var divElement = angular.element(document.querySelector('#outer'));
             var appendHtml = $compile(element)($scope);

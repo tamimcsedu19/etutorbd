@@ -1,5 +1,5 @@
-<div layout="row">
-    <div flex="15">
+<div layout="row" >
+    <div flex="15" id="left">
         <!--Sidebar content-->
         <div class="left-sidebar">
             keyword: <input type="text" class="form-control" ng-model="query">
@@ -29,7 +29,7 @@
             </div>
         </div>>
     </div>
-    <div flex>
+    <div flex id="right">
         <div id="outer" ng-controller="chatCtrl">
             <div class="chat-sidebar">
                 <div class="sidebar-name">

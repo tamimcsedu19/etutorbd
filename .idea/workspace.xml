@@ -4,6 +4,8 @@
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/controllers.js" afterPath="$PROJECT_DIR$/public/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/partials/tutor-list.html" afterPath="$PROJECT_DIR$/public/partials/tutor-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/partials/tutorHome.html" afterPath="$PROJECT_DIR$/public/partials/tutorHome.html" />
     </list>
     <ignored path="etutorbd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +29,14 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-424">
-              <caret line="235" column="7" selection-start-line="235" selection-start-column="7" selection-end-line="235" selection-end-column="7" />
+            <state relative-caret-position="1975">
+              <caret line="350" column="63" selection-start-line="350" selection-start-column="63" selection-end-line="350" selection-end-column="63" />
               <folding>
-                <marker date="1463768684222" expanded="true" signature="9720:9731" placeholder="..." />
-                <marker date="1463768684222" expanded="true" signature="14273:14284" placeholder="..." />
+                <marker date="1463773203622" expanded="true" signature="9178:9195" placeholder="..." />
+                <marker date="1463773203622" expanded="true" signature="9184:9195" placeholder="..." />
+                <marker date="1463773203622" expanded="true" signature="10575:10586" placeholder="..." />
+                <marker date="1463773203622" expanded="true" signature="14745:14762" placeholder="..." />
+                <marker date="1463773203622" expanded="true" signature="16142:16153" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -40,48 +45,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-185">
+            <state relative-caret-position="175">
               <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="118" column="58" selection-start-line="118" selection-start-column="58" selection-end-line="118" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TutorServiceRoutes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TutorService/TutorServiceRoutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navigationTemplate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/partials/navigationTemplate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -100,8 +65,18 @@
       <file leaf-file-name="tutor-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/partials/tutor-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+            <state relative-caret-position="15">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tutorHome.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/partials/tutorHome.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -151,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/UserService/Tutor.js" />
         <option value="$PROJECT_DIR$/DataAccess/UserDAs/EmailToTypeDA.js" />
         <option value="$PROJECT_DIR$/UserService/DAFactory.js" />
         <option value="$PROJECT_DIR$/BLL/PassportConfig.js" />
@@ -182,7 +156,6 @@
         <option value="$PROJECT_DIR$/AuthenticationService/PassReset.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/routes/GenericRoutes.js" />
-        <option value="$PROJECT_DIR$/public/partials/tutorHome.html" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/public/partials/navigationTemplate.html" />
         <option value="$PROJECT_DIR$/app.js" />
@@ -201,6 +174,8 @@
         <option value="$PROJECT_DIR$/routes/RouteManager.js" />
         <option value="$PROJECT_DIR$/ChatService/ChatController.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
+        <option value="$PROJECT_DIR$/public/partials/tutor-list.html" />
+        <option value="$PROJECT_DIR$/public/partials/tutorHome.html" />
         <option value="$PROJECT_DIR$/public/js/controllers.js" />
       </list>
     </option>
@@ -617,7 +592,7 @@
       <workItem from="1463719567187" duration="5254000" />
       <workItem from="1463746738024" duration="7083000" />
       <workItem from="1463766003613" duration="218000" />
-      <workItem from="1463766557281" duration="2276000" />
+      <workItem from="1463766557281" duration="6184000" />
     </task>
     <task id="LOCAL-00001" summary="Added tutor Search etc">
       <created>1453912284207</created>
@@ -913,7 +888,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463766933668</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="front end Chat controller  updated">
+      <created>1463768847730</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1463768847730</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -949,7 +931,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26258000" />
+    <option name="totallyTimeSpent" value="30166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -990,7 +972,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Updated chat test" />
     <MESSAGE value="Moved Search functionality to a separate folder" />
     <MESSAGE value="added login and signup" />
     <MESSAGE value="Student Registration and authentication added." />
@@ -1015,7 +996,8 @@
     <MESSAGE value="Edited the sending of liveLessondID" />
     <MESSAGE value="Added API for getting all the tutors( Just temporary)" />
     <MESSAGE value="front end Chat functionality  updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="front end Chat functionality  updated" />
+    <MESSAGE value="front end Chat controller  updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="front end Chat controller  updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1147,13 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/partials/tutorHome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1365,10 +1340,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/partials/tutor-list.html">
+    <entry file="file://$PROJECT_DIR$/public/partials/navigationTemplate.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+        <state relative-caret-position="360">
+          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1383,27 +1358,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-185">
+        <state relative-caret-position="175">
           <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/partials/navigationTemplate.html">
+    <entry file="file://$PROJECT_DIR$/public/partials/tutor-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="15">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/partials/tutorHome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-424">
-          <caret line="235" column="7" selection-start-line="235" selection-start-column="7" selection-end-line="235" selection-end-column="7" />
+        <state relative-caret-position="1975">
+          <caret line="350" column="63" selection-start-line="350" selection-start-column="63" selection-end-line="350" selection-end-column="63" />
           <folding>
-            <marker date="1463768684222" expanded="true" signature="9720:9731" placeholder="..." />
-            <marker date="1463768684222" expanded="true" signature="14273:14284" placeholder="..." />
+            <marker date="1463773203622" expanded="true" signature="9178:9195" placeholder="..." />
+            <marker date="1463773203622" expanded="true" signature="9184:9195" placeholder="..." />
+            <marker date="1463773203622" expanded="true" signature="10575:10586" placeholder="..." />
+            <marker date="1463773203622" expanded="true" signature="14745:14762" placeholder="..." />
+            <marker date="1463773203622" expanded="true" signature="16142:16153" placeholder="..." />
           </folding>
         </state>
       </provider>
