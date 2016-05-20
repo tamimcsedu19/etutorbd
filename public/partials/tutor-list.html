@@ -1,113 +1,69 @@
-
-
-<div class=".col-md-12">
-<div class="row">
-<div class='typeahead-demo' ng-controller="TypeaheadCtrl">
-	<div class="heading">
-    <h4>Find A Tutor</h4>
-	</div>
-    <input type="text" ng-model="selected" uib-typeahead="subject for subject in subjects | filter:$viewValue | limitTo:8" class="form-control">
-
-    
-</div>
-<div class="row">
-<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-</div>
-</div>
-<div class="row">
-
-
-    <div class="col-md-3">
-      <!--Sidebar content-->
-
-      keyword: <input ng-model="query">
-	  <br/>
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
-      </select>
-
+<div layout="row">
+    <div flex="15">
+        <!--Sidebar content-->
+        <div class="left-sidebar">
+            keyword: <input type="text" class="form-control" ng-model="query">
+            <br/>
+            Sort by:
+            <select ng-model="orderProp">
+                <option value="name">Alphabetical</option>
+                <option value="age">Newest</option>
+            </select>
+        </div>
     </div>
-    <div class="col-md-6">
-      <!--Body content-->
+    <div flex="70">
+        <!--Body content-->
+        <div>
+            <ul class="phones">
+                <li dir-paginate="phone in phones | filter:query | orderBy:orderProp | itemsPerPage: 10"
+                    class="thumbnail">
+                    <a href="/tutor/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"
+                                                                     alt="{{phone.name}}"></a>
+                    <a href="/tutor/{{phone.id}}">{{phone.name}}</a>
+                    <p>{{phone.snippet}}</p>
+                </li>
+            </ul>
 
-      <ul class="phones">
-        <li dir-paginate="phone in phones | filter:query | orderBy:orderProp | itemsPerPage: 10"  class="thumbnail">
-          <a href="/tutor/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}"></a>
-          <a href="/tutor/{{phone.id}}">{{phone.name}}</a>
-          <p>{{phone.snippet}}</p>
-        </li>
-      </ul>
-
-        <!--<ul class="phones">-->
-            <!--<li dir-paginate="phone in phones | filter:query  | itemsPerPage: 10"  class="thumbnail">-->
-                <!--<a href="/tutor/{{phone._id}}" class="thumb"><img ng-src="" alt="Tutor"></a>-->
-                <!--<a href="/tutor/{{phone._id}}">{{phone.fullName}}</a>-->
-                <!--<p>{{phone.university}}</p>-->
-            <!--</li>-->
-        <!--</ul>-->
-
-
+            <div class="text-center">
+                <dir-pagination-controls template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
+            </div>
+        </div>>
     </div>
-
-
-    <div class="col-md-3">
-        <div id ="outer" ng-controller="chatCtrl">
+    <div flex>
+        <div id="outer" ng-controller="chatCtrl">
             <div class="chat-sidebar">
                 <div class="sidebar-name">
                     <!-- Pass username and display name to register popup -->
                     <a href="javascript:register_popup('narayan-prusty', 'Narayan Prusty');">
-                        <img width="30" height="30" />
+                        <img width="30" height="30"/>
                         <span>Narayan Prusty</span>
                     </a>
                 </div>
                 <div class="sidebar-name">
                     <a href="javascript:register_popup('qnimate', 'QNimate');">
-                        <img width="30" height="30" />
+                        <img width="30" height="30"/>
                         <span>QNimate</span>
                     </a>
                 </div>
                 <div class="sidebar-name">
                     <a href="javascript:register_popup('qscutter', 'QScutter');">
-                        <img width="30" height="30"  />
+                        <img width="30" height="30"/>
                         <span>QScutter</span>
                     </a>
                 </div>
                 <div class="sidebar-name">
                     <a href="javascript:register_popup('qidea', 'QIdea');">
-                        <img width="30" height="30"  />
+                        <img width="30" height="30"/>
                         <span>QIdea</span>
                     </a>
                 </div>
                 <div class="sidebar-name">
                     <a href="javascript:register_popup('mahfujhowlader@gmail.com', 'Mahfuj');">
-                        <img width="30" height="30"  />
-                        <span>Rakib</span>
+                        <img width="30" height="30"/>
+                        <span>Mahfuj</span>
                     </a>
                 </div>
             </div>
         </div>
-
     </div>
-	
-
-
-
-</div>
-<div class="row">
-
-    <div class="text-center">
-        <dir-pagination-controls template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
-    </div>
-
-</div>
-
 </div>

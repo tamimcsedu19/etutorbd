@@ -70,7 +70,6 @@ tutorApp.run(['$rootScope', '$location', 'authentication',
 
 
             if (($location.path() === '/profile' || $location.path() === '/tutor-home') && !authentication.isLoggedIn()) {
-                console.log('inside iffff');
                 $location.path('/');
             }
             else if (($location.path() === '/login' || $location.path() === '/register') && authentication.isLoggedIn()) {
@@ -79,7 +78,6 @@ tutorApp.run(['$rootScope', '$location', 'authentication',
                     $rootScope.mySocket = io.connect(socketURL, options);
                     $rootScope.mySocket.emit('create', {user_id: $rootScope.sessionUser.email});
                 }
-                console.log('inside elseeeee iffff');
 
                 $location.path('/');
             }

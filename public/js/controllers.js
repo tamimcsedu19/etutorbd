@@ -13,8 +13,8 @@ tutorControllers.controller('TutorListCtrl', ['$scope', '$routeParams', '$http',
             params: { subject: $routeParams.subject }
         }).then(function (response) {
             //$scope.phones = response.data;
-            console.log(response.data[0].university);
-            console.log(response.data[0]);
+            console.log(response.data);
+            console.log(response.data.university);
         })
 
         $http.get('phones/phones.json').success(function (data) {
@@ -229,7 +229,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             var chattext = document.getElementById("chatin" + id).value;
             document.getElementById("chatin" + id).value = '';
             console.log(" id = " + id + ", with name: " + name + " sent : \n " + chattext);
-            $scope.chatInit(id);
+            //$scope.chatInit(id);
             $scope.messages[id].push({name: name, msg: chattext});
 
             $rootScope.mySocket.emit('message', {
@@ -242,14 +242,14 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             });
         };
 
-        $scope.chatReceive = function (id, name, msg_text) {
+        $scope.chatReceive = function (id, name, msg_text, flag) {
             console.log("In receive id= "+id );
             register_popup(id, name);
 
             $scope.chatInit(id);
             // $rootScope.all_student_messages[id].push({name:data.messages[i].from, msg:data.messages[i].message});
-            $scope.messages[id].push({name: name, msg: msg_text});
-            //$scope.$apply();
+            if(flag) $scope.messages[id].push({name: name, msg: msg_text});
+            $scope.$apply();
         };
 
         $scope.chatInit = function(id){
@@ -262,10 +262,11 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
                 $rootScope.mySocket.emit('retrieveMessages', {
                     toUserId: id,
                     fromUserId: vm.currentUser.email,
-                    pageSize: 50,
+                    pageSize: 30,
                     offset: offset
 
                 });
+                //$scope.$apply();
             }
             console.log('second '+(typeof $scope.messages[id] === 'undefined'));
         };
@@ -274,7 +275,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             console.log("addcaht called...." + id);
 
 
-
+            //var livesession = ' <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star</button>';
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
@@ -290,6 +291,9 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             element = element + '<div class="popup-head-right"><a href="javascript:close_popup(\'' + id + '\');">&#10005;</a></div>';
             element = element + '<div style="clear: both"></div></div><div class="popup-messages">' + repeatel + '</div>' + tmpfullin + '</div>';
 
+
+
+
             var divElement = angular.element(document.querySelector('#outer'));
             var appendHtml = $compile(element)($scope);
             divElement.append(appendHtml);
@@ -302,8 +306,10 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
         };
         
         $rootScope.mySocket.on('message', function (data) {
-            console.log(data);
-            $scope.chatReceive(data.from,data.senderName,data.message);
+            console.log("on msg for student\n"+data);
+            var flag=1;
+            if (!$scope.messages[data.from]) flag = 0;
+            $scope.chatReceive(data.from,data.senderName,data.message,flag);
 
         });
         
@@ -312,7 +318,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             console.log(data);
             for(var i=0; i < data.messages.length;i++)
             {
-                $scope.messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
+                $scope.messages[data.id.toUserId].push({name:data.messages[i].senderName, msg:data.messages[i].message});
                 // $rootScope.all_student_messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
             }
             console.log($scope.messages);
@@ -335,7 +341,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
             var chattext = document.getElementById("chatin" + id).value;
             document.getElementById("chatin" + id).value = '';
             console.log(" id = " + id + ", with name: " + name + " sent : \n " + chattext);
-            $scope.chatInit(id);
+            //$scope.chatInit(id);
             $scope.messages[id].push({name: name, msg: chattext});
 
             $rootScope.mySocket.emit('message', {
@@ -348,14 +354,14 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
             });
         };
 
-        $scope.chatReceive = function (id, name, msg_text) {
+        $scope.chatReceive = function (id, name, msg_text,flag) {
             console.log("In receive id= "+id );
             register_popup(id, name);
 
-            $scope.chatInit(id);
+            // $scope.chatInit(id);
             // $rootScope.all_student_messages[id].push({name:data.messages[i].from, msg:data.messages[i].message});
-            $scope.messages[id].push({name: name, msg: msg_text});
-            //$scope.$apply();
+            if(flag) $scope.messages[id].push({name: name, msg: msg_text});
+            $scope.$apply();
         };
 
         $scope.chatInit = function(id){
@@ -368,10 +374,11 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
                 $rootScope.mySocket.emit('retrieveMessages', {
                     toUserId: id,
                     fromUserId: vm.currentUser.email,
-                    pageSize: 50,
+                    pageSize: 30,
                     offset: offset
 
                 });
+               // $scope.$apply();
             }
             console.log('second '+(typeof $scope.messages[id] === 'undefined'));
         };
@@ -408,8 +415,10 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
         };
 
         $rootScope.mySocket.on('message', function (data) {
-            console.log(data);
-            $scope.chatReceive(data.from,data.senderName,data.message);
+            console.log("on msg for tutor\n"+data);
+            var flag=1;
+            if (!$scope.messages[data.from]) flag = 0;
+            $scope.chatReceive(data.from,data.senderName,data.message, flag);
 
         });
 
@@ -418,7 +427,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
             console.log(data);
             for(var i=0; i < data.messages.length;i++)
             {
-                $scope.messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
+                $scope.messages[data.id.toUserId].push({name:data.messages[i].senderName, msg:data.messages[i].message});
                 // $rootScope.all_student_messages[data.id.toUserId].push({name:data.messages[i].from, msg:data.messages[i].message});
             }
             console.log($scope.messages);

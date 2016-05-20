@@ -1,11 +1,11 @@
 /* app css stylesheet */
 
-body {
-  padding-top: 20px;
-  font-family:Arial, Helvetica, sans-serif;
-	font-size:12px;
+/*body {*/
+  /*padding-top: 20px;*/
+  /*font-family:Arial, Helvetica, sans-serif;*/
+	/*font-size:12px;*/
 
-}
+/*}*/
 
 
 
@@ -81,6 +81,6 @@ ul.specs dt {
   font-weight: bold;
 }
 
-h1 {
-  border-bottom: 1px solid gray;
-}
+/*h1 {*/
+  /*border-bottom: 1px solid gray;*/
+/*}*/

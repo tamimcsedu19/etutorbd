@@ -35,7 +35,7 @@ exports.retrieveMessages = function (param, callback) {
                 "_id": {"$lt": param.offset}
             }
         ]
-    }).limit(param.pageSize).sort({_id: -1}).exec(callback);
+    }).limit(param.pageSize).sort({_id: 1}).exec(callback);
 
 
 }
