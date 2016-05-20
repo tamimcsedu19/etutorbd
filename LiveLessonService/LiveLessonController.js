@@ -3,9 +3,15 @@
  */
 
 'use strict';
+
+var liveLessonDA = require('Li')
 exports.handleClient = function(io,socket){
 
-   socket.on('init',function(data){
+   socket.on('update',function (data) {
+
+
+
+
 
 
 
@@ -16,7 +22,7 @@ exports.handleClient = function(io,socket){
 }
 
 
-exports.initLesson = function (liveLessonData) {
+exports.initLiveLesson = function (liveLessonData) {
 
 
 
