@@ -230,7 +230,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             document.getElementById("chatin" + id).value = '';
             console.log(" id = " + id + ", with name: " + name + " sent : \n " + chattext);
             //$scope.chatInit(id);
-            $scope.messages[id].push({name: name, msg: chattext});
+            $scope.messages[id].push({name: $rootScope.sessionUser.name, msg: chattext});
 
             $rootScope.mySocket.emit('message', {
                 from: vm.currentUser.email,
@@ -342,7 +342,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
             document.getElementById("chatin" + id).value = '';
             console.log(" id = " + id + ", with name: " + name + " sent : \n " + chattext);
             //$scope.chatInit(id);
-            $scope.messages[id].push({name: name, msg: chattext});
+            $scope.messages[id].push({name: $rootScope.sessionUser.name, msg: chattext});
 
             $rootScope.mySocket.emit('message', {
                 from: vm.currentUser.email,
