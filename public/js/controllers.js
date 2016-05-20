@@ -13,8 +13,8 @@ tutorControllers.controller('TutorListCtrl', ['$scope', '$routeParams', '$http',
             params: { subject: $routeParams.subject }
         }).then(function (response) {
             //$scope.phones = response.data;
-            console.log(response.data);
-            console.log(response.data.subject);
+            console.log(response.data[0].university);
+            console.log(response.data[0]);
         })
 
         $http.get('phones/phones.json').success(function (data) {
@@ -124,28 +124,28 @@ tutorControllers.controller('loginCtrl', [ '$rootScope','$location', 'authentica
                     {
                         console.log(vm.currentUser);
 
-                        var socketURL = "http://"+serverAddress+":3001";
-                        var options = {
-                            transports: ['websocket'],
-                            'force new connection': true
-                        };
-
-                        $rootScope.mySocket = io.connect(socketURL, options);
-                        $rootScope.mySocket.emit('create', {user_id: vm.currentUser.email});
+                        // var socketURL = "http://"+serverAddress+":3001";
+                        // var options = {
+                        //     transports: ['websocket'],
+                        //     'force new connection': true
+                        // };
+                        //
+                        // $rootScope.mySocket = io.connect(socketURL, options);
+                        // $rootScope.mySocket.emit('create', {user_id: vm.currentUser.email});
 
                         $location.url('/tutor-home');
                         
                     }
                     else
                     {
-                        var socketURL = "http://"+serverAddress+":3001";
-                        var options = {
-                            transports: ['websocket'],
-                            'force new connection': true
-                        };
-
-                        $rootScope.mySocket = io.connect(socketURL, options);
-                        $rootScope.mySocket.emit('create', {user_id: vm.currentUser.email});
+                        // var socketURL = "http://"+serverAddress+":3001";
+                        // var options = {
+                        //     transports: ['websocket'],
+                        //     'force new connection': true
+                        // };
+                        //
+                        // $rootScope.mySocket = io.connect(socketURL, options);
+                        // $rootScope.mySocket.emit('create', {user_id: vm.currentUser.email});
                         $location.url('/');
                     }
                 });
@@ -153,8 +153,8 @@ tutorControllers.controller('loginCtrl', [ '$rootScope','$location', 'authentica
     }]);
 
 
-tutorControllers.controller('profileCtrl', [ '$location', 'meanData',
-    function ($location, meanData) {
+tutorControllers.controller('profileCtrl', [ '$scope','$location', 'meanData',
+    function ($scope,$location, meanData) {
         var vm = this;
 
         vm.user = {};
@@ -163,21 +163,41 @@ tutorControllers.controller('profileCtrl', [ '$location', 'meanData',
             .success(function(data) {
                 vm.user = data;
                 console.log(vm.user);
+                
             })
             .error(function (e) {
                 console.log(e);
             });
     }]);
 
-tutorControllers.controller('navigationCtrl', [ '$location', '$route','authentication',
-    function ($location, $route,authentication) {
+tutorControllers.controller('tutorHomeCtrl', [ '$scope','$location', 'meanData',
+    function ($scope,$location, meanData) {
         var vm = this;
 
-        vm.isLoggedIn = authentication.isLoggedIn();
+        vm.user = {};
 
-        vm.currentUser = authentication.currentUser();
-        
-        vm.userType = vm.currentUser.userType;
+        meanData.getProfile()
+            .success(function(data) {
+                vm.user = data;
+                console.log(vm.user);
+
+            })
+            .error(function (e) {
+                console.log(e);
+            });
+    }]);
+
+tutorControllers.controller('navigationCtrl', [ '$rootScope','$location', '$route','authentication',
+    function ($rootScope,$location, $route,authentication) {
+        var vm = this;
+
+        // vm.isLoggedIn = authentication.isLoggedIn();
+        //
+        // vm.currentUser = authentication.currentUser();
+        // if(vm.isLoggedIn){
+        //     vm.userType = vm.currentUser.userType;
+        // }
+
 
         vm.logOut = function () {
             authentication
@@ -229,7 +249,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             $scope.chatInit(id);
             // $rootScope.all_student_messages[id].push({name:data.messages[i].from, msg:data.messages[i].message});
             $scope.messages[id].push({name: name, msg: msg_text});
-            $scope.$apply();
+            //$scope.$apply();
         };
 
         $scope.chatInit = function(id){
@@ -335,7 +355,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
             $scope.chatInit(id);
             // $rootScope.all_student_messages[id].push({name:data.messages[i].from, msg:data.messages[i].message});
             $scope.messages[id].push({name: name, msg: msg_text});
-            $scope.$apply();
+            //$scope.$apply();
         };
 
         $scope.chatInit = function(id){

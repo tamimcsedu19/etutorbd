@@ -24,4 +24,11 @@ router.get('/tutor-home',function(req,res){
     });
 });
 
+router.get('/profile',function(req,res){
+
+    res.sendFile(global.__base+'/public/index.html', function (err) {
+        console.log(err);
+    });
+});
+
 module.exports = router;

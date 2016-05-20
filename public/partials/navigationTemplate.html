@@ -2,13 +2,25 @@
   <div class="container">
     <div id="navbar-main">
       <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
+        <!--<li><a href="/">Home</a></li>-->
+        <!--<li ng-show="!navvm.isLoggedIn"><a href="/">Home</a></li>-->
+        <!--<li ng-show="navvm.isLoggedIn && (navvm.userType === 'student')"><a href="/">Home</a></li>-->
+        <!--<li ng-show="navvm.isLoggedIn && (navvm.userType === 'tutor')"><a href="tutor-home">Home</a></li>-->
+        <li ng-show="!loginCheck"><a href="/">Home</a></li>
+        <li ng-show="loginCheck && (sessionUser.userType === 'student')"><a href="/">Home</a></li>
+        <li ng-show="loginCheck && (sessionUser.userType === 'tutor')"><a href="tutor-home">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="navvm.isLoggedIn"><a href="login">Sign in</a></li>
-        <li ng-show="navvm.isLoggedIn && (navvm.userType === 'student')"><a href="profile">{{ navvm.currentUser.name }}</a></li>
-        <li ng-show="navvm.isLoggedIn && (navvm.userType === 'tutor')"><a href="tutor-home">{{ navvm.currentUser.name }}</a></li>
-        <li ng-show="navvm.isLoggedIn"><button ng-click="navvm.logOut()">Log Out</button></li>
+        <li ng-hide="loginCheck"><a href="login">Sign in</a></li>
+        <!--<li ng-show="navvm.isLoggedIn"><a href="profile">{{ navvm.currentUser.name }}</a></li>-->
+        <!--<li ng-show="navvm.isLoggedIn && (navvm.userType === 'student')"><a href="profile">{{ navvm.currentUser.name }}</a></li>-->
+        <!--<li ng-show="navvm.isLoggedIn && (navvm.userType === 'tutor')"><a href="tutor-home">{{ navvm.currentUser.name }}</a></li>-->
+        <!--<li ng-show="navvm.isLoggedIn"><button ng-click="navvm.logOut()">Log Out</button></li>-->
+
+        <li ng-show="loginCheck && (sessionUser.userType === 'student')"><a href="profile">{{ sessionUser.name }}</a></li>
+        <li ng-show="loginCheck && (sessionUser.userType === 'tutor')"><a href="tutor-home">{{ sessionUser.name }}</a></li>
+        <li ng-show="loginCheck"><button ng-click="navvm.logOut()">Log Out</button></li>
+
       </ul>
     </div>
   </div>
