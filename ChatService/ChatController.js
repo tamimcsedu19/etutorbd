@@ -110,9 +110,13 @@ exports.handleClient =  function (io,socket) {
                     liveLessonController.initLesson(liveLessonData);
                     io.to(data.to).join(liveLessonId1);
                     io.to(data.from).join(liveLessonId2);
-                    
-                    io.to(data.to).emit('initLiveLesson',liveLessonData);
-                    io.to(data.from).emit('initLiveLesson',liveLessonData);
+
+                    /** Sends each of the client only the Id of the livelesson so that
+                     * after redirecting through angularjs , they can get all the necessary data
+                     * through getting.
+                     */
+                    io.to(data.to).emit('initLiveLesson',liveLessonId1);
+                    io.to(data.from).emit('initLiveLesson',liveLessonId1);
                 }
                 /** TODO:: Delete key from redis **/
 

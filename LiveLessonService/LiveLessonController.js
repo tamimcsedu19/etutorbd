@@ -14,7 +14,8 @@ exports.handleClient = function(io,socket){
        /** Just checking to send appropriate data **/
        var n_data = {
            liveLessonId: data.liveLessonId,
-           chats:data.chats,
+           user1Chats:data.user1Chats,
+           user2Chats:data.user2Chats,
            pages:data.pages
        }
 
@@ -29,7 +30,7 @@ exports.handleClient = function(io,socket){
     socket.on('getById',function (data) {
 
         liveLessonDA.getById(data.liveLessonID,function (err,data) {
-            socket.emit(data);
+            socket.emit('liveLessonData',data);
 
         });
 

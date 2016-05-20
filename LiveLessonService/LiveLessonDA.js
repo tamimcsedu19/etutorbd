@@ -25,10 +25,7 @@ exports.getById = function (liveLessonId,callback) {
 exports.updateLesson = function(data){
 
     var conditions = { liveLessonId: data.liveLessonId }
-        , update = {
-        chat: data.chat,
-        pages: data.pages
-    };
+        , update = data;
 
     LiveLessonModel.update(conditions,update);
 
