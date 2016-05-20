@@ -4,8 +4,8 @@
 
 
 var passport = require('./PassportConfig');
-var TutorDA;
 var jwt = require('jsonwebtoken');
+
 exports.login = function(req, res) {
 
     passport.authenticate('local', function(err, user, info){
