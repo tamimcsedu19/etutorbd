@@ -47,6 +47,7 @@ describe('Tests chatting functionality', function () {
             client1.on('historyMessages', function (data) {
 
                 assert(data.id.toUserId == "rakib13th@yahoo.com");
+                
                 assert(data.messages.length == 1); // 1 page requested
                 offset = data.messages[data.messages.length-1]._id;
                 cnt++;

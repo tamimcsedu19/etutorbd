@@ -83,11 +83,14 @@ exports.handleClient =  function (io,socket) {
         redisClient.set(key1,liveLessonId,redis.print);
         redisClient.set(key2,liveLessonId,redis.print);
 
+        socket.join(liveLessonId);
+
         io.to(data.to).emit('liveSessionOffer', data);
 
 
 
     });
+
 
     /** This one starts the live lesson **/
     socket.on('liveSessionReply',function(data){
@@ -109,8 +112,9 @@ exports.handleClient =  function (io,socket) {
                     };
 
                     liveLessonController.initLiveLesson(liveLessonData);
-                    io.to(data.to).join(liveLessonId1);
-                    io.to(data.from).join(liveLessonId2);
+
+
+                    socket.join(liveLessonId1);
 
                     /** Sends each of the client only the Id of the livelesson so that
                      * after redirecting through angularjs , they can get all the necessary data
@@ -130,9 +134,9 @@ exports.handleClient =  function (io,socket) {
 
 
     socket.on('disconnect', function (data) {
-        console.log(io.sockets.adapter.rooms);
+
         socket.leave(socket.user_id);
-        console.log(io.sockets.adapter.rooms);
+        
 
     });
 
