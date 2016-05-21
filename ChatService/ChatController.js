@@ -122,7 +122,7 @@ exports.handleClient =  function (io,socket) {
                      * after redirecting through angularjs , they can get all the necessary data
                      * through getting.
                      */
-                    console.log(liveLessonId);
+                    //console.log(liveLessonId);
                     io.to(data.to).emit('initLiveLesson',{liveLessonId:liveLessonId1});
                     io.to(data.from).emit('initLiveLesson',{liveLessonId:liveLessonId1});
                 }

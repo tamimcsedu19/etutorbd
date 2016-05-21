@@ -11,6 +11,13 @@ var total_popups = 0;
 //arrays of popups ids
 var popups = [];
 
+function clearAllPopUps()
+{
+    total_popups = 0;
+    popups = [];
+    console.log('popups cleared');
+}
+
 //this is used to close a popup
 function close_popup(id)
 {
@@ -40,23 +47,25 @@ function display_popups()
         if(popups[iii] != undefined)
         {
             var element = document.getElementById(popups[iii]);
-            element.style.right = right + "px";
-            right = right + 320;
-            element.style.display = "block";
+            if(element) {
+                element.style.right = right + "px";
+                right = right + 320;
+                element.style.display = "block";
+            }
         }
     }
 
     for(var jjj = iii; jjj < popups.length; jjj++)
     {
         var element = document.getElementById(popups[jjj]);
-        element.style.display = "none";
+        if(element) element.style.display = "none";
     }
 }
 
 //creates markup for a new popup. Adds the id to popups array.
 function register_popup(id, name)
 {
-
+    console.log('in register pop up '+ id);
     for(var iii = 0; iii < popups.length; iii++)
     {
         //already registered. Bring it to front.
@@ -74,7 +83,7 @@ function register_popup(id, name)
     }
 
     angular.element(document.getElementById('outer')).scope().addChatBox(id, name);
-
+    
     popups.unshift(id);
 
     calculate_popups();

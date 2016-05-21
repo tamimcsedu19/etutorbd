@@ -1,7 +1,7 @@
 'use strict';
 
 /* Controllers */
-var serverAddress = 'localhost';
+var serverAddress = '192.168.0.5';
 var tutorControllers = angular.module('tutorControllers', []);
 
 tutorControllers.controller('TutorListCtrl', ['$scope', '$routeParams', '$http',
@@ -224,8 +224,8 @@ tutorControllers.controller('navigationCtrl', [ '$rootScope','$location', '$rout
 
 
 
-tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$location', '$log', '$compile','authentication','$mdDialog',
-    function ($rootScope,$scope,$timeout,$location,$log, $compile,authentication,$mdDialog) {
+tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$window','$location', '$log', '$compile','authentication','$mdToast','$mdDialog',
+    function ($rootScope,$scope,$timeout,$window,$location,$log, $compile,authentication,$mdToast,$mdDialog) {
 
 
         console.log('chat control student');
@@ -249,13 +249,28 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$loc
                     .closeTo(angular.element(document.querySelector('#right')))
                     // .targetEvent(ev)
             );
-
+        
             $rootScope.mySocket.emit('liveSessionOffer', {
                 from: vm.currentUser.email,
                 to: id
             });
             console.log("Show Alert done");
         };
+
+
+        // $scope.showSimpleToast = function(id) {
+        //     $mdToast.show(
+        //         $mdToast.simple()
+        //             .textContent('Your request has been sent!')
+        //             .parent(angular.element(document.querySelector('#left')))
+        //             .hideDelay(5000)
+        //     );
+        //
+        //     $rootScope.mySocket.emit('liveSessionOffer', {
+        //         from: vm.currentUser.email,
+        //         to: id
+        //     });
+        // };
 
 
         $scope.showConfirm = function(data) {
@@ -295,6 +310,8 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$loc
             $timeout(function(){
                 console.log('BEFOREEEE received in tutor from server');
                 console.log(data);
+                //var url = '../canvas/'+data.liveLessonId;
+                //$window.location.href =  url;
                 $location.url('/canvas/'+data.liveLessonId);
                 console.log('AFTER  reply received in tutor from server');
                 console.log(data);

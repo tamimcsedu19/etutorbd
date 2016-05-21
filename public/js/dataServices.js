@@ -3,7 +3,7 @@
 /* Services */
 
 (function() {
-  var serverAddress = '192.168.0.102';
+  var serverAddress = '192.168.0.5';
   angular
       .module('Etutor')
       .service('meanData', meanData);

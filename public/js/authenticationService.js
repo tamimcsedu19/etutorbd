@@ -1,5 +1,5 @@
 (function () {
-  var serverAddress = 'localhost';
+  var serverAddress = '192.168.0.5';
   angular
     .module('Etutor')
     .service('authentication', authentication);
