@@ -2,7 +2,7 @@
  * Created by tamim on 2/18/16.
  */
 
-"use strict";
+"use-strict";
 
 
 module.exports = function (userType) {

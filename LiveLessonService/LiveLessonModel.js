@@ -17,8 +17,6 @@ var liveLessonSchema = new Schema({
     liveLessionId:  {type: String, required: true, maxlength: 15},
     user1:      {type: String, required: true, maxlength: 40},
     user2:      {type: String, required: true, maxlength: 40},
-    user1Chats :     {type: Array},
-    user2Chats :     {type: Array},
     startTimeStamp: {type: Number}, //In milliseconds
     liveLessonLength: {type: Number},
     pages: {type: Array}

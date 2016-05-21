@@ -5,7 +5,7 @@
 
 'use-strict';
 
-var ChatDA = require('./ChatDA');
+var ChatDA = require('./ChatDA')('normal');
 var redis = require("redis"),
     redisClient = redis.createClient();
 redisClient.on("error", function (err) {
@@ -42,7 +42,6 @@ exports.handleClient =  function (io,socket) {
 
         };
 
-
         io.to(data.to).emit('message', message); // Send the message to the reciever
 
         ChatDA.saveMessage(message);
@@ -63,6 +62,7 @@ exports.handleClient =  function (io,socket) {
     socket.on('retrieveMessages', function (data) {
 
         ChatDA.retrieveMessages(data, function (error, docs) {
+            console.log(docs);
             socket.emit('historyMessages', {
                 id: data,
                 messages: docs
@@ -73,6 +73,7 @@ exports.handleClient =  function (io,socket) {
     });
 
     socket.on('liveSessionOffer', function (data) {
+
         console.log(data);
         var liveLessonId = shortid.generate();
 
@@ -84,6 +85,7 @@ exports.handleClient =  function (io,socket) {
         redisClient.set(key2,liveLessonId,redis.print);
 
         socket.join(liveLessonId);
+
 
         io.to(data.to).emit('liveSessionOffer', data);
 
@@ -120,6 +122,7 @@ exports.handleClient =  function (io,socket) {
                      * after redirecting through angularjs , they can get all the necessary data
                      * through getting.
                      */
+                    console.log(liveLessonId);
                     io.to(data.to).emit('initLiveLesson',{liveLessonId:liveLessonId1});
                     io.to(data.from).emit('initLiveLesson',{liveLessonId:liveLessonId1});
                 }
@@ -136,7 +139,7 @@ exports.handleClient =  function (io,socket) {
     socket.on('disconnect', function (data) {
 
         socket.leave(socket.user_id);
-        
+
 
     });
 
