@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatController.js" afterPath="$PROJECT_DIR$/ChatService/ChatController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatDA.js" afterPath="$PROJECT_DIR$/ChatService/ChatDA.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatTest.js" afterPath="$PROJECT_DIR$/ChatService/ChatTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatTestUtility.js" afterPath="$PROJECT_DIR$/ChatService/ChatTestUtility.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/MessageModel.js" afterPath="$PROJECT_DIR$/ChatService/MessageModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserService/UserDA.js" afterPath="$PROJECT_DIR$/UserService/UserDA.js" />
     </list>
     <ignored path="etutorbd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -631,7 +623,7 @@
       <workItem from="1463801936302" duration="2512000" />
       <workItem from="1463804522489" duration="2613000" />
       <workItem from="1463810404704" duration="819000" />
-      <workItem from="1463812809613" duration="2818000" />
+      <workItem from="1463812809613" duration="2829000" />
     </task>
     <task id="LOCAL-00001" summary="Added tutor Search etc">
       <created>1453912284207</created>
@@ -948,7 +940,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463803696517</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Room Join working">
+      <created>1463815639277</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1463815639277</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -984,7 +983,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48010000" />
+    <option name="totallyTimeSpent" value="48021000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
