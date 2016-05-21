@@ -54,7 +54,7 @@ tutorApp.config(['$routeProvider', '$locationProvider',
 tutorApp.run(['$rootScope', '$location', 'authentication',
     function ($rootScope, $location, authentication) {
         $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
-            var serverAddress = 'localhost';
+            var serverAddress = '192.168.0.5';
             $rootScope.sessionUser = authentication.currentUser();
             $rootScope.loginCheck = authentication.isLoggedIn();
             console.log('inside app.js'+$rootScope.loginCheck);
@@ -63,6 +63,9 @@ tutorApp.run(['$rootScope', '$location', 'authentication',
                 transports: ['websocket'],
                 'force new connection': true
             };
+            
+            clearAllPopUps();
+            
 
             if ($location.path() === '/' && authentication.isLoggedIn() && $rootScope.sessionUser.userType === 'tutor') {
                 if (typeof $rootScope.mySocket === 'undefined' || $rootScope.mySocket === null) {
