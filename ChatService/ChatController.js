@@ -73,7 +73,7 @@ exports.handleClient =  function (io,socket) {
     });
 
     socket.on('liveSessionOffer', function (data) {
-
+        console.log(data);
         var liveLessonId = shortid.generate();
 
 

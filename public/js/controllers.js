@@ -224,8 +224,8 @@ tutorControllers.controller('navigationCtrl', [ '$rootScope','$location', '$rout
 
 
 
-tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compile','authentication','$mdDialog',
-    function ($rootScope,$scope, $log, $compile,authentication,$mdDialog) {
+tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$location', '$log', '$compile','authentication','$mdDialog',
+    function ($rootScope,$scope,$timeout,$location,$log, $compile,authentication,$mdDialog) {
 
 
         console.log('chat control student');
@@ -254,7 +254,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
                 from: vm.currentUser.email,
                 to: id
             });
-            
+            console.log("Show Alert done");
         };
 
 
@@ -292,8 +292,14 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
         });
 
         $rootScope.mySocket.on('initLiveLesson', function (data) {
+            $timeout(function(){
+                console.log('BEFOREEEE received in tutor from server');
+                console.log(data);
+                $location.url('/canvas/'+data.liveLessonId);
+                console.log('AFTER  reply received in tutor from server');
+                console.log(data);
+            },2000);
 
-            $location.url('/canvas/'+data.liveLessonId);
         });
 
 
@@ -400,8 +406,8 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
     }]);
 
 
-tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$compile','authentication', '$mdDialog',
-    function ($rootScope,$scope, $log, $compile,authentication,$mdDialog) {
+tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout','$location','$log', '$compile','authentication', '$mdDialog',
+    function ($rootScope,$scope,$timeout,$location, $log, $compile,authentication,$mdDialog) {
 
 
         console.log('chat control student');
@@ -419,9 +425,9 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
                     .textContent('Your request has been sent!')
                     .ariaLabel('Alert Dialog Demo')
                     .ok('Got it!')
-                    .openFrom('#left')
+                    // .openFrom('#left')
                     // or an element
-                    .closeTo(angular.element(document.querySelector('#right')))
+                    // .closeTo(angular.element(document.querySelector('#right')))
                 // .targetEvent(ev)
             );
 
@@ -435,6 +441,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
 
         $scope.showConfirm = function(data) {
             // Appending dialog to document.body to cover sidenav in docs app
+            console.log('show confirm\n'+data);
             var confirm = $mdDialog.confirm()
                 .title(' start live session?')
                 .ariaLabel('Lucky day')
@@ -458,17 +465,24 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
 
                 });
 
+
             });
         };
 
         $rootScope.mySocket.on('liveSessionOffer', function (data) {
-
+            console.log(data);
             $scope.showConfirm(data);
         });
 
         $rootScope.mySocket.on('initLiveLesson', function (data) {
+            $timeout(function(){
+                console.log('BEFOREEEE received in tutor from server');
+                console.log(data);
+                $location.url('/canvas/'+data.liveLessonId);
+                console.log('AFTER  reply received in tutor from server');
+                console.log(data);
+            },2000);
 
-            $location.url('/canvas/'+data.liveLessonId);
         });
 
 
