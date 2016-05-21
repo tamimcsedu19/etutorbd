@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-616">
-              <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+            <state relative-caret-position="269">
+              <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="480">
               <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
               <folding />
             </state>
@@ -623,7 +623,7 @@
       <workItem from="1463801936302" duration="2512000" />
       <workItem from="1463804522489" duration="2613000" />
       <workItem from="1463810404704" duration="819000" />
-      <workItem from="1463812809613" duration="2829000" />
+      <workItem from="1463812809613" duration="3655000" />
     </task>
     <task id="LOCAL-00001" summary="Added tutor Search etc">
       <created>1453912284207</created>
@@ -947,7 +947,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463815639277</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Update live lesson and added liveLesson Chat functionality">
+      <created>1463815662148</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1463815662148</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -983,7 +990,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48021000" />
+    <option name="totallyTimeSpent" value="48847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -1024,7 +1031,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Student Registration and authentication added." />
     <MESSAGE value="Updated the routes for serving index.html on certain pages." />
     <MESSAGE value="Added function for offer and response" />
     <MESSAGE value="Re Arrange code to handle connection on socketio file." />
@@ -1049,7 +1055,8 @@
     <MESSAGE value="front end Chat controller  updated" />
     <MESSAGE value="front end live session pop-up added" />
     <MESSAGE value="Room Join working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Room Join working" />
+    <MESSAGE value="Update live lesson and added liveLesson Chat functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update live lesson and added liveLesson Chat functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1413,18 +1420,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
+        <state relative-caret-position="269">
+          <caret line="145" column="0" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
+    <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-616">
-          <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+        <state relative-caret-position="480">
+          <caret line="44" column="43" selection-start-line="44" selection-start-column="43" selection-end-line="44" selection-end-column="43" />
           <folding />
         </state>
       </provider>
