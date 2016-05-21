@@ -12,9 +12,12 @@ redisClient.on("error", function (err) {
     console.log("Error " + err);
 });
 
-var appendSessionAttrib = "liveLessonId";
-exports.handleClient = function(io,socket){
 
+var appendSessionAttrib = "liveLessonId";
+exports.handleClient = function(io,socket,EventEmitter){
+    EventEmitter.on('crazy',function () {
+        console.log("inside crazy");
+    });
 
 
     socket.on('messageLive', function (data) {
@@ -68,14 +71,25 @@ exports.handleClient = function(io,socket){
         });
 
     });
-
-    socket.on('endLiveLesson',function (data) {
+    /** Nodejs Event emitter **/
+    EventEmitter.on("endLiveLesson",function (data) {
         var key1 = data.to+appendSessionAttrib,key2 = data.from+appendSessionAttrib;
 
+
+        io.to(data.to).emit('endLiveLesson',{});
+        io.to(data.from).emit('endLiveLesson',{});
         redisClient.del(key1);
         redisClient.del(key2);
+
     });
-    
+
+
+    socket.on('endLiveLesson',function (data) {
+        EventEmitter.emit("endLiveLesson",data);
+    });
+
+
+
 
 
 

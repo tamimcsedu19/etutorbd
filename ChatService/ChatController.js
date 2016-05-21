@@ -3,7 +3,7 @@
  *
  */
 
-'use-strict';
+'use strict';
 
 var ChatDA = require('./ChatDA')('normal');
 var redis = require("redis"),
@@ -13,6 +13,8 @@ redisClient.on("error", function (err) {
 });
 
 
+
+
 var appendSessionAttrib = "liveLessonId";
 
 
@@ -20,13 +22,15 @@ var appendSessionAttrib = "liveLessonId";
 var shortid = require('shortid');
 var liveLessonController = require('../LiveLessonService/LiveLessonController');
 
-exports.handleClient =  function (io,socket) {
+exports.handleClient =  function (io,socket,EventEmitter) {
+
+    EventEmitter.emit('crazy');
 
     console.log('A user has connected to the socket');
 
 
     socket.on('message', function (data) {
-
+        
         /** TODO :: Implement token authorization with redis
          *  data.token
          *  data.from
@@ -97,8 +101,10 @@ exports.handleClient =  function (io,socket) {
                 redisClient.set(key1,liveLessonId,redis.print);
                 redisClient.set(key2,liveLessonId,redis.print);
 
-                socket.join(liveLessonId);
+                redisClient.lpush(liveLessonId,data.to,data.from);
 
+                socket.join(liveLessonId);
+                socket.liveLessonId = liveLessonId;
 
                 io.to(data.to).emit('liveSessionOffer', data);
 
@@ -157,7 +163,24 @@ exports.handleClient =  function (io,socket) {
 
     socket.on('disconnect', function (data) {
 
-        socket.leave(socket.user_id);
+        if(!socket.liveLessonId){
+            socket.leave(socket.user_id);
+            return;
+        }
+
+        io.to(socket.liveLessonId).emit('endLiveLesson');
+
+        redisClient.lrange(socket.liveLessonId,0,1,function(err, reply) {
+            var data = {
+                to:reply[0],
+                from:reply[1]
+            };
+            EventEmitter.emit('endLiveLesson',data);
+        });
+
+
+
+
 
 
     });

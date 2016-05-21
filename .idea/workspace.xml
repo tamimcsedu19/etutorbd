@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/default.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webrtcVideo/signalServer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthenticationService/AuthController.js" afterPath="$PROJECT_DIR$/AuthenticationService/AuthController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatController.js" afterPath="$PROJECT_DIR$/ChatService/ChatController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatDA.js" afterPath="$PROJECT_DIR$/ChatService/ChatDA.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SearchService/SearchRoutes.js" afterPath="$PROJECT_DIR$/SearchService/SearchRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/GenericRoutes.js" afterPath="$PROJECT_DIR$/routes/GenericRoutes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socketio.js" afterPath="$PROJECT_DIR$/socketio.js" />
     </list>
     <ignored path="etutorbd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +31,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-360">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="41" />
+            <state relative-caret-position="-1879">
+              <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".jshintignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.jshintignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="socketio.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/socketio.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -41,8 +64,8 @@
       <file leaf-file-name="ChatDA.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChatService/ChatDA.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="705">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -61,28 +84,8 @@
       <file leaf-file-name="RouteManager.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/RouteManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LiveLessonDA.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonDA.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LiveLessonModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -91,38 +94,18 @@
       <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+            <state relative-caret-position="540">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AuthenticationService/AuthController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginRoutes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AuthenticationService/LoginRoutes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PassportConfig.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AuthenticationService/PassportConfig.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -137,6 +120,7 @@
         <option value="Jade File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="tsconfig.json" />
       </list>
     </option>
   </component>
@@ -152,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/BLL/SignUpStudentTest.js" />
         <option value="$PROJECT_DIR$/UserService/SchemaFunctions.js" />
         <option value="$PROJECT_DIR$/RegistrationService/RegistrationRoutes.js" />
         <option value="$PROJECT_DIR$/AuthenticationService/LoginRoute.js" />
@@ -160,7 +143,6 @@
         <option value="$PROJECT_DIR$/AuthenticationService/LoginRoutes.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonHandler.js" />
-        <option value="$PROJECT_DIR$/socketio.js" />
         <option value="$PROJECT_DIR$/SearchService/InsertSubjectTutorData.js" />
         <option value="$PROJECT_DIR$/SearchService/SubjectToTutorDA.js" />
         <option value="$PROJECT_DIR$/todo.txt" />
@@ -176,7 +158,6 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/partials/navigationTemplate.html" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/UserService/StudentModel.js" />
         <option value="$PROJECT_DIR$/UserService/TutorModel.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonRoutes.js" />
@@ -195,14 +176,17 @@
         <option value="$PROJECT_DIR$/ChatService/MessageModel.js" />
         <option value="$PROJECT_DIR$/UserService/UserDA.js" />
         <option value="$PROJECT_DIR$/ChatService/ChatTestUtility.js" />
-        <option value="$PROJECT_DIR$/ChatService/ChatDA.js" />
         <option value="$PROJECT_DIR$/ChatService/ChatTest.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js" />
         <option value="$PROJECT_DIR$/SearchService/SearchRoutes.js" />
         <option value="$PROJECT_DIR$/routes/GenericRoutes.js" />
-        <option value="$PROJECT_DIR$/ChatService/ChatController.js" />
-        <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/webrtcVideo/signalServer.js" />
         <option value="$PROJECT_DIR$/AuthenticationService/AuthController.js" />
+        <option value="$PROJECT_DIR$/ChatService/ChatDA.js" />
+        <option value="$PROJECT_DIR$/socketio.js" />
+        <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
+        <option value="$PROJECT_DIR$/ChatService/ChatController.js" />
       </list>
     </option>
   </component>
@@ -261,8 +245,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,7 +273,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="webrtcVideo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="LiveLessonService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,6 +335,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -366,134 +378,20 @@
       <recent name="$PROJECT_DIR$/SessionService" />
     </key>
   </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/bower_components/fonts/glyphicons-halflings-regular.eot</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/bower_components/fonts/glyphicons-halflings-regular.svg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/bower_components/fonts/glyphicons-halflings-regular.ttf</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/bower_components/fonts/glyphicons-halflings-regular.woff</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/bower_components/fonts/glyphicons-halflings-regular.woff2</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
-  </component>
-  <component name="RunManager" selected="Node.js.app.js">
-    <configuration default="false" name="ChatController.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="ChatController.js" working-dir="$PROJECT_DIR$/ChatService">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Mocha.Tests Chatting functionality">
     <configuration default="false" name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="false" name="LiveLessonController.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="LiveLessonController.js" working-dir="$PROJECT_DIR$/LiveLessonService">
       <method />
     </configuration>
-    <configuration default="false" name="LiveLessonModel.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="LiveLessonModel.js" working-dir="$PROJECT_DIR$/LiveLessonService">
+    <configuration default="false" name="InsertSubjectTutorData.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="InsertSubjectTutorData.js" working-dir="$PROJECT_DIR$/SearchService">
       <method />
     </configuration>
-    <configuration default="false" name="InsertSubjectTutorData.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="InsertSubjectTutorData.js" working-dir="$PROJECT_DIR$/SearchService">
+    <configuration default="false" name="signalServer.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="signalServer.js" working-dir="$PROJECT_DIR$/webrtcVideo">
+      <method />
+    </configuration>
+    <configuration default="false" name="socketio.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="socketio.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -616,19 +514,19 @@
       <item index="3" class="java.lang.String" itemvalue="Mocha.SearchTest" />
       <item index="4" class="java.lang.String" itemvalue="Mocha.UserDataAccessTest" />
       <item index="5" class="java.lang.String" itemvalue="Mocha.SignUpStudentTest" />
-      <item index="6" class="java.lang.String" itemvalue="Node.js.ChatController.js" />
-      <item index="7" class="java.lang.String" itemvalue="Node.js.app.js" />
-      <item index="8" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
-      <item index="9" class="java.lang.String" itemvalue="Node.js.LiveLessonModel.js" />
-      <item index="10" class="java.lang.String" itemvalue="Node.js.InsertSubjectTutorData.js" />
+      <item index="6" class="java.lang.String" itemvalue="Node.js.app.js" />
+      <item index="7" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
+      <item index="8" class="java.lang.String" itemvalue="Node.js.InsertSubjectTutorData.js" />
+      <item index="9" class="java.lang.String" itemvalue="Node.js.signalServer.js" />
+      <item index="10" class="java.lang.String" itemvalue="Node.js.socketio.js" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Node.js.app.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.InsertSubjectTutorData.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.ChatController.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.LiveLessonModel.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.socketio.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.signalServer.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.InsertSubjectTutorData.js" />
       </list>
     </recent_temporary>
   </component>
@@ -663,35 +561,8 @@
       <workItem from="1463812809613" duration="4244000" />
       <workItem from="1463828200398" duration="707000" />
       <workItem from="1463830389012" duration="21000" />
-      <workItem from="1463836013072" duration="2531000" />
-    </task>
-    <task id="LOCAL-00001" summary="Added tutor Search etc">
-      <created>1453912284207</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1453912284207</updated>
-    </task>
-    <task id="LOCAL-00002" summary="A more complete skeleton.">
-      <created>1454509166396</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1454509166396</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added signup page , No session management yet">
-      <created>1455438691756</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1455438691756</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Tutor signup complete">
-      <created>1455464351447</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1455464351447</updated>
+      <workItem from="1463836013072" duration="9334000" />
+      <workItem from="1463852400671" duration="361000" />
     </task>
     <task id="LOCAL-00005" summary="Abstracted models and UserDAs">
       <created>1455792936743</created>
@@ -1001,67 +872,102 @@
       <option name="project" value="LOCAL" />
       <updated>1463816731938</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Added a check for live lesson">
+      <created>1463844775153</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1463844775153</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Added control for cancelling live lesson when crossed">
+      <created>1463851821864</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1463851821866</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Added control for cancelling live lesson when crossed">
+      <created>1463851958511</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1463851958511</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Added control for cancelling live lesson when crossed">
+      <created>1463852235243</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1463852235244</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Added control for cancelling live lesson when crossed">
+      <created>1463852488771</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1463852488776</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 06m 23s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 22h 31m 21s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 08m 26s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 22h 32m 07s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 08m 36s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 22h 42m 33s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 12m 53s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 22h 42m 43s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 15m 23s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 23h 12m 51s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 15m 28s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 23h 15m 56s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 16m 57s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 23h 23m 24s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 17m 11s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 23h 23m 43s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 18m 24s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 23h 24m 25s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 13h 20m 33s.xml">
+    <history-entry file="Tests_Chatting_functionality - 2016.05.21 at 23h 26m 09s.xml">
       <configuration name="Tests Chatting functionality" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52695000" />
+    <option name="totallyTimeSpent" value="59859000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.245196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.245196" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28614008" sideWeight="0.41199076" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637855" sideWeight="0.490392" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28614008" sideWeight="0.58800924" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.4968701" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39104477" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28614008" sideWeight="0.58800924" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.48122066" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1078,8 +984,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Updated the routes for serving index.html on certain pages." />
-    <MESSAGE value="Added function for offer and response" />
     <MESSAGE value="Re Arrange code to handle connection on socketio file." />
     <MESSAGE value="Live session controller demo added" />
     <MESSAGE value="Added subject tutor data script" />
@@ -1103,7 +1007,9 @@
     <MESSAGE value="front end live session pop-up added" />
     <MESSAGE value="Room Join working" />
     <MESSAGE value="Update live lesson and added liveLesson Chat functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update live lesson and added liveLesson Chat functionality" />
+    <MESSAGE value="Added a check for live lesson" />
+    <MESSAGE value="Added control for cancelling live lesson when crossed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added control for cancelling live lesson when crossed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1112,48 +1018,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService/SchemaFunctions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserService/UserDATest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/utility.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SearchService/SearchTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="32" column="59" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RegistrationService/SignUpStudentTest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1165,13 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="51" column="51" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AuthenticationService/PassReset.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="86" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
         </state>
       </provider>
     </entry>
@@ -1207,13 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socketio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1301,14 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mocha/lib/runnable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -1363,7 +1205,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1371,7 +1212,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1379,11 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4650">
           <caret line="327" column="27" selection-start-line="327" selection-start-column="27" selection-end-line="327" selection-end-column="37" />
-          <folding>
-            <marker date="1463842849435" expanded="true" signature="9529:9715" ph="{...}" />
-            <marker date="1463842849435" expanded="true" signature="9529:9733" ph="{...}" />
-            <marker date="1463842849435" expanded="true" signature="9529:14297" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1391,7 +1226,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1399,7 +1233,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1407,7 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1415,7 +1247,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,7 +1254,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1431,39 +1261,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/signalmaster/sockets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1036">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatDA.js">
+    <entry file="file://$PROJECT_DIR$/webrtcVideo/signalServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="105">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="44" column="3" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/RouteManager.js">
+    <entry file="file://$PROJECT_DIR$/AuthenticationService/PassReset.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="419">
+          <caret line="71" column="86" selection-start-line="71" selection-start-column="86" selection-end-line="71" selection-end-column="86" />
         </state>
       </provider>
     </entry>
@@ -1475,10 +1312,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatDA.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/RouteManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AuthenticationService/AuthController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socketio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.jshintignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dump.rdb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.jshintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1879">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
           <folding />
         </state>
       </provider>

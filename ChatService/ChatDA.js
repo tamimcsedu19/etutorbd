@@ -45,8 +45,7 @@ module.exports = function (chatType) {
         /**
          * param: to_user_id,from_user_id,offset,pageSize
          */
-        console.log("retrieving message");
-        console.log(param);
+
         module.Message.find({
             "$or": [{
                 "to": param.toUserId,
