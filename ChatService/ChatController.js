@@ -104,11 +104,11 @@ exports.handleClient =  function (io,socket) {
                         liveLessonId:liveLessonId1,
                         user1: data.to,
                         user2: data.from,
-                        startTimeStamp: new Date().now(),
+                        startTimeStamp: Date.now(),
                         liveLessonLength : 0
                     };
 
-                    liveLessonController.initLesson(liveLessonData);
+                    liveLessonController.initLiveLesson(liveLessonData);
                     io.to(data.to).join(liveLessonId1);
                     io.to(data.from).join(liveLessonId2);
 

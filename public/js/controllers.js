@@ -187,6 +187,15 @@ tutorControllers.controller('tutorHomeCtrl', [ '$scope','$location', 'meanData',
             });
     }]);
 
+tutorControllers.controller('canvasCtrl', [ '$scope', '$routeParams',
+    function ($scope,$routeParams) {
+        var vm = this;
+
+        vm.liveLessionId = $routeParams.liveLessionId;
+
+
+    }]);
+
 tutorControllers.controller('navigationCtrl', [ '$rootScope','$location', '$route','authentication',
     function ($rootScope,$location, $route,authentication) {
         var vm = this;
@@ -226,7 +235,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
         $scope.messages = new Array();
 
 
-        $scope.showAlert = function() {
+        $scope.showAlert = function(id) {
             $mdDialog.show(
                 $mdDialog.alert()
                     //.parent(angular.element(document.querySelector('#popupContainer')))
@@ -240,8 +249,52 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
                     .closeTo(angular.element(document.querySelector('#right')))
                     // .targetEvent(ev)
             );
+
+            $rootScope.mySocket.emit('liveSessionOffer', {
+                from: vm.currentUser.email,
+                to: id
+            });
+            
         };
 
+
+        $scope.showConfirm = function(data) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            var confirm = $mdDialog.confirm()
+                .title(' start live session?')
+                .ariaLabel('Lucky day')
+                .ok('Reject')
+                .cancel('Accept');
+            $mdDialog.show(confirm).then(function() {
+                console.log('Rejected request\n'+data);
+                $rootScope.mySocket.emit('liveSessionReply', {
+                    from: data.from,
+                    to: data.to,
+                    reply:0
+
+                });
+                
+            }, function() {
+                console.log('Accepted request\n'+data);
+                $rootScope.mySocket.emit('liveSessionReply', {
+                    from: data.from,
+                    to: data.to,
+                    reply:1
+
+                });
+
+            });
+        };
+
+        $rootScope.mySocket.on('liveSessionOffer', function (data) {
+
+            $scope.showConfirm(data);
+        });
+
+        $rootScope.mySocket.on('initLiveLesson', function (data) {
+
+            $location.url('/canvas/'+data.liveLessonId);
+        });
 
 
         $scope.chatSend = function (id, name) {
@@ -294,7 +347,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$log', '$compil
             console.log("addcaht called...." + id);
 
 
-            var livesession = ' <button type="button" class="btn btn-primary btn-xs" style="margin-right: 5px" ng-click="showAlert()"><span class="glyphicon glyphicon-blackboard"></span> </button>';
+            var livesession = ' <button type="button" class="btn btn-primary btn-xs" style="margin-right: 5px" ng-click="showAlert(\''+id+'\')"><span class="glyphicon glyphicon-blackboard"></span> </button>';
             var closeChat = '<button type="button" class="btn btn-primary btn-xs" onclick="close_popup(\'' + id + '\')"><span class="glyphicon glyphicon-remove"></span> </button>';
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
@@ -357,7 +410,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
 
         $scope.messages = new Array();
 
-        $scope.showAlert = function() {
+        $scope.showAlert = function(id) {
             $mdDialog.show(
                 $mdDialog.alert()
                 //.parent(angular.element(document.querySelector('#popupContainer')))
@@ -371,7 +424,54 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
                     .closeTo(angular.element(document.querySelector('#right')))
                 // .targetEvent(ev)
             );
+
+            $rootScope.mySocket.emit('liveSessionOffer', {
+                from: vm.currentUser.email,
+                to: id
+            });
+
         };
+
+
+        $scope.showConfirm = function(data) {
+            // Appending dialog to document.body to cover sidenav in docs app
+            var confirm = $mdDialog.confirm()
+                .title(' start live session?')
+                .ariaLabel('Lucky day')
+                .ok('Reject')
+                .cancel('Accept');
+            $mdDialog.show(confirm).then(function() {
+                console.log('Rejected request\n'+data);
+                $rootScope.mySocket.emit('liveSessionReply', {
+                    from: data.from,
+                    to: data.to,
+                    reply:0
+
+                });
+
+            }, function() {
+                console.log('Accepted request\n'+data);
+                $rootScope.mySocket.emit('liveSessionReply', {
+                    from: data.from,
+                    to: data.to,
+                    reply:1
+
+                });
+
+            });
+        };
+
+        $rootScope.mySocket.on('liveSessionOffer', function (data) {
+
+            $scope.showConfirm(data);
+        });
+
+        $rootScope.mySocket.on('initLiveLesson', function (data) {
+
+            $location.url('/canvas/'+data.liveLessonId);
+        });
+
+
 
         $scope.chatSend = function (id, name) {
             var chattext = document.getElementById("chatin" + id).value;
@@ -423,8 +523,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$log', '$c
             console.log("addcaht called...." + id);
 
 
-
-            var livesession = ' <button type="button" class="btn btn-primary btn-xs" style="margin-right: 5px" ng-click="showAlert()"><span class="glyphicon glyphicon-blackboard"></span> </button>';
+            var livesession = ' <button type="button" class="btn btn-primary btn-xs" style="margin-right: 5px" ng-click="showAlert(\''+id+'\')"><span class="glyphicon glyphicon-blackboard"></span> </button>';
             var closeChat = '<button type="button" class="btn btn-primary btn-xs" onclick="close_popup(\'' + id + '\')"><span class="glyphicon glyphicon-remove"></span> </button>';
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';

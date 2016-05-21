@@ -40,6 +40,10 @@ tutorApp.config(['$routeProvider', '$locationProvider',
             }).when('/tutor/:tutorId', {
                 templateUrl: 'partials/tutor-detail.html',
                 controller: 'TutorDetailCtrl'
+            }).when('/canvas/:liveLessionId', {
+                templateUrl: 'partials/canvas.html',
+                controller: 'canvasCtrl',
+                controllerAs: 'vm'
             }).otherwise({
                 redirectTo: '/'
             });
