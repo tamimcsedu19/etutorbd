@@ -1,12 +1,16 @@
 /**
  * Created by tamim on 4/16/16.
  */
-var Message = require('./MessageModel');
+'use strict'
+var ChatDA = require('./ChatDA')('normal');
+
+var Message = ChatDA.chatModelFactory('normal');
+
 exports.insertMessages = function () {
     Message.remove({}, function (err) {
 
 
-        messages = []
+        var messages = []
 
         messages.push({
 
@@ -38,7 +42,7 @@ exports.insertMessages = function () {
 
 
         for (var i in messages) {
-            new Message(messages[i]).save();
+            ChatDA.saveMessage((messages[i]));
         }
         console.log("All messages saved");
     });

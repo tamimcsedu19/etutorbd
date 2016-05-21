@@ -5,17 +5,44 @@
 'use-strict';
 
 var liveLessonDA = require('./LiveLessonDA');
-
+var ChatDALive = require("../ChatService/ChatDA")("Live");
 
 exports.handleClient = function(io,socket){
 
-   socket.on('update',function (data) {
+
+
+    socket.on('messageLive', function (data) {
+
+        /** TODO :: Implement token authorization with redis
+         *  data.token
+         *  data.from
+         * **/
+
+        var message = {
+            to: data.to,
+            from: data.from,
+            message: data.message,
+            senderName: data.senderName,
+            timeStamp: data.timeStamp,
+
+
+        };
+
+
+        io.to(data.to).emit('messageLive', message); // Send the message to the reciever
+
+        ChatDALive.saveMessage(message);
+
+
+    });
+
+
+
+    socket.on('update',function (data) {
 
        /** Just checking to send appropriate data **/
        var n_data = {
            liveLessonId: data.liveLessonId,
-           user1Chats:data.user1Chats,
-           user2Chats:data.user2Chats,
            pages:data.pages
        }
 
@@ -35,6 +62,9 @@ exports.handleClient = function(io,socket){
         });
 
     });
+
+
+    
 
 
 
