@@ -6,7 +6,13 @@
 
 var liveLessonDA = require('./LiveLessonDA');
 var ChatDALive = require("../ChatService/ChatDA")("Live");
+var redis = require("redis"),
+    redisClient = redis.createClient();
+redisClient.on("error", function (err) {
+    console.log("Error " + err);
+});
 
+var appendSessionAttrib = "liveLessonId";
 exports.handleClient = function(io,socket){
 
 
@@ -63,7 +69,12 @@ exports.handleClient = function(io,socket){
 
     });
 
+    socket.on('endLiveLesson',function (data) {
+        var key1 = data.to+appendSessionAttrib,key2 = data.from+appendSessionAttrib;
 
+        redisClient.del(key1);
+        redisClient.del(key2);
+    });
     
 
 

@@ -74,24 +74,43 @@ exports.handleClient =  function (io,socket) {
 
     socket.on('liveSessionOffer', function (data) {
 
+
+
+        var key1 = data.to+appendSessionAttrib,key2 = data.from+appendSessionAttrib;
+
+
         console.log(data);
         var liveLessonId = shortid.generate();
 
 
-        //TODO check if the user is already in session , may be in the client side
 
+
+        //TODO: check if the user is already in session , may be in the client side
+        //Done
         var key1 = data.to+appendSessionAttrib,key2 = data.from+appendSessionAttrib;
-        redisClient.set(key1,liveLessonId,redis.print);
-        redisClient.set(key2,liveLessonId,redis.print);
+        redisClient.get(key1, function(err, liveLessonId1) {
+            redisClient.get(key2,function (err,liveLessonId2) {
 
-        socket.join(liveLessonId);
+                if(liveLessonId1 || liveLessonId2)
+                    return;
+
+                redisClient.set(key1,liveLessonId,redis.print);
+                redisClient.set(key2,liveLessonId,redis.print);
+
+                socket.join(liveLessonId);
 
 
-        io.to(data.to).emit('liveSessionOffer', data);
+                io.to(data.to).emit('liveSessionOffer', data);
+
+            });
+        });
+
 
 
 
     });
+    
+    
 
 
     /** This one starts the live lesson **/
@@ -122,7 +141,7 @@ exports.handleClient =  function (io,socket) {
                      * after redirecting through angularjs , they can get all the necessary data
                      * through getting.
                      */
-                    //console.log(liveLessonId);
+                    
                     io.to(data.to).emit('initLiveLesson',{liveLessonId:liveLessonId1});
                     io.to(data.from).emit('initLiveLesson',{liveLessonId:liveLessonId1});
                 }
