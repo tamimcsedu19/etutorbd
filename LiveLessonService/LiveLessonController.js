@@ -65,8 +65,10 @@ exports.handleClient = function(io,socket,EventEmitter){
 
     socket.on('getById',function (data) {
 
+        console.log(data);
         search_data = {
             liveLessonId:data.liveLessonId
+
         }
         liveLessonDA.getById(search_data,function (err,data) {
             

@@ -603,11 +603,30 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout',
 
 
 
-tutorControllers.controller('drawing_controller', [ '$scope', '$routeParams','$http', '$log',
-    function ($scope,$routeParams,$http,$log) {
+tutorControllers.controller('drawing_controller', [ '$rootScope','$scope', '$routeParams','$http', '$log',
+    function ($rootScope,$scope,$routeParams,$http,$log) {
         var vm = this;
 
+        var user1;
+        var user2;
         vm.liveLessionId = $routeParams.liveLessionId;
+
+
+        $rootScope.mySocket.emit('getById', {
+            liveLessonId : vm.liveLessionId
+
+        });
+
+
+        $rootScope.mySocket.on('liveLessonData', function (data) {
+            console.log(data);
+            console.log(data.to);
+            console.log(data.from);
+
+        });
+
+
+
 
 
         console.log("Controller Init");
