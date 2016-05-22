@@ -215,6 +215,15 @@ tutorControllers.controller('navigationCtrl', [ '$rootScope','$location', '$rout
 
 
 
+tutorControllers.controller('videoCtrl', [ '$rootScope','$scope',
+    function ($rootScope,$scope) {
+        $rootScope.mySocket.on('tamim', function (data) {
+
+
+        });
+
+    }]);
+
 
 
 tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$window','$location', '$log', '$compile','authentication','$mdToast','$mdDialog',
@@ -622,10 +631,15 @@ tutorControllers.controller('drawing_controller', [ '$rootScope','$scope', '$rou
             console.log(data);
             console.log(data.to);
             console.log(data.from);
+            user1 = data.from;
+            user2 = data.to;
 
         });
 
-
+        // $rootScope.mySocket.on('update', function (data) {
+        //    
+        //
+        // });
 
 
 

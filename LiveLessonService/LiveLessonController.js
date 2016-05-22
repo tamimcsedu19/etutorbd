@@ -57,7 +57,7 @@ exports.handleClient = function(io,socket,EventEmitter){
 
        liveLessonDA.updateLesson(n_data);
 
-       io.to(data.liveLessonId).emit('update',data);
+       io.to(data.to).emit('update',data);
 
 
 
