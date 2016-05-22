@@ -628,19 +628,46 @@ tutorControllers.controller('drawing_controller', [ '$rootScope','$scope', '$rou
 
 
         $rootScope.mySocket.on('liveLessonData', function (data) {
-            console.log(data);
-            console.log(data.to);
-            console.log(data.from);
-            user1 = data.from;
-            user2 = data.to;
+            // console.log(data);
+            if(data.from === $rootScope.sessionUser.email) {
+                user1 = data.from;
+                user2 = data.to;
+            }
+            else {
+                user1 = data.to;
+                user2 = data.from;
+            }
+            //console.log(user1);
+            //console.log(user2);
 
         });
 
         // $rootScope.mySocket.on('update', function (data) {
-        //    
+        //    //data.pages will carry the changes of canvas of other user . so you have to use it
+        //
+        // });
+        //
+        // $rootScope.mySocket.emit('update', {
+        //             from : user1,
+        //            to    : user2,
+        //     liveLessonId : vm.liveLessionId,
+        //            pages : //you have to put your canvas update object here
         //
         // });
 
+
+        // $rootScope.mySocket.emit('endLiveLesson', {
+        //     liveLessonId : vm.liveLessionId,
+        //     from : user1,
+        //       to : user2
+        //
+        // });
+
+
+        // $rootScope.mySocket.on('endLiveLesson', function (data) {
+        //
+        //
+        // });
 
 
         console.log("Controller Init");
