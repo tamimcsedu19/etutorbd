@@ -95,16 +95,15 @@ exports.handleClient =  function (io,socket,EventEmitter) {
         redisClient.get(key1, function(err, liveLessonId1) {
             redisClient.get(key2,function (err,liveLessonId2) {
 
+                console.log(liveLessonId2);
                 if(liveLessonId1 || liveLessonId2)
                     return;
 
                 redisClient.set(key1,liveLessonId,redis.print);
                 redisClient.set(key2,liveLessonId,redis.print);
 
-                redisClient.lpush(liveLessonId,data.to,data.from);
 
                 socket.join(liveLessonId);
-                socket.liveLessonId = liveLessonId;
 
                 io.to(data.to).emit('liveSessionOffer', data);
 
@@ -147,7 +146,10 @@ exports.handleClient =  function (io,socket,EventEmitter) {
                      * after redirecting through angularjs , they can get all the necessary data
                      * through getting.
                      */
-                    
+
+                    redisClient.lpush(liveLessonId1,data.to,data.from);
+                    socket.liveLessonId = liveLessonId1;
+
                     io.to(data.to).emit('initLiveLesson',{liveLessonId:liveLessonId1});
                     io.to(data.from).emit('initLiveLesson',{liveLessonId:liveLessonId1});
                 }
@@ -163,6 +165,10 @@ exports.handleClient =  function (io,socket,EventEmitter) {
 
     socket.on('disconnect', function (data) {
 
+        console.log("Disconnected");
+        console.log(socket.user_id);
+        console.log(socket.liveLessonId);
+        socket.leave(socket.user_id);
         if(!socket.liveLessonId){
             socket.leave(socket.user_id);
             return;
@@ -175,6 +181,8 @@ exports.handleClient =  function (io,socket,EventEmitter) {
                 to:reply[0],
                 from:reply[1]
             };
+
+            console.log(data);
             EventEmitter.emit('endLiveLesson',data);
         });
 

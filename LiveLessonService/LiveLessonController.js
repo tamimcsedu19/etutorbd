@@ -73,6 +73,8 @@ exports.handleClient = function(io,socket,EventEmitter){
     });
     /** Nodejs Event emitter **/
     EventEmitter.on("endLiveLesson",function (data) {
+        console.log("ending live lesson");
+        console.log(data);
         var key1 = data.to+appendSessionAttrib,key2 = data.from+appendSessionAttrib;
 
 

@@ -8,6 +8,8 @@ var tutorApp = angular.module('Etutor', [
     'tutorFilters',
     'ui.bootstrap',
     'ngMaterial',
+    'colorpicker.module',
+    'ngAnimate',
     'angularUtils.directives.dirPagination'
 ]);
 
@@ -41,9 +43,7 @@ tutorApp.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'partials/tutor-detail.html',
                 controller: 'TutorDetailCtrl'
             }).when('/canvas/:liveLessionId', {
-                templateUrl: 'partials/canvas.html',
-                controller: 'canvasCtrl',
-                controllerAs: 'vm'
+                templateUrl: 'partials/canvas.html'
             }).otherwise({
                 redirectTo: '/'
             });
@@ -54,7 +54,7 @@ tutorApp.config(['$routeProvider', '$locationProvider',
 tutorApp.run(['$rootScope', '$location', 'authentication',
     function ($rootScope, $location, authentication) {
         $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
-            var serverAddress = '192.168.0.5';
+            var serverAddress = 'localhost';
             $rootScope.sessionUser = authentication.currentUser();
             $rootScope.loginCheck = authentication.isLoggedIn();
             console.log('inside app.js'+$rootScope.loginCheck);
