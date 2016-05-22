@@ -17,7 +17,7 @@ module.exports = function (chatType) {
          *  takes an input and return the database of appropriate type
          */
         if(chatType == "normal")
-            return mongoose.model('MessageNormal',require('./MessageModel'));
+            return mongoose.model('Message',require('./MessageModel'));
         else
             return mongoose.model('MessageLive',require('./MessageModel'));
 
