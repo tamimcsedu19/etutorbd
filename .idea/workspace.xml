@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
+    <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="Testing">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatController.js" afterPath="$PROJECT_DIR$/ChatService/ChatController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonDA.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonDA.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js" />
@@ -70,8 +69,8 @@
       <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+            <state relative-caret-position="221">
+              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -80,8 +79,8 @@
       <file leaf-file-name="LiveLessonDA.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonDA.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="570">
+              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -90,8 +89,8 @@
       <file leaf-file-name="LiveLessonModel.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="359">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/ChatService/MessageModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="53" />
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="18" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -199,8 +198,8 @@
         <option value="$PROJECT_DIR$/AuthenticationService/AuthController.js" />
         <option value="$PROJECT_DIR$/socketio.js" />
         <option value="$PROJECT_DIR$/ChatService/ChatDA.js" />
-        <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js" />
         <option value="$PROJECT_DIR$/ChatService/ChatController.js" />
+        <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonDA.js" />
       </list>
@@ -352,20 +351,20 @@
       <recent name="$PROJECT_DIR$/SessionService" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.app.js">
+  <component name="RunManager" selected="Node.js.LiveLessonModel.js">
     <configuration default="false" name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
     <configuration default="false" name="LiveLessonController.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="LiveLessonController.js" working-dir="$PROJECT_DIR$/LiveLessonService">
       <method />
     </configuration>
-    <configuration default="false" name="InsertSubjectTutorData.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="$PROJECT_DIR$/node-v4.2.4-linux-x64/bin/node" path-to-js-file="InsertSubjectTutorData.js" working-dir="$PROJECT_DIR$/SearchService">
-      <method />
-    </configuration>
     <configuration default="false" name="signalServer.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="signalServer.js" working-dir="$PROJECT_DIR$/webrtcVideo">
       <method />
     </configuration>
     <configuration default="false" name="socketio.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="socketio.js" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="false" name="LiveLessonModel.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="LiveLessonModel.js" working-dir="$PROJECT_DIR$/LiveLessonService">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -490,17 +489,17 @@
       <item index="5" class="java.lang.String" itemvalue="Mocha.SignUpStudentTest" />
       <item index="6" class="java.lang.String" itemvalue="Node.js.app.js" />
       <item index="7" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
-      <item index="8" class="java.lang.String" itemvalue="Node.js.InsertSubjectTutorData.js" />
-      <item index="9" class="java.lang.String" itemvalue="Node.js.signalServer.js" />
-      <item index="10" class="java.lang.String" itemvalue="Node.js.socketio.js" />
+      <item index="8" class="java.lang.String" itemvalue="Node.js.signalServer.js" />
+      <item index="9" class="java.lang.String" itemvalue="Node.js.socketio.js" />
+      <item index="10" class="java.lang.String" itemvalue="Node.js.LiveLessonModel.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.app.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.socketio.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.signalServer.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.InsertSubjectTutorData.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.LiveLessonModel.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.app.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.socketio.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.signalServer.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.LiveLessonController.js" />
       </list>
     </recent_temporary>
   </component>
@@ -540,14 +539,7 @@
       <workItem from="1463884453462" duration="497000" />
       <workItem from="1463893997556" duration="3714000" />
       <workItem from="1463909466621" duration="604000" />
-      <workItem from="1463911669300" duration="732000" />
-    </task>
-    <task id="LOCAL-00008" summary="Added angular scripts">
-      <created>1459618066805</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1459618066805</updated>
+      <workItem from="1463911669300" duration="1953000" />
     </task>
     <task id="LOCAL-00009" summary="Added chat backend functionality with tests">
       <created>1460827680548</created>
@@ -885,7 +877,14 @@
       <option name="project" value="LOCAL" />
       <updated>1463896420145</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Testing">
+      <created>1463912414081</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1463912414089</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -921,7 +920,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65516000" />
+    <option name="totallyTimeSpent" value="66737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -962,7 +961,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added subject tutor data script" />
     <MESSAGE value="Add usertype in JWT" />
     <MESSAGE value="Working Search functionality , run SearchTest before running." />
     <MESSAGE value="Student SignUp Up To Date" />
@@ -987,7 +985,8 @@
     <MESSAGE value="Added control for cancelling live lesson when crossed" />
     <MESSAGE value="changed database name to Message" />
     <MESSAGE value="Live lesson works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Live lesson works" />
+    <MESSAGE value="Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1300,10 +1299,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatDA.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ChatService/MessageModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="53" />
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1318,32 +1333,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatDA.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="42" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+        <state relative-caret-position="359">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonDA.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="570">
+          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
           <folding />
         </state>
       </provider>

@@ -14,16 +14,16 @@ var Schema = mongoose.Schema;
 var liveLessonSchema = new Schema({
 
 
-    liveLessionId:  {type: String, required: true, maxlength: 15},
+    liveLessonId:  {type: String, required: true, maxlength: 15},
     to:      {type: String, required: true, maxlength: 40},
     from:      {type: String, required: true, maxlength: 40},
     startTimeStamp: {type: Number}, //In milliseconds
     liveLessonLength: {type: Number},
-    pages: {type: Array}
 
 
 });
 
 
 var LiveLesson = mongoose.model('liveLesson', liveLessonSchema);
+
 module.exports = LiveLesson;

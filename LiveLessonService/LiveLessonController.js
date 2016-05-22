@@ -69,7 +69,7 @@ exports.handleClient = function(io,socket,EventEmitter){
             liveLessonId:data.liveLessonId
         }
         liveLessonDA.getById(search_data,function (err,data) {
-            console.log(data);
+            
             socket.emit('liveLessonData',data);
 
         });
