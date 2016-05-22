@@ -7,16 +7,23 @@ var LiveLessonModel = require('./LiveLessonModel');
 
 exports.create = function(initialData){
     var liveLessonModel = new LiveLessonModel(initialData);
-    liveLessonModel.save();
+    liveLessonModel.save(function (err) {
+        console.log(initialData);
+        console.log("saved successfully");
+    });
 }
 
-exports.getById = function (liveLessonId,callback) {
+exports.getById = function (data,callback) {
 
 
-    LiveLessonModel.find({liveLessionId:liveLessonId},function (err,data) {
+
+    LiveLessonModel.find({liveLessonId:data.liveLessonId},function (err,liveLessonData) {
+        console.log("inside getByIdDA");
+        console.log(liveLessonData);
+
         if(err)
             callback(err);
-        callback(null,data);
+        callback(null,liveLessonData);
 
     });
 

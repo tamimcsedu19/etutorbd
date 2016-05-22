@@ -66,7 +66,8 @@ exports.handleClient =  function (io,socket,EventEmitter) {
     socket.on('retrieveMessages', function (data) {
 
         ChatDA.retrieveMessages(data, function (error, docs) {
-            console.log(docs);
+            
+            
             socket.emit('historyMessages', {
                 id: data,
                 messages: docs
@@ -83,7 +84,7 @@ exports.handleClient =  function (io,socket,EventEmitter) {
         var key1 = data.to+appendSessionAttrib,key2 = data.from+appendSessionAttrib;
 
 
-        console.log(data);
+        
         var liveLessonId = shortid.generate();
 
 
@@ -95,7 +96,7 @@ exports.handleClient =  function (io,socket,EventEmitter) {
         redisClient.get(key1, function(err, liveLessonId1) {
             redisClient.get(key2,function (err,liveLessonId2) {
 
-                console.log(liveLessonId2);
+                
                 if(liveLessonId1 || liveLessonId2)
                     return;
 
@@ -131,8 +132,8 @@ exports.handleClient =  function (io,socket,EventEmitter) {
 
                     var liveLessonData = {
                         liveLessonId:liveLessonId1,
-                        user1: data.to,
-                        user2: data.from,
+                        to: data.to,
+                        from: data.from,
                         startTimeStamp: Date.now(),
                         liveLessonLength : 0
                     };
@@ -165,9 +166,7 @@ exports.handleClient =  function (io,socket,EventEmitter) {
 
     socket.on('disconnect', function (data) {
 
-        console.log("Disconnected");
-        console.log(socket.user_id);
-        console.log(socket.liveLessonId);
+
         socket.leave(socket.user_id);
         if(!socket.liveLessonId){
             socket.leave(socket.user_id);
@@ -182,7 +181,7 @@ exports.handleClient =  function (io,socket,EventEmitter) {
                 from:reply[1]
             };
 
-            console.log(data);
+            
             EventEmitter.emit('endLiveLesson',data);
         });
 
