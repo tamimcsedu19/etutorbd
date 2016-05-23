@@ -219,6 +219,7 @@ tutorControllers.controller('videoCtrl', [ '$rootScope','$scope',
     function ($rootScope,$scope) {
         $rootScope.mySocket.on('tamim', function (data) {
 
+                
 
         });
 
