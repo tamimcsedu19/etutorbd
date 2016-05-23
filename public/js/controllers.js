@@ -328,6 +328,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
             console.log(" id = " + id + ", with name: " + name + " sent : \n " + chattext);
             //$scope.chatInit(id);
             $scope.messages[id].push({name: $rootScope.sessionUser.name, msg: chattext});
+            console.log($scope.messages[id][$scope.messages[id].length-1].msg);
 
             $rootScope.mySocket.emit('message', {
                 from: vm.currentUser.email,
@@ -377,7 +378,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
-            var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
+            var tmpinput = '<textarea enter-submit="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '"></textarea>';
 
             var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput  + '</div></div>';
 
@@ -561,7 +562,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout',
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
-            var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
+            var tmpinput = '<textarea enter-submit="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '"></textarea>';
 
             var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + '</div></div>';
 
