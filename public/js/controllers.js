@@ -219,7 +219,7 @@ tutorControllers.controller('videoCtrl', [ '$rootScope','$scope',
     function ($rootScope,$scope) {
         $rootScope.mySocket.on('tamim', function (data) {
 
-                
+
 
         });
 
@@ -383,7 +383,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
 
             var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput  + '</div></div>';
 
-            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
+            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <pre>{{item.msg}} </pre> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
             var element = '<div class="popup-box chat-popup" id="' + id + '">';
             element = element + '<div class="popup-head">';
@@ -567,7 +567,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout',
 
             var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + '</div></div>';
 
-            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
+            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <pre>{{item.msg}} </pre> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
             var element = '<div class="popup-box chat-popup" id="' + id + '">';
             element = element + '<div class="popup-head">';
