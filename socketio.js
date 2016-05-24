@@ -2,7 +2,7 @@
  * Created by tamim on 5/13/16.
  */
 
-'use-strict'
+'use strict'
 
 // SocketIO singleton
 

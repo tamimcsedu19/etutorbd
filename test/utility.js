@@ -1,8 +1,8 @@
 /**
  * Created by tamim on 2/18/16.
  */
-'use-strict';
-__base = __dirname + '/../'
+'use strict';
+var __base = __dirname + '/../'
 var TutorDA = require('../UserService/UserDA')('tutor');
 var subjectToTutor = require('../SearchService/SubjectToTutorDA');
 var Student = require('../UserService/StudentModel');

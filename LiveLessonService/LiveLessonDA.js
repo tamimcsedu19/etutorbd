@@ -2,7 +2,7 @@
  * Created by tamim on 5/16/16.
  */
 
-'use-strict'
+'use strict'
 var LiveLessonModel = require('./LiveLessonModel');
 
 exports.create = function(initialData){

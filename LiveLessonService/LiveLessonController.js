@@ -2,7 +2,7 @@
  * Created by tamim on 4/2/16.
 */
 
-'use-strict';
+'use strict';
 
 var liveLessonDA = require('./LiveLessonDA');
 var ChatDALive = require("../ChatService/ChatDA")("Live");
@@ -12,6 +12,8 @@ redisClient.on("error", function (err) {
     console.log("Error " + err);
 });
 
+
+var EmailToTypeDA = require('../UserService/EmailToTypeDA');
 
 var appendSessionAttrib = "liveLessonId";
 exports.handleClient = function(io,socket,EventEmitter){
@@ -66,7 +68,7 @@ exports.handleClient = function(io,socket,EventEmitter){
     socket.on('getById',function (data) {
 
         console.log(data);
-        search_data = {
+        var search_data = {
             liveLessonId:data.liveLessonId
 
         }
@@ -77,8 +79,84 @@ exports.handleClient = function(io,socket,EventEmitter){
         });
 
     });
+
+
+
+
+    /** LiveLesson End functions **/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /** Nodejs Event emitter **/
+
+
+
+
+
+
     EventEmitter.on("endLiveLesson",function (data) {
+
+        EmailToTypeDA.getUserType(data.to,function (err,EmailType) {
+            var userType = EmailType.userType;
+
+            // data has a field called liveLessonId
+            liveLessonDA.getById(data,function (err,liveLessonData) {
+
+                var startTime = liveLessonData.startTimeStamp;
+                var curTime = Date.now();
+                var totalTimeMinutes = (curTime-startTime)/(60*1000);
+                var studentCut = totalTimeMinutes*(500.0/60);
+                var ourCut = .15 * studentCut;
+                var tutorCut = studentCut-ourCut;
+
+
+                var TutorDA = require('../UserService/UserDA')('tutor');
+                var StudentDA = require('../UserService/UserDA')('student');
+
+                var studentUpdate,tutorUpdate;
+                var tutorEmail,studentEmail;
+
+                if(userType == "tutor") {
+                    studentEmail = data.from;
+                    tutorEmail = data.to;
+
+                }
+                else {
+                    studentEmail = data.to;
+                    tutorEmail = data.from;
+                }
+
+                studentUpdate =  { $inc: { Balance: -studentCut } };
+                tutorUpdate   =  { $inc: { Balance: +tutorCutCut } };
+
+                TutorDA.update({email:tutorEmail},tutorUpdate);
+                StudentDA.update({email:studentEmail},tutorUpdate);
+
+
+            });
+
+
+
+
+
+        });
+
+
+
+
         console.log("ending live lesson");
         console.log(data);
         var key1 = data.to+appendSessionAttrib,key2 = data.from+appendSessionAttrib;
@@ -88,6 +166,40 @@ exports.handleClient = function(io,socket,EventEmitter){
         io.to(data.from).emit('endLiveLesson',{});
         redisClient.del(key1);
         redisClient.del(key2);
+
+
+
+
+
+    });
+
+
+
+    socket.on('findBalance',function(data){
+
+        var userId = data.user_id;
+
+
+        EmailToTypeDA.getUserType(data.to,function (err,EmailType) {
+            var userType = EmailType.userType;
+            var UserDA =  require('../UserService/UserDA')(userType);
+            UserDA.getUserByEmail(userId,function (err,user) {
+
+                if(err)
+                    console.log(err);
+                else {
+                    data.balance = user.balance;
+                    socket.emit('Balance',data);
+
+
+                }
+
+            });
+
+
+        });
+
+
 
     });
 

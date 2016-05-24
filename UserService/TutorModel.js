@@ -13,6 +13,7 @@ var tutorSchema = new Schema({
     hash: {type: String, required: true},
     resetPasswordToken: String,
     resetPasswordExpires: Date,
+    balance:{type:Number,default:0},
     userType: {type: String, required: true, maxlength: 10},
     bankName: {type: String, default: "", maxlength: 50},
     bankSwift: {type: String, default: "", maxlength: 50},

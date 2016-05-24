@@ -1,7 +1,7 @@
 /**
  * Created by tamim on 5/9/16.
  */
-'use-strict'
+'use strict'
 var express = require('express');
 var search = require('../SearchService/Search');
 var router = express.Router();

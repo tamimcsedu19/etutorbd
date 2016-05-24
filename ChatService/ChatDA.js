@@ -1,7 +1,7 @@
 /**
  * Created by tamim on 4/16/16.
  */
-'use-strict'
+'use strict'
 
 var mongoose = require("../DataAccess/DbConnection");
 

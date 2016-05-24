@@ -1,7 +1,7 @@
 /**
  * Created by tamim on 4/30/16.
  */
-'use-strict'
+'use strict'
 var authController = require('./AuthController');
 var express = require('express');
 var router = express.Router();

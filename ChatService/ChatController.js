@@ -180,7 +180,8 @@ exports.handleClient =  function (io,socket,EventEmitter) {
         redisClient.lrange(socket.liveLessonId,0,1,function(err, reply) {
             var data = {
                 to:reply[0],
-                from:reply[1]
+                from:reply[1],
+                liveLessonId:socket.liveLessonId
             };
 
             

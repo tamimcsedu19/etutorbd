@@ -18,7 +18,7 @@ var studentSchema = new Schema({
     ActivationToken: String,
     isActivated: {type: Number, default: 0},
     userType: {type: String, required: true, maxlength: 10},
-    AccountBalance: {type: Number, default: 0},
+    Balance: {type: Number, default: 0},
     salt : String,
     isOnline: {type: Boolean,default:false},
     liveLessonId: String
