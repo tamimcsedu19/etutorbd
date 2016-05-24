@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/session_chat.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="etutorbd.iws" />
@@ -547,14 +548,7 @@
       <workItem from="1463973970964" duration="12887000" />
       <workItem from="1464001788703" duration="3610000" />
       <workItem from="1464079878505" duration="254000" />
-      <workItem from="1464080697468" duration="85000" />
-    </task>
-    <task id="LOCAL-00013" summary="Moved Search functionality to a separate folder">
-      <created>1462001265641</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1462001265641</updated>
+      <workItem from="1464080697468" duration="185000" />
     </task>
     <task id="LOCAL-00014" summary="added login and signup">
       <created>1462001284306</created>
@@ -892,7 +886,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464080121722</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="canvas working">
+      <created>1464080785642</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1464080785642</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -928,7 +929,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99781000" />
+    <option name="totallyTimeSpent" value="99881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
