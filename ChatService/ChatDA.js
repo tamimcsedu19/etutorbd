@@ -29,7 +29,8 @@ module.exports = function (chatType) {
     module.saveMessage = function (n_message) {
 
 
-
+        module.Message.collection.insert(n_message);
+        return;
         var message = new module.Message(n_message);
 
         message.save(function (err) {

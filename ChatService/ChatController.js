@@ -54,6 +54,7 @@ exports.handleClient =  function (io,socket,EventEmitter) {
     });
 
     socket.on('create', function (data) {
+        io.sockets.emit('isOnline',data);
 
         console.log('Room creating with user_id: ' + data.user_id);
         socket.user_id = data.user_id;
@@ -166,6 +167,7 @@ exports.handleClient =  function (io,socket,EventEmitter) {
 
     socket.on('disconnect', function (data) {
 
+        io.sockets.emit('isOffline',{user_id:socket.user_id});
 
         socket.leave(socket.user_id);
         if(!socket.liveLessonId){
