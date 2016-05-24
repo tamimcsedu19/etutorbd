@@ -3,17 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AuthenticationService/LoginRoutes.js" afterPath="$PROJECT_DIR$/AuthenticationService/LoginRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatController.js" afterPath="$PROJECT_DIR$/ChatService/ChatController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChatService/ChatDA.js" afterPath="$PROJECT_DIR$/ChatService/ChatDA.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LiveLessonService/LiveLessonDA.js" afterPath="$PROJECT_DIR$/LiveLessonService/LiveLessonDA.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserService/StudentModel.js" afterPath="$PROJECT_DIR$/UserService/StudentModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserService/TutorModel.js" afterPath="$PROJECT_DIR$/UserService/TutorModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UserService/UserDA.js" afterPath="$PROJECT_DIR$/UserService/UserDA.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/GenericRoutes.js" afterPath="$PROJECT_DIR$/routes/GenericRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/socketio.js" afterPath="$PROJECT_DIR$/socketio.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/utility.js" afterPath="$PROJECT_DIR$/test/utility.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TutorService/TutorServiceRoutes.js" afterPath="$PROJECT_DIR$/TutorService/TutorServiceRoutes.js" />
     </list>
     <ignored path="etutorbd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,11 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2276">
+              <caret line="183" column="29" selection-start-line="183" selection-start-column="29" selection-end-line="183" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LiveLessonController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="208" column="7" selection-start-line="208" selection-start-column="7" selection-end-line="208" selection-end-column="7" />
+            <state relative-caret-position="431">
+              <caret line="191" column="33" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -74,18 +74,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="socketio.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/socketio.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginRoutes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AuthenticationService/LoginRoutes.js">
+      <file leaf-file-name="GenericRoutes.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/GenericRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
@@ -94,11 +84,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmailToTypeDA.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UserService/EmailToTypeDA.js">
+      <file leaf-file-name="RouteManager.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/RouteManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="15" />
+            <state relative-caret-position="0">
+              <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TutorServiceRoutes.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TutorService/TutorServiceRoutes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -119,16 +119,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="19" column="18" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utility.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/utility.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -181,7 +171,6 @@
         <option value="$PROJECT_DIR$/TutorService/TutorFeatures.js" />
         <option value="$PROJECT_DIR$/TutorService/TutorFeaturesDA.js" />
         <option value="$PROJECT_DIR$/TutorService/TutorFeaturesController.js" />
-        <option value="$PROJECT_DIR$/TutorService/TutorServiceRoutes.js" />
         <option value="$PROJECT_DIR$/routes/RouteManager.js" />
         <option value="$PROJECT_DIR$/public/partials/tutor-list.html" />
         <option value="$PROJECT_DIR$/public/partials/canvas.html" />
@@ -210,6 +199,7 @@
         <option value="$PROJECT_DIR$/UserService/StudentModel.js" />
         <option value="$PROJECT_DIR$/UserService/UserDA.js" />
         <option value="$PROJECT_DIR$/LiveLessonService/LiveLessonController.js" />
+        <option value="$PROJECT_DIR$/TutorService/TutorServiceRoutes.js" />
       </list>
     </option>
   </component>
@@ -298,6 +288,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="UserService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TutorService" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="etutorbd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,14 +584,7 @@
       <workItem from="1464022558622" duration="1213000" />
       <workItem from="1464097178993" duration="2915000" />
       <workItem from="1464103824337" duration="4118000" />
-      <workItem from="1464110495097" duration="2491000" />
-    </task>
-    <task id="LOCAL-00012" summary="Moved Search functionality to a separate folder">
-      <created>1460982798838</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1460982798838</updated>
+      <workItem from="1464110495097" duration="2797000" />
     </task>
     <task id="LOCAL-00013" summary="Moved Search functionality to a separate folder">
       <created>1462001265641</created>
@@ -911,7 +922,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464105465580</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Added balance info">
+      <created>1464113730097</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1464113730098</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -947,7 +965,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79836000" />
+    <option name="totallyTimeSpent" value="80142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -988,7 +1006,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Student SignUp Up To Date" />
     <MESSAGE value="test up to date&#10;" />
     <MESSAGE value="Full name works" />
     <MESSAGE value="Full Name Works Again" />
@@ -1013,7 +1030,8 @@
     <MESSAGE value="Testing" />
     <MESSAGE value="Fixed typo lession and updated livelesson FindOne" />
     <MESSAGE value="Online and offline added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Online and offline added" />
+    <MESSAGE value="Added balance info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added balance info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1068,13 +1086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TutorService/TutorServiceRoutes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1206,13 +1217,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/RouteManager.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AuthenticationService/AuthController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1282,23 +1286,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2745">
-          <caret line="183" column="29" selection-start-line="183" selection-start-column="29" selection-end-line="183" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChatService/ChatDA.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/GenericRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
@@ -1380,8 +1368,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LiveLessonService/LiveLessonController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="208" column="7" selection-start-line="208" selection-start-column="7" selection-end-line="208" selection-end-column="7" />
+        <state relative-caret-position="431">
+          <caret line="191" column="33" selection-start-line="191" selection-start-column="33" selection-end-line="191" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChatService/ChatController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2276">
+          <caret line="183" column="29" selection-start-line="183" selection-start-column="29" selection-end-line="183" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/GenericRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/RouteManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TutorService/TutorServiceRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding />
         </state>
       </provider>

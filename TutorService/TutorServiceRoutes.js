@@ -9,7 +9,7 @@ var TutorFeaturesController = require('./TutorFeaturesController');
 var express = require('express');
 var router = express.Router();
 
-router.get('/getSomeTutors', function (req, res) {
+router.get('/getsometutors', function (req, res) {
 
 
     TutorFeaturesController.getSampleTutors(function (err,tutors) {
