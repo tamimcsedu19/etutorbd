@@ -377,11 +377,12 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
-            var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
+             var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
+            //var tmpinput = '<textarea enter-submit="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '"></textarea>';
 
-            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput  + '</div></div>';
+            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput  + tempclick + '</div></div>';
 
-            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
+            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <pre>{{item.msg}} </pre> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
             var element = '<div class="popup-box chat-popup" id="' + id + '">';
             element = element + '<div class="popup-head">';
@@ -561,11 +562,12 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout',
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
-            var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
+            //var tmpinput = '<textarea enter-submit="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '"></textarea>';
+             var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
 
-            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + '</div></div>';
+            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + tempclick + '</div></div>';
 
-            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
+            var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <pre>{{item.msg}} </pre> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
             var element = '<div class="popup-box chat-popup" id="' + id + '">';
             element = element + '<div class="popup-head">';

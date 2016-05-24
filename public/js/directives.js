@@ -70,3 +70,31 @@
 
 })();
 
+
+(function () {
+
+    angular
+        .module('Etutor')
+        .directive('enterSubmit', entersubmit);
+
+    function entersubmit () {
+        return {
+            restrict: 'A',
+            link: function (scope, elem, attrs) {
+
+                elem.bind('keydown', function(event) {
+                    var code = event.keyCode || event.which;
+
+                    if (code === 13) {
+                        if (!event.shiftKey) {
+                            event.preventDefault();
+                            scope.$apply(attrs.enterSubmit);
+                        }
+                    }
+                });
+            }
+        }
+    }
+
+})();
+
