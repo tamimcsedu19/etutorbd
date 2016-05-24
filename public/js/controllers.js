@@ -215,6 +215,15 @@ tutorControllers.controller('navigationCtrl', [ '$rootScope','$location', '$rout
 
 
 
+tutorControllers.controller('videoCtrl', [ '$rootScope','$scope',
+    function ($rootScope,$scope) {
+        $rootScope.mySocket.on('tamim', function (data) {
+
+
+        });
+
+    }]);
+
 
 
 tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$window','$location', '$log', '$compile','authentication','$mdToast','$mdDialog',
@@ -342,9 +351,9 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
 
         $scope.chatInit = function(id){
             console.log('first '+(typeof $scope.messages[id] === 'undefined'));
-            if ( !$scope.messages[id]) {
+            if (!$scope.messages[id]) {
                 $scope.messages[id] = new Array();
-                console.log("New array created");
+                console.log("New array created "+(typeof $scope.messages[id] === 'undefined'));
 
                 var offset = 'ffffffffffffffffffffffff';
                 $rootScope.mySocket.emit('retrieveMessages', {
@@ -368,9 +377,9 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
-            var tmpinput = '<input type="text" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
+            var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
 
-            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + tempclick + '</div></div>';
+            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput  + '</div></div>';
 
             var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
@@ -552,9 +561,9 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout',
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
-            var tmpinput = '<input type="text" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
+            var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
 
-            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + tempclick + '</div></div>';
+            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + '</div></div>';
 
             var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <p>{{item.msg}} </p> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
@@ -603,12 +612,146 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout',
 
 
 
-tutorControllers.controller('drawing_controller', [ '$scope', '$routeParams','$window','$http', '$log',
-    function ($scope,$routeParams,$window, $http,$log) {
+tutorControllers.controller('drawing_controller', [ '$rootScope','$scope', '$routeParams','$location','$timeout','$http', '$log',
+    function ($rootScope,$scope,$routeParams,$location,$timeout,$http,$log) {
         var vm = this;
 
+        var user1;
+        var user2;
         vm.liveLessionId = $routeParams.liveLessionId;
 
+
+        $rootScope.mySocket.emit('getById', {
+            liveLessonId : vm.liveLessionId
+
+        });
+
+
+        $rootScope.mySocket.on('liveLessonData', function (data) {
+            // console.log(data);
+            if(data.from === $rootScope.sessionUser.email) {
+                user1 = data.from;
+                user2 = data.to;
+            }
+            else {
+                user1 = data.to;
+                user2 = data.from;
+            }
+            //console.log(user1);
+            //console.log(user2);
+
+        });
+
+        $rootScope.mySocket.on('update', function (data) {
+           //data.pages will carry the changes of canvas of other user . so you have to use it
+           //   console.log('update received');
+            // console.log(data);
+            received(data.pages);
+        });
+        //
+        // $rootScope.mySocket.emit('update', {
+        //             from : user1,
+        //            to    : user2,
+        //     liveLessonId : vm.liveLessionId,
+        //            pages : //you have to put your canvas update object here
+        //
+        // });
+
+
+        // $rootScope.mySocket.emit('endLiveLesson', {
+        //     liveLessonId : vm.liveLessionId,
+        //     from : user1,
+        //       to : user2
+        //
+        // });
+
+
+        $rootScope.mySocket.on('endLiveLesson', function (data) {
+            $timeout(function(){
+                console.log('end live lesson received');
+                $location.url('/');
+            },2000);
+
+        });
+
+        $scope.endLesson = function(){
+
+            $rootScope.mySocket.emit('endLiveLesson', {
+                liveLessonId : vm.liveLessionId,
+                from : user1,
+                to : user2
+
+            });
+            console.log('End live lesson sent');
+
+        };
+
+        function send(json_str, canv_indx, func_obj){
+
+            console.log('sent update');
+            // console.log(json_str);
+            // console.log(canv_indx);
+            console.log(func_obj);
+            $rootScope.mySocket.emit('update', {
+                from : user1,
+                to    : user2,
+                liveLessonId : vm.liveLessionId,
+                pages : {
+                    json_str : json_str,
+                    canv_indx : canv_indx,
+                    func_obj : func_obj
+                }
+
+            });
+            // console.log('sent update done');
+        }
+
+        function received(data){
+
+            console.log('data received in function');
+            console.log(data);
+            if(data.func_obj.addtab == 1){
+                $scope.addTab(0);
+            }
+            else if(data.func_obj.removetab == 1){
+                $scope.removeTab(0);
+            }
+            else if(data.func_obj.nth_tab >= 0){
+
+                $scope.openNthTab(data.func_obj.nth_tab);
+                $scope.$apply();
+            }
+            else if(data.func_obj.undo == 1){
+                undo_operation(0);
+            }
+            else if(data.func_obj.redo == 1){
+                redo_operation(0);
+            }
+            else if(data.func_obj.obj_changed == 1){
+                var canv_indx = data.canv_indx;
+
+                disableCanvasListeners(canv_indx);
+
+                canvaslist[canv_indx].loadFromJSON(data.json_str);
+
+                if(curpos[canv_indx] == MAX){
+                    undoavail[canv_indx].shift();
+                    undoavail[canv_indx].push(JSON.stringify(canvaslist[canv_indx]));
+                }
+                else {
+                    undoavail[canv_indx][curpos[canv_indx]] = (JSON.stringify(canvaslist[canv_indx]));
+                    // console.log(JSON.stringify(canvaslist[curcanvas_indx]).length);
+                    curpos[canv_indx]++;
+                }
+                lastmodifiedpos[canv_indx] = curpos[canv_indx];
+
+                removePathSelected(canv_indx);
+
+                canvaslist[canv_indx].renderAll();
+
+                enableCanvasListeners(canv_indx);
+            }
+        }
 
         console.log("Controller Init");
         var MAX = 100; //sets maximum amount of undo ad redo operations available
@@ -625,84 +768,105 @@ tutorControllers.controller('drawing_controller', [ '$scope', '$routeParams','$w
         $scope.$watch('selectedIndex', function(current, old){
             // previous = $scope.canvases[old];
             // selected = $scope.canvases[current];
+
             curcanvas_indx = $scope.selectedIndex;
+            send(0, 0, {
+                addtab: 0,
+                removetab: 0,
+                nth_tab: curcanvas_indx,
+                undo: 0,
+                redo: 0,
+                obj_changed: 0
+            });
+            console.log("tab changed to :" + curcanvas_indx);
         });
 
-        function newCanvas(){
-            console.log("add tab called");
+        $scope.newCanvas = function(){
+            $scope.$apply();
+            //var newlen = canvaslist.length;
+            curcanvas_indx = canvaslist.length;
+            canvaslist.push(new fabric.Canvas(("myCanvas"+curcanvas_indx)));
+            console.log(curcanvas_indx+ "\n"+canvaslist[curcanvas_indx]);
+            var viewportWidth = 2000;
+            var viewportHeight = 1800;
+            canvaslist[curcanvas_indx].setWidth(viewportWidth);
+            canvaslist[curcanvas_indx].setHeight(viewportHeight);
+            canvaslist[curcanvas_indx].isDrawingMode = true;
+            canvaslist[curcanvas_indx].on('object:selected', onObjectSelected);
+            canvaslist[curcanvas_indx].on('object:modified', onObjectModified);
+            canvaslist[curcanvas_indx].on('object:removed', onObjectModified);
+            canvaslist[curcanvas_indx].on('object:added', onObjectModified);
+            curpos[curcanvas_indx] = 1;
+            lastmodifiedpos[curcanvas_indx] = 1;
+            undoavail[curcanvas_indx] = new Array(MAX);
+            undoavail[curcanvas_indx][0] = (JSON.stringify(canvaslist[curcanvas_indx]));
+            console.log("created");
+        };
+
+        $scope.addTab = function(send_flag){
+
+            console.log("add tab called, send_flag = " + send_flag);
             var newlen = canvaslist.length;
             var title = "Page "+(newlen+1);
             $scope.canvases.push({title: title, tab_index: (newlen), disabled: true});
-            setTimeout(function(){
-                curcanvas_indx = newlen;
-                canvaslist.push(new fabric.Canvas(("myCanvas"+curcanvas_indx)));
-                //console.log(curcanvas_indx+ "\n"+canvaslist[curcanvas_indx]);
-                var viewportWidth = 2000;
-                var viewportHeight = 1800;
-                canvaslist[curcanvas_indx].setWidth(viewportWidth);
-                canvaslist[curcanvas_indx].setHeight(viewportHeight);
-                canvaslist[curcanvas_indx].isDrawingMode = true;
-                canvaslist[curcanvas_indx].on('object:selected', onObjectSelected);
-                canvaslist[curcanvas_indx].on('object:modified', onObjectModified);
-                canvaslist[curcanvas_indx].on('object:removed', onObjectModified);
-                canvaslist[curcanvas_indx].on('object:added', onObjectModified);
-                curpos[curcanvas_indx] = 1;
-                lastmodifiedpos[curcanvas_indx] = 1;
-                undoavail[curcanvas_indx] = new Array(MAX);
-                undoavail[curcanvas_indx][0] = (JSON.stringify(canvaslist[curcanvas_indx]));
-                //console.log("created")
-            }, 100);
-        }
-
-        newCanvas();
-
-        $scope.addTab = function(){
-            newCanvas();
+            setTimeout($scope.newCanvas, 200);
+            if(send_flag) {
+                send(0, 0, {
+                    addtab: 1,
+                    removetab: 0,
+                    nth_tab: -1,
+                    undo: 0,
+                    redo: 0,
+                    obj_changed: 0
+                });
+            }
         };
 
-        $scope.removeTab = function(){
+        $scope.addTab(0);
+        // $scope.addTab(0);
+
+        $scope.removeTab = function(send_flag){
+
             if($scope.canvases.length>1) {
                 $scope.canvases.pop();
                 canvaslist.pop();
+                if(send_flag) {
+                    send(0, 0, {
+                        addtab: 0,
+                        removetab: 1,
+                        nth_tab: -1,
+                        undo: 0,
+                        redo: 0,
+                        obj_changed: 0
+                    });
+                }
             }
         };
 
         $scope.openNthTab = function (n){
-            $scope.selectedIndex = n;
+            if(n != $scope.selectedIndex) $scope.selectedIndex = n;
         };
 
+        function removePathSelected(canv_indx){
+            var elements = [];
+            elements = canvaslist[canv_indx].getObjects('path');
 
-//loads canvaslist[curcanvas_indx] data from json object
-        function load_from_json(json){
-            canvaslist[curcanvas_indx].loadFromJSON(json.data);
-            canvaslist[curcanvas_indx].renderAll();
-        }
-
-//Tamim: implement this function!
-//send: parameters have JSON object or the strings "undo" "redo".
-//send: should send this to server
-        function send(json){
-
-        }
-
-//Tamim: implement this function!
-        function receive(json){
+            for(var i = 0; i<elements.length; i++){
+                // console.log(elements[i]);
+                // console.log(elements[i].type);
+                if(elements[i].type === 'path'){
+                    elements[i].selectable = false;
+                }
+            }
 
         }
 
-        function init(){
-            //for(var i = 0; i<MAX; i++){
-            //    curpos[i] = 1;
-            //    undoavail[i] = new Array(MAX);
-            //    undoavail[i][0] = (JSON.stringify(canvaslist[0]));
-            //}
-            //console.log("init " + canvaslist[0]+" "+undoavail[0][0]);
-        }
 
         function onObjectModified(e){
             if(e && e.target && e.target.get('type') === 'path') {
-                e.target.set('selectable', false);
-                //console.log("modified ... ", e.target.get('selectable'));
+                // e.target.set('selectable', false);
+                e.target.selectable = false;
+                console.log("modified ... ", e.target.selectable);
             }
             if(curpos[curcanvas_indx] == MAX){
                 undoavail[curcanvas_indx].shift();
@@ -714,56 +878,100 @@ tutorControllers.controller('drawing_controller', [ '$scope', '$routeParams','$w
                 curpos[curcanvas_indx]++;
             }
             lastmodifiedpos[curcanvas_indx] = curpos[curcanvas_indx];
-            send(JSON.stringify(canvaslist[curcanvas_indx]));
+
+            send(JSON.stringify(canvaslist[curcanvas_indx]), curcanvas_indx, {
+                addtab: 0,
+                removetab: 0,
+                nth_tab: -1,
+                undo: 0,
+                redo: 0,
+                obj_changed: 1
+            });
         }
 
-//the undo and redo operations do not send canvas data!!
-//they only send commands for undo and redo
-        function undo_operation(){
+        function disableCanvasListeners(canv_indx) {
+            canvaslist[canv_indx].__eventListeners["object:modified"] = [];
+            canvaslist[canv_indx].__eventListeners["object:removed"] = [];
+            canvaslist[canv_indx].__eventListeners["object:added"] = [];
+        }
+
+        function enableCanvasListeners(canv_indx) {
+            canvaslist[canv_indx].on('object:modified', onObjectModified);
+            canvaslist[canv_indx].on('object:removed', onObjectModified);
+            canvaslist[canv_indx].on('object:added', onObjectModified);
+        }
+
+        function undo_operation(send_flag){
             var undo_indx;
             if(curpos[curcanvas_indx] > 1) {
-                canvaslist[curcanvas_indx].__eventListeners["object:modified"] = [];
-                canvaslist[curcanvas_indx].__eventListeners["object:removed"] = [];
-                canvaslist[curcanvas_indx].__eventListeners["object:added"] = [];
+                disableCanvasListeners(curcanvas_indx);
 
                 undo_indx = curpos[curcanvas_indx]-2;
                 canvaslist[curcanvas_indx].loadFromJSON(undoavail[curcanvas_indx][undo_indx]);
                 curpos[curcanvas_indx]--;
+
+                removePathSelected(curcanvas_indx);
+
                 canvaslist[curcanvas_indx].renderAll();
-                canvaslist[curcanvas_indx].on('object:modified', onObjectModified);
-                canvaslist[curcanvas_indx].on('object:removed', onObjectModified);
-                canvaslist[curcanvas_indx].on('object:added', onObjectModified);
+
+                enableCanvasListeners(curcanvas_indx);
+
+                if(send_flag === 1) {
+                    console.log('inside undo operation ');
+                    send(0, 0, {
+                        addtab: 0,
+                        removetab: 0,
+                        nth_tab: -1,
+                        undo: 1,
+                        redo: 0,
+                        obj_changed: 0
+                    });
+                }
+
             }
             //console.log("Undo "+curcanvas_indx +" "+curpos[curcanvas_indx]+" "+ undo_indx+"\n"+undoavail[curcanvas_indx][undo_indx]);
-            send("undo");
         }
 
-        function redo_operation(){
+        function redo_operation(send_flag){
             var undo_indx = curpos[curcanvas_indx];
             if(undo_indx < lastmodifiedpos[curcanvas_indx]) {
-                canvaslist[curcanvas_indx].__eventListeners["object:modified"] = [];
-                canvaslist[curcanvas_indx].__eventListeners["object:removed"] = [];
-                canvaslist[curcanvas_indx].__eventListeners["object:added"] = [];
-
+                disableCanvasListeners(curcanvas_indx);
                 undo_indx = curpos[curcanvas_indx];
                 canvaslist[curcanvas_indx].loadFromJSON(undoavail[curcanvas_indx][undo_indx]);
                 curpos[curcanvas_indx]++;
+
+                removePathSelected(curcanvas_indx);
                 canvaslist[curcanvas_indx].renderAll();
 
-                canvaslist[curcanvas_indx].on('object:modified', onObjectModified);
-                canvaslist[curcanvas_indx].on('object:removed', onObjectModified);
-                canvaslist[curcanvas_indx].on('object:added', onObjectModified);
+                enableCanvasListeners(curcanvas_indx);
+
+                if(send_flag == 1) {
+                    send(0, 0, {
+                        addtab: 0,
+                        removetab: 0,
+                        nth_tab: -1,
+                        undo: 0,
+                        redo: 1,
+                        obj_changed: 0
+                    });
+                }
             }
-            send("redo");
         }
 
         function onObjectSelected(e) {
-            console.log(e.target.get('type') , e.target.get('selectable'));
+            console.log("1 : "+e.target.get('type') , e.target.get('selectable'));
+            if(e && e.target && e.target.get('type') === 'path') {
+                // e.target.set('selectable', false);
+                e.target.selectable = false;
+                //console.log("modified ... ", e.target.get('selectable'));
+            }
+            console.log("2: "+e.target.get('type') , e.target.get('selectable'));
         }
 
         $scope.key_pressed = function($event){
             console.log("keys: "+$event.keyCode+" "+$event.ctrlKey);
             if ($event.keyCode == 46) {
+                //delete Key pressed
                 var activeObject = canvaslist[curcanvas_indx].getActiveObject(),
                     activeGroup = canvaslist[curcanvas_indx].getActiveGroup();
                 if (activeGroup) {
@@ -778,10 +986,12 @@ tutorControllers.controller('drawing_controller', [ '$scope', '$routeParams','$w
                 }
             }
             else if($event.keyCode == 90 && $event.ctrlKey == true){
-                undo_operation();
+                //CTRL-Z
+                undo_operation(1);
             }
             else if($event.keyCode == 89 && $event.ctrlKey == true){
-                redo_operation();
+                //CTRL-Y
+                redo_operation(1);
             }
         };
 

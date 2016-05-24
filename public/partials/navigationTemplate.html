@@ -9,6 +9,7 @@
         <li ng-show="!loginCheck"><a href="/">Home</a></li>
         <li ng-show="loginCheck && (sessionUser.userType === 'student')"><a href="/">Home</a></li>
         <li ng-show="loginCheck && (sessionUser.userType === 'tutor')"><a href="tutor-home">Home</a></li>
+        <li ><a href="/canvas/123456789">Canvas</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="loginCheck"><a href="login">Sign in</a></li>

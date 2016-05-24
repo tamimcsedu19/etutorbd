@@ -2,26 +2,26 @@
 
 /* Services */
 
-(function() {
-  var serverAddress = 'localhost';
-  angular
-      .module('Etutor')
-      .service('meanData', meanData);
+(function () {
+    var serverAddress = 'localhost';
+    angular
+        .module('Etutor')
+        .service('meanData', meanData);
 
-  meanData.$inject = ['$http', 'authentication'];
-  function meanData ($http, authentication) {
+    meanData.$inject = ['$http', 'authentication'];
+    function meanData($http, authentication) {
 
-    var getProfile = function () {
-      return $http.get('/api/profile', {
-        headers: {
-          Authorization: 'Bearer '+ authentication.getToken()
-        }
-      });
-    };
+        var getProfile = function () {
+            return $http.get('/api/profile', {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.getToken()
+                }
+            });
+        };
 
-    return {
-      getProfile : getProfile
-    };
-  }
+        return {
+            getProfile: getProfile
+        };
+    }
 
 })();
