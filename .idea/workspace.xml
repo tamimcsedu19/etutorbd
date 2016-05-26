@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac78183-8409-42ab-8d72-51d972da2455" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tutoring.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="etutorbd.iws" />
@@ -599,14 +598,7 @@
       <workItem from="1464151479691" duration="8950000" />
       <workItem from="1464163961889" duration="4995000" />
       <workItem from="1464194967246" duration="369000" />
-      <workItem from="1464282031845" duration="157000" />
-    </task>
-    <task id="LOCAL-00015" summary="added login and signup">
-      <created>1462025839824</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1462025839824</updated>
+      <workItem from="1464282031845" duration="163000" />
     </task>
     <task id="LOCAL-00016" summary="Student Registration and authentication added.">
       <created>1462025876125</created>
@@ -944,7 +936,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464282145995</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="added balanced plus video element">
+      <created>1464282195316</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1464282195316</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -980,7 +979,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103539000" />
+    <option name="totallyTimeSpent" value="103545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="0" />
