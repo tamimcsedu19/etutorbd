@@ -1,0 +1,19 @@
+.wrapper-clockdate {
+    padding: 5px;
+    max-width:100px;
+    width:100%;
+    text-align:center;
+    margin-top:1%;
+    -webkit-box-shadow:inset 0px 0px 10px #222;
+    box-shadow:inset 0px 0px 10px #222;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+#clock-large {
+    background-color:#333;
+    font-family: 'Orbitron', sans-serif;
+    font-size:18px;
+    text-shadow:0px 0px 1px #fff;
+    color:#fff;
+}
