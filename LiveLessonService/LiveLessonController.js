@@ -12,7 +12,7 @@ redisClient.on("error", function (err) {
     console.log("Error " + err);
 });
 
-
+var cnt = 0;
 var EmailToTypeDA = require('../UserService/EmailToTypeDA');
 
 var appendSessionAttrib = "liveLessonId";
@@ -109,6 +109,9 @@ exports.handleClient = function(io,socket,EventEmitter){
 
     EventEmitter.on("endLiveLesson",function (data) {
 
+        ++cnt;
+        console.log('End Lesson Call cnt: '+cnt);
+
         EmailToTypeDA.getUserType(data.to,function (err,EmailType) {
             var userType = EmailType.userType;
 
@@ -116,13 +119,16 @@ exports.handleClient = function(io,socket,EventEmitter){
             liveLessonDA.getById(data,function (err,liveLessonData) {
 
                 var startTime = liveLessonData.startTimeStamp;
+                console.log('startTime: '+startTime)
                 var curTime = Date.now();
-                var totalTimeMinutes = (curTime-startTime)/(60*1000);
+                console.log('curTime: '+curTime);
+                var totalTimeMinutes = (curTime-startTime)/(60.00*1000.00);
                 var studentCut = totalTimeMinutes*(500.0/60);
                 var ourCut = .15 * studentCut;
                 var tutorCut = studentCut-ourCut;
 
 
+                console.log(totalTimeMinutes);
                 var TutorDA = require('../UserService/UserDA')('tutor');
                 var StudentDA = require('../UserService/UserDA')('student');
 
@@ -138,12 +144,21 @@ exports.handleClient = function(io,socket,EventEmitter){
                     studentEmail = data.to;
                     tutorEmail = data.from;
                 }
+                console.log(tutorCut);
 
-                studentUpdate =  { $inc: { Balance: -studentCut } };
-                tutorUpdate   =  { $inc: { Balance: +tutorCutCut } };
+                studentUpdate =  { '$inc': { balance: -studentCut } };
+                tutorUpdate   =  { '$inc': { balance: +tutorCut } };
 
-                TutorDA.update({email:tutorEmail},tutorUpdate);
-                StudentDA.update({email:studentEmail},tutorUpdate);
+                console.log('updating '+tutorEmail);
+                TutorDA.update({email:tutorEmail},tutorUpdate,function (err) {
+                    console.log(err);
+                });
+
+                console.log('updating '+studentEmail);
+                console.log(studentUpdate);
+                StudentDA.update({email:studentEmail},studentUpdate,function (err) {
+                    console.log(err);
+                });
 
 
             });

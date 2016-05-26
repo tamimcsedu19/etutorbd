@@ -1,29 +1,52 @@
-<div class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div id="navbar-main">
-      <ul class="nav navbar-nav">
-        <!--<li><a href="/">Home</a></li>-->
-        <!--<li ng-show="!navvm.isLoggedIn"><a href="/">Home</a></li>-->
-        <!--<li ng-show="navvm.isLoggedIn && (navvm.userType === 'student')"><a href="/">Home</a></li>-->
-        <!--<li ng-show="navvm.isLoggedIn && (navvm.userType === 'tutor')"><a href="tutor-home">Home</a></li>-->
-        <li ng-show="!loginCheck"><a href="/">Home</a></li>
-        <li ng-show="loginCheck && (sessionUser.userType === 'student')"><a href="/">Home</a></li>
-        <li ng-show="loginCheck && (sessionUser.userType === 'tutor')"><a href="tutor-home">Home</a></li>
-        <li ><a href="/canvas/123456789">Canvas</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li ng-hide="loginCheck"><a href="login">Sign in</a></li>
-        <!--<li ng-show="navvm.isLoggedIn"><a href="profile">{{ navvm.currentUser.name }}</a></li>-->
-        <!--<li ng-show="navvm.isLoggedIn && (navvm.userType === 'student')"><a href="profile">{{ navvm.currentUser.name }}</a></li>-->
-        <!--<li ng-show="navvm.isLoggedIn && (navvm.userType === 'tutor')"><a href="tutor-home">{{ navvm.currentUser.name }}</a></li>-->
-        <!--<li ng-show="navvm.isLoggedIn"><button ng-click="navvm.logOut()">Log Out</button></li>-->
+<!--<div class="navbar navbar-default navbar-fixed-top">-->
+  <!--<div class="container">-->
+    <!--<div id="navbar-main">-->
+      <!--<ul class="nav navbar-nav">-->
+        <!--&lt;!&ndash;<li><a href="/">Home</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li ng-show="!navvm.isLoggedIn"><a href="/">Home</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li ng-show="navvm.isLoggedIn && (navvm.userType === 'student')"><a href="/">Home</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li ng-show="navvm.isLoggedIn && (navvm.userType === 'tutor')"><a href="tutor-home">Home</a></li>&ndash;&gt;-->
+        <!--<li ng-show="!loginCheck"><a href="/">Home</a></li>-->
+        <!--<li ng-show="loginCheck && (sessionUser.userType === 'student')"><a href="/">Home</a></li>-->
+        <!--<li ng-show="loginCheck && (sessionUser.userType === 'tutor')"><a href="tutor-home">Home</a></li>-->
+        <!--<li ><a href="/canvas/123456789">Canvas</a></li>-->
+      <!--</ul>-->
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li ng-hide="loginCheck"><a href="login">Sign in</a></li>-->
+        <!--&lt;!&ndash;<li ng-show="navvm.isLoggedIn"><a href="profile">{{ navvm.currentUser.name }}</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li ng-show="navvm.isLoggedIn && (navvm.userType === 'student')"><a href="profile">{{ navvm.currentUser.name }}</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li ng-show="navvm.isLoggedIn && (navvm.userType === 'tutor')"><a href="tutor-home">{{ navvm.currentUser.name }}</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li ng-show="navvm.isLoggedIn"><button ng-click="navvm.logOut()">Log Out</button></li>&ndash;&gt;-->
 
-        <li ng-show="loginCheck && (sessionUser.userType === 'student')"><a href="profile">{{ sessionUser.name }}</a></li>
-        <li ng-show="loginCheck && (sessionUser.userType === 'tutor')"><a href="tutor-home">{{ sessionUser.name }}</a></li>
-        <!--<li ng-show="loginCheck"><button ng-click="navvm.logOut()">Log Out</button></li>-->
-        <li ng-show="loginCheck"><a href="" ng-click="navvm.logOut()">Log Out</a></li>
+        <!--<li ng-show="loginCheck && (sessionUser.userType === 'student')"><a href="profile">{{ sessionUser.name }}</a></li>-->
+        <!--<li ng-show="loginCheck && (sessionUser.userType === 'tutor')"><a href="tutor-home">{{ sessionUser.name }}</a></li>-->
+        <!--&lt;!&ndash;<li ng-show="loginCheck"><button ng-click="navvm.logOut()">Log Out</button></li>&ndash;&gt;-->
+        <!--<li ng-show="loginCheck"><a href="" ng-click="navvm.logOut()">Log Out</a></li>-->
 
-      </ul>
-    </div>
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<md-toolbar class="md-primary">
+
+  <div class="md-toolbar-tools">
+    <md-button class="md-primary md-raised" ng-show="!loginCheck" ng-href="/"> Home </md-button>
+    <md-button ng-show="loginCheck && (sessionUser.userType === 'student')" ng-href="/"> Home</md-button>
+    <md-button ng-show="loginCheck && (sessionUser.userType === 'tutor')" ng-href="tutor-home"> Home </md-button>
+    <!--<md-button class="md-icon-button" aria-label="Settings">-->
+      <!--<md-icon md-svg-icon="img/icons/menu.svg"></md-icon>-->
+    <!--</md-button>-->
+    <!--<h2>-->
+      <!--<span>Toolbar with Icon Buttons</span>-->
+    <!--</h2>-->
+    <span flex></span>
+
+    <md-button class="md-primary md-raised" ng-show="loginCheck && (sessionUser.userType === 'student')" ng-href="profile">{{ sessionUser.name }}</md-button>
+    <md-button class="md-primary md-raised" ng-show="loginCheck && (sessionUser.userType === 'tutor')" ng-href="profile">{{ sessionUser.name }}</md-button>
+
+    <!--<div ng-show="loginCheck && (sessionUser.userType === 'student')"><a href="profile">{{ sessionUser.name }}</a></div>-->
+    <!--<div ng-show="loginCheck && (sessionUser.userType === 'tutor')"><a href="tutor-home">{{ sessionUser.name }}</a></div>-->
+    <md-button class="md-warn md-hue-1" ng-show="loginCheck" ng-click="navvm.logOut()">Log Out</md-button>
+    <md-button class="md-warn" ng-hide="loginCheck"  ng-href="login">Sign in</md-button>
   </div>
-</div>
+</md-toolbar>

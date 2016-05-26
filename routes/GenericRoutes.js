@@ -5,6 +5,7 @@
 var express = require('express');
 var search = require('../SearchService/Search');
 var router = express.Router();
+var EmailToTypeDA = require('../UserService/EmailToTypeDA');
 router.get('/login',function(req,res){
 
     res.sendFile(global.__base+'/public/index.html', function (err) {
@@ -44,4 +45,6 @@ router.get('/tutors/:subject', function (req, res) {
     });
 
 });
+
+
 module.exports = router;

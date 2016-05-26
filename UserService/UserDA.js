@@ -75,14 +75,14 @@ module.exports = function (userType) {
 
         });
 
-    }
+    };
     
     
     module.update = function (query,update,callback) {
 
-        module.User.update(query,update,callback);
+        module.User.update(query,update,null,callback);
     
-    }
+    };
 
 
     /** Give the online Tutors **/

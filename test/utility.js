@@ -10,6 +10,7 @@ var Tutor = require('../UserService/TutorModel');
 var EmailToType = require('../UserService/EmailToTypeModel');
 var SubjectToTutor = require('../SearchService/SubjectToTutor');
 var EmailToTypeDA = require('../UserService/EmailToTypeDA');
+var SubjectToTutorDA = require('../SearchService/SubjectToTutorDA');
 var async = require('async');
 
 exports.cleanup = function () {
@@ -59,11 +60,11 @@ exports.cleanup = function () {
 
 exports.insertTutors = function (alldone) {
 
+    var tutors = [];
 
 
 
-
-    var tutor2 = {
+    tutors.push ({
         firstName: "Mahfuj",
         lastName: "Howlader",
         fullName: "Mahfuj Howlader",
@@ -75,9 +76,10 @@ exports.insertTutors = function (alldone) {
         majorSubject: "Computer Science",
         expectedGraduation: 2017,
         userType: "tutor"
-    };
+    });
 
-    var tutor3 = {
+
+    tutors.push({
         firstName: "Rakib",
         lastName: "Ahsan",
         fullName: "Rakib Ahsan",
@@ -89,59 +91,85 @@ exports.insertTutors = function (alldone) {
         majorSubject: "Computer Science and Engineering",
         expectedGraduation: 2017,
         userType: "tutor"
-    };
-
-    async.waterfall([
-        function (done) {
-            EmailToTypeDA.setUserType(tutor2.email,'tutor',function(err) {
-                TutorDA.save(tutor2, function (err) {
-                    done();
-                });
-            });
+    });
 
 
-        },
-        function (done) {
-            EmailToTypeDA.setUserType(tutor3.email,'tutor',function(err) {
-                TutorDA.save(tutor3, function (err) {
-                    done();
-                });
-            });
+    tutors.push({
+        firstName: "Sabrina",
+        lastName: "Ishita",
+        fullName: "Sabrina Zaman Ishita",
+        email: "mithilazz@gmail.com",
+        hash: "mithila",
+        birthDay: Date('1993-06-07'),
+        university: "University of Dhaka",
+        currentDegree: "Undergraduate",
+        majorSubject: "Computer Science and Engineering",
+        expectedGraduation: 2017,
+        userType: "tutor"
+
+    });
+
+    tutors.push({
+        firstName: "Zahin",
+        lastName: "Zawad",
+        fullName: "Zahin Zawad",
+        email: "zahinzawad@gmail.com",
+        hash: "zahinn",
+        birthDay: Date('1993-06-07'),
+        university: "University of Dhaka",
+        currentDegree: "Undergraduate",
+        majorSubject: "Computer Science and Engineering",
+        expectedGraduation: 2017,
+        userType: "tutor"
+
+    });
+
+    tutors.push({
+        firstName: "Sayeed",
+        lastName: "Anwar",
+        fullName: "Sayeed Anwar",
+        email: "sayeed@gmail.com",
+        hash: "sayeed",
+        birthDay: Date('1993-06-07'),
+        university: "University of Dhaka",
+        currentDegree: "Undergraduate",
+        majorSubject: "Computer Science and Engineering",
+        expectedGraduation: 2017,
+        userType: "tutor"
+
+    });
 
 
-        },
+    for (var i in tutors) {
+        var tutor = new Tutor(tutors[i]);
+        EmailToTypeDA.setUserType(tutor.email,'tutor',function (err) {
+            if(err)
+                console.log(err);
+        });
 
-        /** Lets give em some subjects **/
-            function (done) {
-            subjectToTutor.saveSubjectTutor({
-                'tutorEmail': "mahfujhowlader@gmail.com",
-                'subject': 'C++'
-            }, function () {
-                done();
-            });
+        SubjectToTutorDA.saveSubjectTutor({
+            subject:'C++',
+            tutorEmail:tutor.email
+        });
+        SubjectToTutorDA.saveSubjectTutor({
+            subject:'Java',
+            tutorEmail:tutor.email
+        });
+        SubjectToTutorDA.saveSubjectTutor({
+            subject:'Algebra',
+            tutorEmail:tutor.email
+        });
+        tutor.save(function (err) {
+            if(err)
+                console.log(err);
+        });
 
-        },
-        function (done) {
-            subjectToTutor.saveSubjectTutor({
-                'tutorEmail': "mahfujhowlader@gmail.com",
-                'subject': 'Algebra'
-            }, function () {
-                done();
-            });
-
-        },
-
-
-        /** Now lets test the search option **/
-
-
-
-            function (done) {
-            alldone();
-        }
+    }
+    alldone();
 
 
-    ]);
 
 
 }
+
+exports.insertTutors(function () {});

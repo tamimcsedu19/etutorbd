@@ -1,228 +1,236 @@
 
 <div layout="row" ng-cloak ng-app="drawingapp" ng-controller="drawing_controller">
 
-<div flex="4" layout="column" layout-padding ng-keydown="key_pressed($event)">
-    <!--<md-content flex class="md__content">-->
-    <!--<md-list class="md__list">-->
-    <section flex>
-        <a href="#" colorpicker ng-model="hexPicker.color" ng-change="changeFillColor()">
-            <i class="fa fa-tint fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" colorpicker ng-model="hexPicker.color" ng-change="changeBorderColor()">
-            <i class="fa fa-pencil-square-o fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <md-menu>
-            <a href="#" ng-click="$mdOpenMenu($event)">
-                <i class="fa fa-line-chart fa-lg"></i>
+    <div flex="4" layout="column" layout-padding ng-keydown="key_pressed($event)">
+        <!--<md-content flex class="md__content">-->
+        <!--<md-list class="md__list">-->
+        <section flex>
+            <a href="#" colorpicker ng-model="hexPicker.color" ng-change="changeFillColor()">
+                <i class="fa fa-tint fa-lg"></i>
             </a>
-            <md-menu-content width=2 class="md_menu_content">
-                <md-menu-item ng-init="line_width=1">
-                    <md-slider style="padding-left: 8%; padding-right: 8%; padding-top: 8%" flex="1" class="md-primary"
-                               md-discrete
-                               ng-model="line_width" ng-click="changeBorderWidth()"
-                               ng-change="changeBorderWidth()" step="1" min="1" max="50"
-                               aria-label="rating">
-                    </md-slider>
-                </md-menu-item>
-            </md-menu-content>
-        </md-menu>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="pencil_button" ng-click="pencil_button()">
-            <!--<span class="glyphicon glyphicon glyphicon-pencil"></span>-->
-            <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="eraser_button" ng-click="eraser_button()">
-            <i class="fa fa-eraser fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="drawing-mode" ng-click="drawing_mode()">
-            <i class="fa fa-mouse-pointer fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="bringforward_button" ng-click="bring_fwd()">
-            <!--<span class="glyphicon glyphicon glyphicon-import"></span>-->
-            <i class="fa fa-fast-forward fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="sendbackward_button" ng-click="send_back()">
-            <!--<span class="glyphicon glyphicon glyphicon-export"></span>-->
-            <i class="fa fa-fast-backward fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="circle_button" ng-click="circle_button()">
-            <i class="fa fa-circle-o fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="square_button" ng-click="rect_button()">
-            <i class="fa fa-square-o fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="triangle_button" ng-click="tri_button()">
-            <i class="fa fa-exclamation-triangle fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="line_button" ng-click="line_button()">
-            <i class="fa fa-minus fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <section flex>
-        <a href="#" id="clear-canvas" ng-click="clear_canvas()">
-            <i class="fa fa-remove fa-lg"></i>
-        </a>
-        <md-divider inset></md-divider>
-    </section>
-    <!--</md-list>-->
-    <!--</md-content>-->
-</div>
-<div flex="75" layout="column" id="good" ng-keydown="key_pressed($event)">
-    <!--<div flex = "90">-->
-    <md-tabs flex md-selected="selectedIndex" md-autoselect>
-
-        <md-tab flex ng-repeat="canvas in canvases" label={{canvas.title}}>
-            <div flex tabIndex={{201+canvas.tab_index}} class="canvas_wrapper">
-                <canvas flex id={{"myCanvas"+canvas.tab_index}} tabindex={{canvas.tab_index+1}}
-                        style="border:2px solid #6ae772"></canvas>
-            </div>
-        </md-tab>
-    </md-tabs>
-    <div>
-        <md-button ng-click="addTab(1)" class="md-primary md-raised">Add New Tab</md-button>
-        <md-button ng-click="removeTab(1)" class="md-raised md-warn"> Remove Last Tab</md-button>
-        <md-button ng-click="endLesson()" class="md-raised md-warn"> End Lesson</md-button>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" colorpicker ng-model="hexPicker.color" ng-change="changeBorderColor()">
+                <i class="fa fa-pencil-square-o fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <md-menu>
+                <a href="#" ng-click="$mdOpenMenu($event)">
+                    <i class="fa fa-line-chart fa-lg"></i>
+                </a>
+                <md-menu-content width=2 class="md_menu_content">
+                    <md-menu-item ng-init="line_width=1">
+                        <md-slider style="padding-left: 8%; padding-right: 8%; padding-top: 8%" flex="1" class="md-primary"
+                                   md-discrete
+                                   ng-model="line_width" ng-click="changeBorderWidth()"
+                                   ng-change="changeBorderWidth()" step="1" min="1" max="50"
+                                   aria-label="rating">
+                        </md-slider>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="pencil_button" ng-click="pencil_button()">
+                <!--<span class="glyphicon glyphicon glyphicon-pencil"></span>-->
+                <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="eraser_button" ng-click="eraser_button()">
+                <i class="fa fa-eraser fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="drawing-mode" ng-click="drawing_mode()">
+                <i class="fa fa-mouse-pointer fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="bringforward_button" ng-click="bring_fwd()">
+                <!--<span class="glyphicon glyphicon glyphicon-import"></span>-->
+                <i class="fa fa-fast-forward fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="sendbackward_button" ng-click="send_back()">
+                <!--<span class="glyphicon glyphicon glyphicon-export"></span>-->
+                <i class="fa fa-fast-backward fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="circle_button" ng-click="circle_button()">
+                <i class="fa fa-circle-o fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="square_button" ng-click="rect_button()">
+                <i class="fa fa-square-o fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="triangle_button" ng-click="tri_button()">
+                <i class="fa fa-exclamation-triangle fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="line_button" ng-click="line_button()">
+                <i class="fa fa-minus fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <section flex>
+            <a href="#" id="clear-canvas" ng-click="clear_canvas()">
+                <i class="fa fa-remove fa-lg"></i>
+            </a>
+            <md-divider inset></md-divider>
+        </section>
+        <!--</md-list>-->
+        <!--</md-content>-->
     </div>
-</div>
-<div flex>
+    <div flex="75" layout="column" id="good" ng-keydown="key_pressed($event)">
+        <!--<div flex = "90">-->
+        <md-tabs class="md-primary md-hue-3" flex md-selected="selectedIndex" md-autoselect>
 
-    <div>
-        <video id="remoteVideo" style="height: 250px; width:250px; background-color: #5bc0de"></video>
+            <md-tab flex ng-repeat="canvas in canvases" label={{canvas.title}}>
+                <div flex tabIndex={{201+canvas.tab_index}} class="canvas_wrapper">
+                    <canvas flex id={{"myCanvas"+canvas.tab_index}} tabindex={{canvas.tab_index+1}}
+                            style="border:2px solid #6ae772"></canvas>
+                </div>
+            </md-tab>
+        </md-tabs>
+        <div>
+            <md-button ng-click="addTab(1)" class="md-primary md-raised">Add New Tab</md-button>
+            <md-button ng-click="removeTab(1)" class="md-raised md-warn"> Remove Last Tab</md-button>
+            <md-button ng-click="endLesson()" class="md-raised md-warn"> End Lesson</md-button>
+            <md-button ng-click="videoToggle()" class="md-primary md-warn"> Video Chat </md-button>
+        </div>
     </div>
     <div flex>
-        <!--<div class="container" style="padding-left: 0px">-->
-        <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="padding-left:0px;">
-            <div class="col-xs-12 col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading top-bar">
-                        <div class="col-md-8 col-xs-8">
-                            <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3>
-                        </div>
-                        <div class="col-md-4 col-xs-4" style="text-align: right;">
-                            <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
-                            <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
-                        </div>
-                    </div>
-                    <div class="panel-body msg_container_base">
-                        <div class="row msg_container base_sent">
-                            <div class="col-md-10 col-xs-10">
-                                <div class="messages msg_sent">
-                                    <p>that mongodb thing looks good, huh?
-                                        tiny master db, and huge document store</p>
-                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+
+        <div>
+            <div class="wrapper-clockdate">
+                <div id="clock-large"></div>
+            </div>
+        </div>
+        <div>
+            <div id="draggable" style="width: 730px; height:630px; background-color: #5bc0de"class="ui-widget-content">
+                <iframe style="padding-left: 10px" id="myframe" style = "" src="https://appear.in/rakibRoom" width=700" height="600"></iframe>
+            </div>
+        </div>
+        <div>
+            <div class="container" style="margin-left: 5px">
+                <div class="row chat-window col-xs-5 col-md-3" id="chat_window_1" style="padding-left:5px;">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading top-bar">
+                                <div class="col-md-8 col-xs-8">
+                                    <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> Chat - Miguel</h3>
+                                </div>
+                                <div class="col-md-4 col-xs-4" style="text-align: right;">
+                                    <a href="#"><span id="minim_chat_window" class="glyphicon glyphicon-minus icon_minim"></span></a>
+                                    <a href="#"><span class="glyphicon glyphicon-remove icon_close" data-id="chat_window_1"></span></a>
                                 </div>
                             </div>
-                            <div class="col-md-2 col-xs-2 avatar">
-                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                            </div>
-                        </div>
-                        <div class="row msg_container base_receive">
-                            <div class="col-md-2 col-xs-2 avatar">
-                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                            </div>
-                            <div class="col-md-10 col-xs-10">
-                                <div class="messages msg_receive">
-                                    <p>that mongodb thing looks good, huh?
-                                        tiny master db, and huge document store</p>
-                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                            <div class="panel-body msg_container_base">
+                                <div class="row msg_container base_sent">
+                                    <div class="col-md-10 col-xs-10">
+                                        <div class="messages msg_sent">
+                                            <p>that mongodb thing looks good, huh?
+                                                tiny master db, and huge document store</p>
+                                            <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-2 avatar">
+                                        <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                                    </div>
+                                </div>
+                                <div class="row msg_container base_receive">
+                                    <div class="col-md-2 col-xs-2 avatar">
+                                        <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                                    </div>
+                                    <div class="col-md-10 col-xs-10">
+                                        <div class="messages msg_receive">
+                                            <p>that mongodb thing looks good, huh?
+                                                tiny master db, and huge document store</p>
+                                            <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row msg_container base_receive">
+                                    <div class="col-md-2 col-xs-2 avatar">
+                                        <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                                    </div>
+                                    <div class="col-xs-10 col-md-10">
+                                        <div class="messages msg_receive">
+                                            <p>that mongodb thing looks good, huh?
+                                                tiny master db, and huge document store</p>
+                                            <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row msg_container base_sent">
+                                    <div class="col-xs-10 col-md-10">
+                                        <div class="messages msg_sent">
+                                            <p>that mongodb thing looks good, huh?
+                                                tiny master db, and huge document store</p>
+                                            <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-2 avatar">
+                                        <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                                    </div>
+                                </div>
+                                <div class="row msg_container base_receive">
+                                    <div class="col-md-2 col-xs-2 avatar">
+                                        <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                                    </div>
+                                    <div class="col-xs-10 col-md-10">
+                                        <div class="messages msg_receive">
+                                            <p>that mongodb thing looks good, huh?
+                                                tiny master db, and huge document store</p>
+                                            <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row msg_container base_sent">
+                                    <div class="col-md-10 col-xs-10 ">
+                                        <div class="messages msg_sent">
+                                            <p>that mongodb thing looks good, huh?
+                                                tiny master db, and huge document store</p>
+                                            <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-2 avatar">
+                                        <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row msg_container base_receive">
-                            <div class="col-md-2 col-xs-2 avatar">
-                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                            </div>
-                            <div class="col-xs-10 col-md-10">
-                                <div class="messages msg_receive">
-                                    <p>that mongodb thing looks good, huh?
-                                        tiny master db, and huge document store</p>
-                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row msg_container base_sent">
-                            <div class="col-xs-10 col-md-10">
-                                <div class="messages msg_sent">
-                                    <p>that mongodb thing looks good, huh?
-                                        tiny master db, and huge document store</p>
-                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-xs-2 avatar">
-                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                            </div>
-                        </div>
-                        <div class="row msg_container base_receive">
-                            <div class="col-md-2 col-xs-2 avatar">
-                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                            </div>
-                            <div class="col-xs-10 col-md-10">
-                                <div class="messages msg_receive">
-                                    <p>that mongodb thing looks good, huh?
-                                        tiny master db, and huge document store</p>
-                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row msg_container base_sent">
-                            <div class="col-md-10 col-xs-10 ">
-                                <div class="messages msg_sent">
-                                    <p>that mongodb thing looks good, huh?
-                                        tiny master db, and huge document store</p>
-                                    <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                                </div>
-                            </div>
-                            <div class="col-md-2 col-xs-2 avatar">
-                                <img src="http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-1.jpg" class=" img-responsive ">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="input-group">
-                            <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
+                            <div class="panel-footer">
+                                <div class="input-group">
+                                    <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here..." />
                         <span class="input-group-btn">
                         <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
                         </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--</div>-->
     </div>
-</div>
 
 </div>

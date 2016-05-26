@@ -12,13 +12,7 @@ module.exports = {
     saveSubjectTutor: function (SubjectToTutorData, callback) {
 
         var subjectToTutor = new SubjectToTutor(SubjectToTutorData);
-        subjectToTutor.save(function (err) {
-            if (err) {
-                return callback(err);
-
-            }
-            return callback();
-        });
+        subjectToTutor.save(callback);
 
 
     }

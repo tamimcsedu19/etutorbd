@@ -1,62 +1,43 @@
-
 <div  layout="row">
-    <div flex = "80">
-        <div class="container" ng-controller="tutorHomeCtrl" id="left">
-            <div class="row">
+    <div flex = "80" style="padding-left: 2%;">
+        <!--<div class="tooltip-demo well">-->
 
-                <div class="col-md-6">
 
-                    <h1 class="form-signin-heading">Your profile</h1>
+        <div class="row-fluid sortable">
+            <div class="box span9">
+                <div class="box-header">
+                    <h2><i class="halflings-icon font"></i><span class="break"></span>Dashboard</h2>
+                </div>
+                <div class="box-content">
+                    <div class="page-header">
+                        <h1>Schedules: <small>This is your dashboard , Here you can see your upcoming schedule</small></h1>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <h3>You have a schedule with John Doe at 9:PM today</h3>
 
-                    <form  class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Full name</label>
-                            <p class="form-control-static">{{ vm.user.fullName }}</p>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Email</label>
-                            <p class="form-control-static">{{ vm.user.email }}</p>
-                        </div>
-                    </form>
+
+                    </div><!--/row -->
+
 
                 </div>
-
-            </div>
+            </div><!--/span-->
+        </div>
+        <!--</div>-->
+        <div class="container" ng-controller="tutorHomeCtrl" id="left">
         </div>
     </div>
 
     <div flex>
-        <div id ="outer" ng-controller="tutorChatCtrl" id="right">
+        <div id ="outer" ng-controller="tutorChatCtrl">
             <div class="chat-sidebar">
-                <div class="sidebar-name">
+                <div class="sidebar-name" ng-repeat="people in onlineList">
                     <!-- Pass username and display name to register popup -->
-                    <a href="javascript:register_popup('narayan-prusty', 'Narayan Prusty');">
+                    <a href="#" ng-click="register_popup(people.email, people.name)">
+
                         <img width="30" height="30" />
-                        <span>Narayan Prusty</span>
-                    </a>
-                </div>
-                <div class="sidebar-name">
-                    <a href="javascript:register_popup('qnimate', 'QNimate');">
-                        <img width="30" height="30" />
-                        <span>QNimate</span>
-                    </a>
-                </div>
-                <div class="sidebar-name">
-                    <a href="javascript:register_popup('qscutter', 'QScutter');">
-                        <img width="30" height="30"  />
-                        <span>QScutter</span>
-                    </a>
-                </div>
-                <div class="sidebar-name">
-                    <a href="javascript:register_popup('qidea', 'QIdea');">
-                        <img width="30" height="30"  />
-                        <span>QIdea</span>
-                    </a>
-                </div>
-                <div class="sidebar-name">
-                    <a href="javascript:register_popup('maruf@gmail.com', 'Maruf');">
-                        <img width="30" height="30"  />
-                        <span>Maruf</span>
+                        <span>{{people.name}}</span>
                     </a>
                 </div>
             </div>

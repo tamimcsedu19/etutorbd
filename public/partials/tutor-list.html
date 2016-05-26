@@ -4,23 +4,22 @@
         <div class="left-sidebar">
             keyword: <input type="text" class="form-control" ng-model="query">
             <br/>
-            Sort by:
-            <select ng-model="orderProp">
-                <option value="name">Alphabetical</option>
-                <option value="age">Newest</option>
-            </select>
+            <!--Sort by:-->
+            <!--<select ng-model="orderProp">-->
+                <!--<option value="name">Alphabetical</option>-->
+                <!--<option value="age">Newest</option>-->
+            <!--</select>-->
         </div>
     </div>
     <div flex="70">
         <!--Body content-->
         <div>
             <ul class="phones">
-                <li dir-paginate="phone in phones | filter:query | orderBy:orderProp | itemsPerPage: 10"
+                <li dir-paginate="phone in phones | filter:query  | itemsPerPage: 10"
                     class="thumbnail">
-                    <a href="/tutor/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"
-                                                                     alt="{{phone.name}}"></a>
-                    <a href="/tutor/{{phone.id}}">{{phone.name}}</a>
-                    <p>{{phone.snippet}}</p>
+                    <a href="/tutor/{{phone._id}}" class="thumb"></a>
+                    <a href="/tutor/{{phone._id}}">{{phone.fullName}}</a>
+                    <p>{{phone.majorSubject + ' , ' + phone.university}}</p>
                 </li>
             </ul>
 
@@ -32,35 +31,12 @@
     <div flex id="right">
         <div id="outer" ng-controller="chatCtrl">
             <div class="chat-sidebar">
-                <div class="sidebar-name">
+                <div class="sidebar-name" ng-repeat="people in onlineList">
                     <!-- Pass username and display name to register popup -->
-                    <a href="javascript:register_popup('narayan-prusty', 'Narayan Prusty');">
-                        <img width="30" height="30"/>
-                        <span>Narayan Prusty</span>
-                    </a>
-                </div>
-                <div class="sidebar-name">
-                    <a href="javascript:register_popup('qnimate', 'QNimate');">
-                        <img width="30" height="30"/>
-                        <span>QNimate</span>
-                    </a>
-                </div>
-                <div class="sidebar-name">
-                    <a href="javascript:register_popup('qscutter', 'QScutter');">
-                        <img width="30" height="30"/>
-                        <span>QScutter</span>
-                    </a>
-                </div>
-                <div class="sidebar-name">
-                    <a href="javascript:register_popup('qidea', 'QIdea');">
-                        <img width="30" height="30"/>
-                        <span>QIdea</span>
-                    </a>
-                </div>
-                <div class="sidebar-name">
-                    <a href="javascript:register_popup('mahfujhowlader@gmail.com', 'Mahfuj');">
-                        <img width="30" height="30"/>
-                        <span>Mahfuj</span>
+                    <a href="#" ng-click="register_popup(people.email, people.name)">
+
+                        <img width="30" height="30" />
+                        <span>{{people.name}}</span>
                     </a>
                 </div>
             </div>

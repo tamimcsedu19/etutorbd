@@ -1,14 +1,54 @@
 
-<div class="container">
-  
-  <h1>Welcome to EtutorBD</h1>
 
-  <div class='typeahead-demo' ng-controller="TypeaheadCtrl">
-    <div class="heading">
-      <h4>Find A Tutor</h4>
+<div class="container">
+
+  <div id="myCarouselpp" class="carousel slide" data-ride="carousel">
+
+    <div class="boxing col-md-12">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h1 class="welcome">Welcome to EtutorBD</h1>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div class="heading">
+            <h4 class="tutorFind">Find A Tutor</h4>
+          </div>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+
+        <!--<div class="col-md-2"></div>-->
+        <!--<div class="col-md-6"></div>-->
+          <div class="typeahead-demo" ng-controller="TypeaheadCtrl">
+            <input type="text" ng-enter="check()" ng-model="selected" uib-typeahead="subject for subject in subjects | filter:$viewValue | limitTo:8" class="form-control">
+          </div>
+        <!--<div class="col-md-4"></div>-->
+      </div>
+
     </div>
-    <input type="text" ng-enter="check()" ng-model="selected" uib-typeahead="subject for subject in subjects | filter:$viewValue | limitTo:8" class="form-control">
-    <!--<button ng-click="check()">Search</button>-->
+
+    <!-- Other carousel below !-->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img/tutoring.png" alt="Chania">
+
+
+      </div>
+    </div>
+
+
 
   </div>
 

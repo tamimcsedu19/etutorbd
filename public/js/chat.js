@@ -62,7 +62,7 @@ function display_popups()
     }
 }
 
-//creates markup for a new popup. Adds the id to popups array.
+// //creates markup for a new popup. Adds the id to popups array.
 function register_popup(id, name)
 {
     console.log('in register pop up '+ id);
@@ -83,7 +83,7 @@ function register_popup(id, name)
     }
 
     angular.element(document.getElementById('outer')).scope().addChatBox(id, name);
-    
+
     popups.unshift(id);
 
     calculate_popups();

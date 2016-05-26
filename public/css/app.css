@@ -1,13 +1,36 @@
 /* app css stylesheet */
 
 /*body {*/
-  /*padding-top: 20px;*/
-  /*font-family:Arial, Helvetica, sans-serif;*/
-	/*font-size:12px;*/
+/*padding-top: 20px;*/
+/*font-family:Arial, Helvetica, sans-serif;*/
+/*font-size:12px;*/
 
 /*}*/
 
+div.typeahead-demo{
 
+  margin-right: -20px;
+
+}
+div#myCarouselpp {
+  position:relative;
+}
+
+div.boxing {
+  position:absolute;
+  z-index:9999999;
+  top:20px; /* change to whatever you want */
+  left:10px; /* change to whatever you want */
+  right:auto; /* change to whatever you want */
+  bottom:auto; /* change to whatever you want */
+}
+
+h1.welcome{
+  color:rgb(255, 133, 51);
+}
+h4.tutorFind{
+  color: rgb(204, 0, 5);
+}
 
 .phones {
   list-style: none;
@@ -82,5 +105,5 @@ ul.specs dt {
 }
 
 /*h1 {*/
-  /*border-bottom: 1px solid gray;*/
+/*border-bottom: 1px solid gray;*/
 /*}*/

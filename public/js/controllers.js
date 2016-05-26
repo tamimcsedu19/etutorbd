@@ -1,7 +1,7 @@
 'use strict';
 
 /* Controllers */
-var serverAddress = 'localhost';
+var serverAddress = '192.168.137.145';
 var tutorControllers = angular.module('tutorControllers', []);
 
 tutorControllers.controller('TutorListCtrl', ['$scope', '$routeParams', '$http',
@@ -12,15 +12,15 @@ tutorControllers.controller('TutorListCtrl', ['$scope', '$routeParams', '$http',
             method: "get",
             params: { subject: $routeParams.subject }
         }).then(function (response) {
-            //$scope.phones = response.data;
+            $scope.phones = response.data;
             console.log(response.data);
             console.log(response.data.university);
-        })
-
-        $http.get('phones/phones.json').success(function (data) {
-            $scope.phones = data;
-            console.log(data);
         });
+
+        // $http.get('phones/phones.json').success(function (data) {
+        //     $scope.phones = data;
+        //     console.log(data);
+        // });
 
         $scope.orderProp = 'age';
     }]);
@@ -153,11 +153,13 @@ tutorControllers.controller('loginCtrl', [ '$rootScope','$location', 'authentica
     }]);
 
 
-tutorControllers.controller('profileCtrl', [ '$scope','$location', 'meanData',
-    function ($scope,$location, meanData) {
+tutorControllers.controller('profileCtrl', [ '$rootScope','$scope','$http','$location', 'meanData',
+    function ($rootScope,$scope,$http,$location, meanData) {
         var vm = this;
+        $scope.date = new Date();
 
         vm.user = {};
+        vm.balance;
 
         meanData.getProfile()
             .success(function(data) {
@@ -168,6 +170,16 @@ tutorControllers.controller('profileCtrl', [ '$scope','$location', 'meanData',
             .error(function (e) {
                 console.log(e);
             });
+
+        $http({
+            url: "http://"+serverAddress+":3000/api/findBalance",
+            method: "get",
+            params: { user_id: $rootScope.sessionUser.email }
+        }).then(function (response) {
+            vm.balance = response.data.balance;
+
+        });
+
     }]);
 
 tutorControllers.controller('tutorHomeCtrl', [ '$scope','$location', 'meanData',
@@ -235,7 +247,18 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
         vm.currentUser = authentication.currentUser();
         
         $scope.messages = new Array();
+        $scope.onlineList = new Array();
 
+        $scope.updateOnlineList = function(){
+            // $scope.onlineList = data;
+            $scope.onlineList.push({email: 'mahfujhowlader@gmail.com', name: 'Mahfuj'});
+            $scope.onlineList.push({email: 'rakib.13th@gmail.com', name: 'Rakib'});
+            $scope.onlineList.push({email: 'mithilazz@gmail.com', name: 'Ishita'});
+            $scope.onlineList.push({email: 'zahinzawad@gmail.com', name: 'Zahin'});
+            $scope.onlineList.push({email: 'sayeed@gmail.com', name: 'Sayeed'});
+        };
+
+        $scope.updateOnlineList();
 
         $scope.showAlert = function(id) {
             $mdDialog.show(
@@ -341,7 +364,7 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
 
         $scope.chatReceive = function (id, name, msg_text, flag) {
             console.log("In receive id= "+id );
-            register_popup(id, name);
+            $scope.register_popup(id, name);
 
             $scope.chatInit(id);
             // $rootScope.all_student_messages[id].push({name:data.messages[i].from, msg:data.messages[i].message});
@@ -368,6 +391,50 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
             console.log('second '+(typeof $scope.messages[id] === 'undefined'));
         };
 
+        $scope.close_popup = function (id)
+        {
+            for(var iii = 0; iii < popups.length; iii++)
+            {
+                if(id == popups[iii])
+                {
+                    Array.remove(popups, iii);
+
+                    document.getElementById(id).style.display = "none";
+
+                    calculate_popups();
+
+                    return;
+                }
+            }
+        };
+
+        $scope.register_popup = function (id, name)
+        {
+            console.log('in register pop up '+ id);
+            for(var iii = 0; iii < popups.length; iii++)
+            {
+                //already registered. Bring it to front.
+                if(id == popups[iii])
+                {
+                    Array.remove(popups, iii);
+
+                    popups.unshift(id);
+
+                    calculate_popups();
+
+
+                    return;
+                }
+            }
+
+            $scope.addChatBox(id, name);
+
+            popups.unshift(id);
+
+            calculate_popups();
+
+        };
+
         $scope.addChatBox = function (id, name) {
             console.log("addcaht called...." + id);
 
@@ -377,10 +444,9 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
-             var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
-            //var tmpinput = '<textarea enter-submit="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '"></textarea>';
+            var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
 
-            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput  + tempclick + '</div></div>';
+            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput +tempclick + '</div></div>';
 
             var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <pre>{{item.msg}} </pre> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
@@ -429,12 +495,33 @@ tutorControllers.controller('chatCtrl', ['$rootScope','$scope', '$timeout','$win
 tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout','$location','$log', '$compile','authentication', '$mdDialog',
     function ($rootScope,$scope,$timeout,$location, $log, $compile,authentication,$mdDialog) {
 
-
         console.log('chat control student');
         var vm = this;
         vm.currentUser = authentication.currentUser();
 
         $scope.messages = new Array();
+        $scope.onlineList = new Array();
+
+        $scope.updateOnlineList = function(){
+            // $scope.onlineList = data;
+            $scope.onlineList.push({email: 'maruf@gmail.com', name: 'Maruf'});
+            $scope.onlineList.push({email: 'towhid@gmail.com', name: 'Towhidul'});
+            $scope.onlineList.push({email: 'amifa@gmail.com', name: 'Amifa Raj'});
+            $scope.onlineList.push({email: 'jony@gmail.com', name: 'Jony Ahmed'});
+        };
+
+        $scope.updateOnlineList();
+
+        // setTimeout(function () {
+        //     $scope.updateOnlineList();
+        //     $scope.onlineList.push({email: 'qscutter', name: 'QScutter'});
+        //     $scope.onlineList.push({email: 'qnimate', name: 'QNimate'});
+        //     $scope.onlineList.push({email: 'qnimate', name: 'QNimate'});
+        //     $scope.onlineList.push({email: 'qnimate', name: 'QNimate'});
+        //     $scope.onlineList.push({email: 'qnimate', name: 'QNimate'});
+        //     $scope.$apply();
+        //     console.log($scope.onlineList);
+        // }, 100);
 
         $scope.showAlert = function(id) {
             $mdDialog.show(
@@ -526,7 +613,7 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout',
 
         $scope.chatReceive = function (id, name, msg_text,flag) {
             console.log("In receive id= "+id );
-            register_popup(id, name);
+            $scope.register_popup(id, name);
 
             // $scope.chatInit(id);
             // $rootScope.all_student_messages[id].push({name:data.messages[i].from, msg:data.messages[i].message});
@@ -553,19 +640,62 @@ tutorControllers.controller('tutorChatCtrl', ['$rootScope','$scope', '$timeout',
             console.log('second '+(typeof $scope.messages[id] === 'undefined'));
         };
 
+        $scope.close_popup = function (id)
+        {
+            for(var iii = 0; iii < popups.length; iii++)
+            {
+                if(id == popups[iii])
+                {
+                    Array.remove(popups, iii);
+
+                    document.getElementById(id).style.display = "none";
+
+                    calculate_popups();
+
+                    return;
+                }
+            }
+        };
+
+        $scope.register_popup = function (id, name)
+        {
+            console.log('in register pop up '+ id);
+            for(var iii = 0; iii < popups.length; iii++)
+            {
+                //already registered. Bring it to front.
+                if(id == popups[iii])
+                {
+                    Array.remove(popups, iii);
+
+                    popups.unshift(id);
+
+                    calculate_popups();
+
+
+                    return;
+                }
+            }
+
+            $scope.addChatBox(id, name);
+
+            popups.unshift(id);
+
+            calculate_popups();
+
+        };
+
         $scope.addChatBox = function (id, name) {
             console.log("addcaht called...." + id);
 
 
             var livesession = ' <button type="button" class="btn btn-primary btn-xs" style="margin-right: 5px" ng-click="showAlert(\''+id+'\')"><span class="glyphicon glyphicon-blackboard"></span> </button>';
-            var closeChat = '<button type="button" class="btn btn-primary btn-xs" onclick="close_popup(\'' + id + '\')"><span class="glyphicon glyphicon-remove"></span> </button>';
+            var closeChat = '<button type="button" class="btn btn-primary btn-xs" ng-click="close_popup(\'' + id + '\')"><span class="glyphicon glyphicon-remove"></span> </button>';
 
             var tempclick = '<span class="input-group-btn"><button class="btn btn-primary" type="button" ng-click="chatSend(\'' + id + '\', \'' + name + '\')">SEND</button></span>';
             //'onclick=chatSend(\''+id+'\')';
-            //var tmpinput = '<textarea enter-submit="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '"></textarea>';
-             var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
+            var tmpinput = '<input type="text" ng-enter="chatSend(\'' + id + '\', \'' + name + '\')" class="form-control" placeholder="Enter your text..." id= "chatin' + id + '">';
 
-            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + tempclick + '</div></div>';
+            var tmpfullin = '<div class="well well-sm"><div class="input-group"">' + tmpinput + tempclick+'</div></div>';
 
             var repeatel = '<md-list>  <md-list-item class="md-2-line" ng-repeat="item in messages[\'' + id + '\']"> <div class="md-list-item-text"> <h3>{{item.name}}</h3> <pre>{{item.msg}} </pre> </div> <md-divider inset></md-divider> </md-list-item> </md-list>';
 
@@ -1178,6 +1308,36 @@ tutorControllers.controller('drawing_controller', [ '$rootScope','$scope', '$rou
             canvaslist[curcanvas_indx].clear();
             onObjectModified();
         };
+
+        $(function() {
+            $( "#draggable" ).draggable();
+            $( "#draggable" ).hide();
+        });
+
+
+        $scope.videoToggle = function () {
+            $("#draggable").toggle();
+        };
+
+        var seconds = 0, minutes = 0, hours = 0;
+        function showTime() {
+            if (document.getElementById("clock-large")) {
+                seconds++;
+                if (seconds >= 60) {
+                    seconds = 0;
+                    minutes++;
+                    if (minutes >= 60) {
+                        minutes = 0;
+                        hours++;
+                    }
+                }
+                document.getElementById("clock-large").innerHTML = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+            }
+            else {
+                seconds = 0; minutes = 0; hours = 0;
+            }
+        }
+        setInterval(showTime, 1000);
 
 
     }]);
