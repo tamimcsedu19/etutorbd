@@ -54,7 +54,7 @@ tutorApp.config(['$routeProvider', '$locationProvider',
 tutorApp.run(['$rootScope', '$location', 'authentication',
     function ($rootScope, $location, authentication) {
         $rootScope.$on('$routeChangeStart', function(event, nextRoute, currentRoute) {
-            var serverAddress = '192.168.137.145';
+            var serverAddress = 'localhost';
             $rootScope.sessionUser = authentication.currentUser();
             $rootScope.loginCheck = authentication.isLoggedIn();
             console.log('inside app.js'+$rootScope.loginCheck);

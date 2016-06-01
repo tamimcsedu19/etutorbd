@@ -1,7 +1,7 @@
 'use strict';
 
 /* Controllers */
-var serverAddress = '192.168.137.145';
+var serverAddress = 'localhost';
 var tutorControllers = angular.module('tutorControllers', []);
 
 tutorControllers.controller('TutorListCtrl', ['$scope', '$routeParams', '$http',
